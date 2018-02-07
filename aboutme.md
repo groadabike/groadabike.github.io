@@ -3,7 +3,7 @@ layout: page
 title: About me
 subtitle: Gerardo Roa Dabike
 ---
-Helo,  
+Hello,  
 I am a PhD student in the Department of Computer Science at the 
 University of Sheffield under the supervision of Dr. Jon Barker.  
  
