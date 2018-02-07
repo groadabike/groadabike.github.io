@@ -3,12 +3,12 @@ layout: page
 title: Contact
 subtitle: 
 ---
-![mail me](/img/icon/mail-icon.png) groadabike1@sheffield.ac.uk
+![](/img/icon/mail-icon.png) groadabike1@sheffield.ac.uk
 
-Speech and Hearing Research Group,  
+![](/img/icon/location-icon.png) Speech and Hearing Research Group,  
 Department of Computer Science,  
 University of Sheffield,  
 Regent Court, 211 Portobello St.,  
 Sheffield, S1 4DP, UK   
 
-+44 7713 670375
+![](/img/icon/phone-icon.png) +44 7713 670375
