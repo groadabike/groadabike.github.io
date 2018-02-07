@@ -7,9 +7,9 @@ subtitle: Gerardo Roa Dabike
 
 - MSc Advanced Computer Science  
   University of Sheffield, UK  
-  2015-2016
+  2015-2016  
   
 - Ingeniería Civil Informática  
   Universidad Diego Portales, Chile  
-  1998-2004
+  1998-2004  
   
