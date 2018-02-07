@@ -63,9 +63,10 @@ author:
 
 # Select which links to show in the footer
 footer-links-active:
+  email: true
+  telephone: true
   rss: false
   facebook: false
-  email: true
   twitter: false
   google-plus: false
   github: true
@@ -78,7 +79,7 @@ footer-links-active:
   instagram: false
   youtube: false
   spotify: false
-  telephone: true
+
 
 # Select which share links to show in posts
 share-links-active:
