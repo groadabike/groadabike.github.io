@@ -14,7 +14,7 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Gerardo Roa
+title: Home
 
 # Short description of your site
 description: Speech Processing - Deep Learning
@@ -59,7 +59,7 @@ author:
   instagram: yourname # eg. daattali
   youtube: user/groad   # eg. user/daattali or channel/daattali
   spotify: yourname   # eg. daattali
-  telephone: +44 7713 670375   # eg. +14159998888
+  telephone: (+44) 114 22 21800   # eg. +14159998888
 
 # Select which links to show in the footer
 footer-links-active:
