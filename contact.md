@@ -8,9 +8,10 @@ subtitle:
 ![](/img/icon/location-icon.png) **Speech and Hearing Research Group**  
 The Department of Computer Science  
 University of Sheffield
-Regent Court, 211 Portobello St.  
+Regent Court, 211 Portobello  
 Sheffield 
 S1 4DP 
 UK   
 
-![](/img/icon/phone-icon.png) +44 7713 670375
+![](/img/icon/phone-icon.png) (+44) 114 22 21800  
++44 7713 670375
