@@ -1,10 +1,10 @@
 ---
 layout: post
-title: My first post!
-subtitle: Isn't exciting?
+title: Master Research
+subtitle: How to replicate...
 image: 
-bigimg: /img/2018-02-05/baby-penguin.jpg
-tags: test
+bigimg: /img/2018-02-12/penguin.jpg
+tags: Msc, Acomus
 ---
 
 Hi there,
