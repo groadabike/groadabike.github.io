@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Acomus
-subtitle: An ACOustic MUSic corpus for research
+subtitle: An **ACO**ustic **MUS**ic corpus for research
 image: 
 bigimg: /img/2018-02-16/penguin.jpg
 tags: [Msc, Acomus, kaldi]
