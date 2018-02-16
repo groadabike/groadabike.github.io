@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Acomus
-subtitle: An ACOustic MUSic corpus for research
+subtitle: An <b>ACO</b>ustic <b>MUS</b>ic corpus for research
 image:
 bigimg: /img/2018-02-16/penguin.jpg
 tags: [Msc, Acomus, kaldi]
@@ -13,10 +13,10 @@ During my master at University of Sheffield I had the crazy idea to do
 in my dissertation an ASR system in music. 
 Besides all the intrinsic difficult that is an ASR have, I found that, 
 even though several corpus are available for music research such as
-[Medleydb](http://medleydb.weebly.com/) and 
-[Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/),
-there are none corpus of music annotated for speech research. 
-
+<a href:"http://medleydb.weebly.com/" target="_blank">Medleydb</a>
+and 
+<a href:"https://labrosa.ee.columbia.edu/millionsong/" target="_blank">Million Song Dataset</a>,
+there are none corpus of music annotated for speech research.   
 Therefore, I accepted the challenge of creating a new corpus that 
 would satisfy my research needs.
 As a result of that, Acomus corpus was born.
