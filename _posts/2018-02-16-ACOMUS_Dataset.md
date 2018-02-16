@@ -13,10 +13,10 @@ During my master at University of Sheffield I had the crazy idea to do
 in my dissertation an ASR system in music. 
 Besides all the intrinsic difficult that is an ASR have, I found that, 
 even though several corpus are available for music research such as
-<a href:"http://medleydb.weebly.com/" target="_blank">Medleydb</a>
-and 
-<a href:"https://labrosa.ee.columbia.edu/millionsong/" target="_blank">Million Song Dataset</a>,
-there are none corpus of music annotated for speech research.   
+[Medleydb](http://medleydb.weebly.com/){:target="_blank"} and 
+[Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/){:target="_blank"},
+there are none corpus of music annotated for speech research. 
+
 Therefore, I accepted the challenge of creating a new corpus that 
 would satisfy my research needs.
 As a result of that, Acomus corpus was born.
