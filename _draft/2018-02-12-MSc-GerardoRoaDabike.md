@@ -7,10 +7,7 @@ bigimg: /img/2018-02-12/penguin.jpg
 tags: [Msc, Acomus, kaldi]
 ---
 
-Hi there,
 
-This is my first official post in my blog. Exciting, isn’t?
-Ok, today I just wanted to introduce myself.
 
 I am from Chile and  studied informatics engineering back in 1998 at 
 the Universidad Diego Portales.
