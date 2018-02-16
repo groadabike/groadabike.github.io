@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Acomus
-subtitle: An **ACO**ustic **MUS**ic corpus for research
-image: 
+subtitle: An ACOustic MUSic corpus for research
+image:
 bigimg: /img/2018-02-16/penguin.jpg
 tags: [Msc, Acomus, kaldi]
 ---
 
-#Motivation#
+# Motivation
 
 During my master at University of Sheffield I had the crazy idea to do
 in my dissertation an ASR system in music. 
@@ -22,7 +22,7 @@ would satisfy my research needs.
 As a result of that, Acomus corpus was born.
    
 
-#Description#
+# Description
 
 Acomus is a collection of acoustic covers of popular music that are
 share on YouTube by amateurs artist.
@@ -32,7 +32,7 @@ proportion is piano.
 The collection is base only in adults singers with a 
 reasonable gender balance.
 
-#How to get the corpus#
+# How to get the corpus
 
 Please, if you want to know more about this corpus, please do not hesitate
 to contact me, or follow this link [ACOMUS](https://groadabike.github.io/ACOMUS/).
