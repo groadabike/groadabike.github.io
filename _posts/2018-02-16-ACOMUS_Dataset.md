@@ -20,7 +20,15 @@ there are none corpus of music annotated for speech research.
 Therefore, I accepted the challenge of creating a new corpus that 
 would satisfy my research needs.
 As a result of that, Acomus corpus was born.
-   
+
+
+# Restrictions
+
+Please, take into account that this corpus was designed 
+for academic purposes only. 
+Any commercial use or other distinct than academic is 
+strictly forbidden and please avoid to do it.
+ 
 
 # Description
 
