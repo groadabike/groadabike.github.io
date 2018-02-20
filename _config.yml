@@ -14,7 +14,7 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Gerardo Roa
+title: Home
 
 # Short description of your site
 description: Speech Processing - Deep Learning
@@ -59,7 +59,7 @@ author:
   instagram: yourname # eg. daattali
   youtube: user/groad   # eg. user/daattali or channel/daattali
   spotify: yourname   # eg. daattali
-  telephone: +44 7713 670375   # eg. +14159998888
+  telephone: (+44) 114 22 21800   # eg. +14159998888
 
 # Select which links to show in the footer
 footer-links-active:
@@ -94,7 +94,7 @@ share-links-active:
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: ""
+disqus: "groadabike"
 
 # Fill in your Google Analytics ID to track your website using GA
 #google_analytics: ""
@@ -143,7 +143,7 @@ defaults:
       show-avatar: true
 
 # Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
-link-tags: false
+link-tags: true
 
 # Exclude these files from production site
 exclude:

@@ -4,13 +4,12 @@ title: About me
 subtitle: Gerardo Roa Dabike
 ---
 Hello,  
-I am a PhD student in the Department of Computer Science at the 
+I am a PhD research student in The Department of Computer Science at the 
 University of Sheffield under the supervision of Dr. Jon Barker.  
  
-My research subject is an Automatic Speech Recognition in a music context.  
-This means that several challenges must be solved. 
-Some of these are source separation, acoustic and language models designs.  
+My research project is Automatic Lyrics Transcription.  
 
+  
 
 
 

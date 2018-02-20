@@ -1,16 +1,13 @@
 ---
 layout: post
-title: My first post!
-subtitle: Isn't exciting?
+title: Master Research
+subtitle: How to replicate...
 image: 
-bigimg: /img/2018-02-05/baby-penguin.jpg
-tags: 
+bigimg: /img/2018-02-12/penguin.jpg
+tags: [Msc, Acomus, kaldi]
 ---
 
-Hi there,
 
-This is my first official post in my blog. Exciting, isn’t?
-Ok, today I just wanted to introduce myself.
 
 I am from Chile and  studied informatics engineering back in 1998 at 
 the Universidad Diego Portales.
@@ -26,12 +23,12 @@ about Speech Recognition, the topic that I am very interested.
 
 I took the speech processing and speech recognition modules, 
 both dictated by the professors, 
-[Roger Moore](http://www.dcs.shef.ac.uk/~roger/){:target="_blank"} and 
-[Thomas Hain](http://www.dcs.shef.ac.uk/~th/){:target="_blank"}.  
-My supervisor [Dr. Jon Barker](http://staffwww.dcs.shef.ac.uk/people/J.Barker/){:target="_blank"} 
+[Roger Moore](http://www.dcs.shef.ac.uk/~roger/) and 
+[Thomas Hain](http://www.dcs.shef.ac.uk/~th/).  
+My supervisor [Dr. Jon Barker](http://staffwww.dcs.shef.ac.uk/people/J.Barker/) 
 was a great inspiration and he encourage me to follow 
 what I though would be a good Dissertation Topic, Speech Recognition in Music.
-Off course, I can't left but recognize to [Erfan Loweimi](http://mini.dcs.shef.ac.uk/staffs/erfan-loweimi/){:target="_blank"}
+Off course, I can't left but recognize to [Erfan Loweimi](http://mini.dcs.shef.ac.uk/staffs/erfan-loweimi/)
 who supported and helped me all the time. 
 
 This is all for now, in a future post I can talk more in detail 
