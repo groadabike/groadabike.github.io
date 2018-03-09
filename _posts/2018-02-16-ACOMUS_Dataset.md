@@ -5,6 +5,7 @@ subtitle: An <b>ACO</b>ustic <b>MUS</b>ic corpus for research
 image:
 bigimg: /img/2018-02-16/penguin.jpg
 tags: [Msc, Acomus, kaldi]
+published: True
 ---
 
 # Motivation
