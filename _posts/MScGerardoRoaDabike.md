@@ -5,7 +5,7 @@ subtitle: How to replicate...
 image: 
 bigimg: /img/2018-02-16/penguin.jpg
 tags: [Msc, Acomus, kaldi]
-date: 2018-03-20
+date: 2018-03-22
 categories: Automatic Speech Recognition
 published: true
 ---
