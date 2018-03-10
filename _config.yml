@@ -72,7 +72,7 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 
 social-network-links:
-  email: "groadabike1@sheffield.ac.uk"
+
   #facebook: yourname  # eg. daattali
   github: groadabike    # eg. daattali
   #twitter: GerardoRoaD   # eg. daattali
@@ -86,6 +86,7 @@ social-network-links:
   #instagram: yourname # eg. daattali
   #youtube: user/groad   # eg. user/daattali or channel/daattali
   #spotify: yourname   # eg. daattali
+  email: "groadabike1@sheffield.ac.uk"
   telephone: (+44) 114 22 21800   # eg. +14159998888
 
 # Select which links to show in the footer
