@@ -73,39 +73,39 @@ author:
 
 social-network-links:
   email: "groadabike1@sheffield.ac.uk"
-  facebook: yourname  # eg. daattali
+  #facebook: yourname  # eg. daattali
   github: groadabike    # eg. daattali
-  twitter: GerardoRoaD   # eg. daattali
-  reddit: yourname    # eg. daattali
-  google-plus: 104297178849702862816   # eg. +DeanAttali or 109424658772469020925
+  #twitter: GerardoRoaD   # eg. daattali
+  #reddit: yourname    # eg. daattali
+  #google-plus: 104297178849702862816   # eg. +DeanAttali or 109424658772469020925
   linkedin: gerardo-roa-dabike  # eg. daattali
-  xing: yourname      # eg. daattali
-  pinterest: gerardoroa # eg. gerardoroa
+  #xing: yourname      # eg. daattali
+  #pinterest: gerardoroa # eg. gerardoroa
   stackoverflow: "6430361/gerardo-roa" # eg. "3943160/daattali"
-  snapchat: yourname  # eg. daattali
-  instagram: yourname # eg. daattali
-  youtube: user/groad   # eg. user/daattali or channel/daattali
-  spotify: yourname   # eg. daattali
+  #snapchat: yourname  # eg. daattali
+  #instagram: yourname # eg. daattali
+  #youtube: user/groad   # eg. user/daattali or channel/daattali
+  #spotify: yourname   # eg. daattali
   telephone: (+44) 114 22 21800   # eg. +14159998888
 
 # Select which links to show in the footer
-footer-links-active:
-  email: true
-  telephone: true
-  rss: false
-  facebook: false
-  twitter: false
-  google-plus: false
-  github: true
-  reddit: false
-  linkedin: true
-  xing: false
-  pinterest: false
-  stackoverflow: true
-  snapchat: false
-  instagram: false
-  youtube: false
-  spotify: false
+#footer-links-active:
+#  email: true
+#  telephone: true
+#  rss: false
+#  facebook: false
+#  twitter: false
+#  google-plus: false
+#  github: true
+#  reddit: false
+#  linkedin: true
+#  xing: false
+#  pinterest: false
+#  stackoverflow: true
+#  snapchat: false
+#  instagram: false
+#  youtube: false
+#  spotify: false
 
 
 # Select which share links to show in posts
