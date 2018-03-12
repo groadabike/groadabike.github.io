@@ -29,11 +29,11 @@ fulfil some specific requirements and mix only 2 channels.
 
 # Filtering MedleyDB
 
-'''python
+```python
 import medleydb as mdb
 import librosa
 
-'''
+```
   
 
 
