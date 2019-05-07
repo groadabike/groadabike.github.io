@@ -11,33 +11,31 @@ published: True
 
 # MedleyDB, a multitrack dataset.
 
-MedleyDB [1] is a great and completely free dataset for music research
-created at NYU's Music and Audio Research Lab.
-This collection consist in 122 different multitracks of 44.1 kHz wav files.
-Each of the components of the tracks are divided in a independent channel.  
-For a detailed description of the dataset, please refer directly to the
+MedleyDB [1]  is a great and free dataset for music research created at NYU’s Music 
+and Audio Research Lab. This collection consists of 122 different multi-tracks of 44.1 kHz
+wav files. Each of the components of the tracks is divided into an independent channel.
+For a detailed description of the dataset, please refer directly to the 
 [project website](http://medleydb.weebly.com/).
 
-In addition to the dataset, in the website of the project is it possible to find 
-a great set of [python tools](https://github.com/marl/medleydb)
-that allows to easily work with the entirely collection. 
-
-In this post we will focus in how this tools can be used in order to 
-filter the dataset. The target is to select a subset of tracks that 
-fulfil some specific requirements and mix only 2 channels. 
+In addition to the dataset, on the website of the project is it possible to find a great 
+set of [Python tools](https://github.com/marl/medleydb)
+ that allows working with the entire collection efficiently.  
+ 
+In this post, we will focus on the use of these tools to:
+select a subset of tracks and re-mix two channels.
    
 
 # Filtering MedleyDB
 
-We are going to create a subset of MedleyDB with tracks that fulfil:
+We are going to select a subset of MedleyDB with the tracks that:
 
-1. Track with vocal
-2. Track with acoustic guitar
+1. Contain one or more vocal channel. 
+2. Contain one or more acoustic guitar channel.
 
 Firstly, we need to know what instrument are available in the corpus.
 Then, we can select the desired instrument.
 
-The next code shows us a set with all of the labeled instrument in MedleyDB. 
+The next code shows us a set with all of the labelled instrument in MedleyDB. 
 ```python
 import medleydb as mdb
 
@@ -46,10 +44,9 @@ print(instruments)
 
 ```
 
-Now we are going to concentrate only in the vocals instrument labeled as 
-**<gender> singer** and we are going to print out the ranking of the
+Now we are going to filter the channels with instrument labelled as 
+**male/female singer** and we are going to print out the ranking of the
 STEM and the ID of the track.
-All the vocal instrument that we want will be saved in *instruments* list 
 
 
 ```python
@@ -65,11 +62,7 @@ for mtrack in mtrack_generator:
 
 ```
 
-Now, we are going to add a second list of instruments for the accompaniment
-background called *back_instruments*, and we will print out the audio 
-path of each of the tracks.
-It is mandatory that the **MEDLEYDB_PATH** variable is properly set
-in order to this code works ([python tools](https://github.com/marl/medleydb)).   
+Now, we filter the tracks that labelled as "acoustic guitar".
 
 ```python
 import medleydb as mdb
