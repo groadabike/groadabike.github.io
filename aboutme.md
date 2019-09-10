@@ -2,7 +2,6 @@
 layout: page
 title: About me
 subtitle: Gerardo Roa Dabike
-bigimg: img/2018-02-16/penguin.jpg
 ---
 Hi,  
 I am a PhD student in the Department of Computer Science at The 
