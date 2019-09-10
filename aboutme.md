@@ -4,7 +4,7 @@ title: About me
 subtitle: Gerardo Roa Dabike
 ---
 Hi,  
-I am a PhD student in The Department of Computer Science at the 
+I am a PhD student in the Department of Computer Science at The 
 University of Sheffield under the supervision of the Professor Jon Barker.  
  
 My research interest is Singing Enhancement and Automatic Lyrics Transcription.  
