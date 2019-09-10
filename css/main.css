@@ -447,10 +447,10 @@ background-color: #EEE;
 }
 .intro-header.big-img {
   background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
   background-size: contain;
-  -o-background-size: cover;
+  -o-background-size: contain;
   margin-top: 51px; /* The small navbar is 50px tall + 1px border */
   margin-bottom: 35px;
 }
@@ -460,10 +460,10 @@ background-color: #EEE;
   height: 100%;
   opacity: 0;
   background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  -o-background-size: contain;
   -webkit-transition: opacity 1s linear;
   -moz-transition: opacity 1s linear;
   transition: opacity 1s linear;
