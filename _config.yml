@@ -58,9 +58,9 @@ footer-link-col: "#404040"
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
-navbar-img: "/img/pinguino_rey.jpg"
+# navbar-img: "/img/pinguino_rey.jpg"
 # footer-img: "/img/bgimage.png"
-page-img: "/img/pinguino_rey.jpg"
+# page-img: "/img/pinguino_rey.jpg"
 
 # --- Footer options --- #
 
@@ -84,7 +84,7 @@ social-network-links:
   #reddit: yourname    # eg. daattali
   #google-plus: 104297178849702862816   # eg. +DeanAttali or 109424658772469020925
 
-  linkedin: gerardo-roa-dabike/en  # eg. daattali
+  #linkedin: gerardo-roa-dabike/en  # eg. daattali
 
   #xing: yourname      # eg. daattali
   #pinterest: gerardoroa # eg. gerardoroa
@@ -125,7 +125,7 @@ share-links-active:
   twitter: true
   facebook: true
   google: false
-  linkedin: true
+  linkedin: false
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
