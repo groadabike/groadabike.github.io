@@ -2,7 +2,7 @@
 layout: page
 title: Publications
 subtitle:
-bigimg: img/2018-02-16/penguin.jpg
+bigimg: /img/2018-02-16/penguin.jpg
 ---
 
 ## _Conference Papers_
