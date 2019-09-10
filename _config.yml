@@ -23,6 +23,7 @@ description: Speech Processing - Deep Learning
 
 # List of links in the navigation bar
 navbar-links:
+  Publications: "publications"
   About Me: "aboutme"
   Contact: "contact"
  # Resources:
