@@ -17,7 +17,7 @@ baseurl: ""
 title: Gerardo Roa Dabike
 
 # Short description of your site
-description: Personal website
+description: Gerardo's personal web page
 
 # --- Navigation bar options --- #
 
@@ -158,7 +158,7 @@ title-separator: "-"
 timezone: "Europe/London"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /blog/:year/:month/:day/:title.html  #/:year-:month-:day-:title/
 paginate: 5
 
 kramdown:
