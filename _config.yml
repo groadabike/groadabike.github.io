@@ -39,7 +39,7 @@ Tags: "tags"
 avatar: "/img/avatar/DSC_3979.JPG" # "/img/avatar-icon.png"
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
-title-img: "/img/avatar/DSC_3979.JPG"
+# title-img: "/img/avatar/DSC_3979.JPG"
 
 # --- Background colour/image options --- #
 
@@ -60,7 +60,7 @@ footer-link-col: "#404040"
 
 # navbar-img: "/img/pinguino_rey.jpg"
 # footer-img: "/img/bgimage.png"
-# page-img: "/img/pinguino_rey.jpg"
+page-img: "/img/pinguino_rey.jpg"
 
 # --- Footer options --- #
 
