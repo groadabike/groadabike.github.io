@@ -4,7 +4,7 @@ title: Working with MedleyDB
 subtitle: and its python tools
 image: 
 bigimg: 
-tags: [MedleyDB, Acomus]
+
 date: 2018-03-12
 published: True
 ---
