@@ -23,9 +23,9 @@ description: Gerardo's personal web page
 
 # List of links in the navigation bar
 navbar-links:
-  Publications: "publications"
-  About Me: "aboutme"
-  Contact: "contact"
+  Publications: "publications.html"
+  About Me: "aboutme.html"
+  Contact: "contact.html"
  # Resources:
  #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
  #   - Learn markdown: "http://www.markdowntutorial.com/"
