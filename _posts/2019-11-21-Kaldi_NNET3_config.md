@@ -40,7 +40,7 @@ This is an explanation how a line in xconfig is mapped into the final configurat
 
 **xconfig**
 
-input name=ivector dim=100
+input name=ivector dim=100  
 input name=input dim=40
 
 **config**
