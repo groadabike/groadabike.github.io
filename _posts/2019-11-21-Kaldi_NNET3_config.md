@@ -63,19 +63,12 @@ This is an explanation how a line in xconfig is mapped into the final configurat
     </thead>
     <tbody>
         <tr>
-            <td rowspan="4">L1 Name</td>
-            <td rowspan="2">L2 Name A</td>
-            <td>L3 Name A</td>
-        </tr>
-        <tr>
-            <td>L3 Name B</td>
-        </tr>
-        <tr>
-            <td rowspan=2>L2 Name B</td>
-            <td>L3 Name C</td>
-        </tr>
-        <tr>
-            <td>L3 Name D</td>
+            <td rowspan="2">input</td>
+            <td rowspan="2">No extra parameter</td>
+            <td>input name=ivector dim=100</td>
+            <td>input name=input dim=100</td>
+            <td>input-node name=ivector dim=100</td>
+            <td>input-node name=input dim=100</td>
         </tr>
     </tbody>
 </table>
