@@ -109,4 +109,6 @@ I will list all of the layers. But, I will only detail some of them.
 * [relu](https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units)
 * [gru](https://deepai.org/machine-learning-glossary-and-terms/gated-recurrent-unit)
 * [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory)
+* [attention models](https://deepai.org/machine-learning-glossary-and-terms/attention-models)
+* [convolutional NN](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network)
 
