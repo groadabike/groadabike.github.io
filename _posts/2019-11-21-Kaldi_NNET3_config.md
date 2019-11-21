@@ -33,15 +33,16 @@ This files are parse by using the script steps/nnet3/xconfig_to_configs.py passi
 e.g.  
 ```
 config_dir=etc/chain/tdnn/configs
-steps/nnet3/xconfig_to_configs.py --xconfig-file $config_dir/network.xconfig --config-dir $config_dir/configs/ 
+steps/nnet3/xconfig_to_configs.py --xconfig-file $config_dir/network.xconfig \
+                                  --config-dir $config_dir/configs/ 
 ```
 
 # Layers
 
-This is an explanation how a line in xconfig is mapped into the final configuration.
+This is an explanation how a line in xconfig is parse into the final configuration of the network.
 Kaldi groups the layers into several kinds.
 
-* [Basic Layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py)
+* [basic_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py)
 * [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py)
 * [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py)
 * [lstm](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/lstm.py)
