@@ -34,21 +34,22 @@ TODO -
 
 This is an explanation how a line in xconfig is mapped into the final configuration
 
-## Basic Layers
+## [Basic Layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py)
 
-### input
+| Layers | xconfig | config |
+|--------|:---------|:--------|
+| input  | input name=ivector dim=100   | input-node name=ivector dim=100 |
+|        |  input name=input dim=40     | input-node name=input dim=40 |
+| output | output-layer name=output dim=1924 input=Append(-1,0,1) | component name=output.affine type=NaturalGradientAffineComponent input-dim=900 output-dim=1924  max-change=1.5 param-stddev=0.0 bias-stddev=0.0 |
+|        |                                                        | component-node name=output.affine component=output.affine input=Append(Offset(lda, -1), lda, Offset(lda, 1))  |
+|        |                                                        | component name=output.log-softmax type=LogSoftmaxComponent dim=1924  |
+|        |                                                        | component-node name=output.log-softmax component=output.log-softmax input=output.affine  |
+|        |                                                        | output-node name=output input=output.log-softmax objective=linear  |
+|        | output name=output input=Append(-1,0,1)                |
 
-**xconfig**
 
-input name=ivector dim=100  
-input name=input dim=40
 
-**config**
 
-input-node name=ivector dim=100
-input-node name=input dim=40
-
-### output
 
 
 
