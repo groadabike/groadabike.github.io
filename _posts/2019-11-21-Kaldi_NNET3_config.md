@@ -47,9 +47,9 @@ I will list all of the layers. But, I will only detail some of them.
     * input
     * output (not real outputs, they just directly map to an output-node in nnet3)
     * output_layer (real output layer)
-    * relu-renorm-layer (or any combination between relu, renorm, sigmoid amd tanh)
+    * relu-renorm-layer (or any combination between relu, renorm, sigmoid and tanh)
     * fixed-affine-layer
-    * affine-layer 
+    * affine-layer (fully connected layer)
     * idct-layer (to convert input MFCC-features to Filterbank features)
     * spec-augment-layer
 * [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py)
@@ -101,4 +101,12 @@ I will list all of the layers. But, I will only detail some of them.
     * tdnnf-layer (factorized TDNN)
     * prefinal-layer
 
+## Some definitions from deepai.org
+
+* [batchnorm](https://deepai.org/machine-learning-glossary-and-terms/batch-normalization) 
+* [affine](https://deepai.org/machine-learning-glossary-and-terms/affine-layer) 
+* [sigmoid](https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function)
+* [relu](https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units)
+* [gru](https://deepai.org/machine-learning-glossary-and-terms/gated-recurrent-unit)
+* [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory)
 
