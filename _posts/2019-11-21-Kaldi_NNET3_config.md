@@ -85,8 +85,20 @@ I will list all of the layers. But, I will only detail some of them.
     * fast-opgru-layer
     * fast-norm-opgru-layer
 * [stats_layer](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py)
+    * stats-layer (adds statistics-pooling and statistics-extraction components)
 * [trivial_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py)
+    * renorm-component
+    * batchnorm-component
+    * no-op-component
+    * delta-layer 
+    * linear-component
+    * combine-feature-maps-layer
+    * affine-component
+    * scale-component
+    * offset-component
+    * dim-range-component
 * [composite_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/composite_layers.py)
+    * tdnnf-layer (factorized TDNN)
+    * prefinal-layer
 
-## Basic Layers
 
