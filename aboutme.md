@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: Gerardo Roa Dabike
+subtitle: 
 ---
 Hi,  
 I am a PhD student in the Department of Computer Science at The 
