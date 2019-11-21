@@ -28,47 +28,26 @@ TODO- add Index and Cindex descripton
 
 # xconfig to config
 
-TODO - 
+The **xconfig** are simplified configuration files to define the structure of the network.
+This files are parse by using the script steps/nnet3/xconfig_to_configs.py passing the xconfig file and output path.
+e.g.  
+```
+config_dir=etc/chain/tdnn/configs
+steps/nnet3/xconfig_to_configs.py --xconfig-file $config_dir/network.xconfig --config-dir $config_dir/configs/ 
+```
 
 # Layers
 
-This is an explanation how a line in xconfig is mapped into the final configuration
+This is an explanation how a line in xconfig is mapped into the final configuration.
+Kaldi groups the layers into several kinds.
 
-## [Basic Layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py)
-
-| Layers | xconfig | config |
-|--------|:---------|:--------|
-| input  | input name=ivector dim=100   | input-node name=ivector dim=100 |
-|        |  input name=input dim=40     | input-node name=input dim=40 |
-| output | output-layer name=output dim=1924 input=Append(-1,0,1) | component name=output.affine type=NaturalGradientAffineComponent input-dim=900 output-dim=1924  max-change=1.5 param-stddev=0.0 bias-stddev=0.0 |
-|        |                                                        | component-node name=output.affine component=output.affine input=Append(Offset(lda, -1), lda, Offset(lda, 1))  |
-|        |                                                        | component name=output.log-softmax type=LogSoftmaxComponent dim=1924  |
-|        |                                                        | component-node name=output.log-softmax component=output.log-softmax input=output.affine  |
-|        |                                                        | output-node name=output input=output.log-softmax objective=linear  |
-|        | output name=output input=Append(-1,0,1)                |
+* [Basic Layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py)
+* [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py)
+* [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py)
+* [lstm](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/lstm.py)
+* [gru](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/gru.py)
+* [stats_layer](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py)
+* [trivial_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py)
+* [composite_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/composite_layers.py)
 
 
-
-
-
-
-<table>
-    <thead>
-        <tr>
-            <th>Layers</th>
-            <th>Description</th>
-            <th>xconfig</th>
-            <th>config</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan="2">input</td>
-            <td rowspan="2">No extra parameter</td>
-            <td>input name=ivector dim=100</td>
-            <td>input name=input dim=100</td>
-            <td>input-node name=ivector dim=100</td>
-            <td>input-node name=input dim=100</td>
-        </tr>
-    </tbody>
-</table>
