@@ -178,43 +178,43 @@ steps/nnet3/xconfig_to_configs.py --xconfig-file $dir/configs/network.xconfig \
 
 ## Input layer
 
-In the Kaldi recipes, it is common that the dimension of the input layer is 40 MFCC and, be used as a fix value  for the **dim** parameter for the input layer.
-But sometimes, you may have vectors with a different size. Therefore, you may want the dim to be a dynamic value.
-The way to do this is getting the dimension of the features vector and passing that value to the input layer.
+In the Kaldi recipes, it is common that the dimension of the input layer is 40 MFCC. In some cases, this is a hard value for the **dim** parameter in the input layer definition.
+But sometimes, you may want to experiment with vectors of different size. Therefore, it would be more convenient to have a dynamic value that automatically take the vector size.
+You can get the vector size by calling feat-to-dim function as:
 
 ```
 # Getting features vector dimension
 feat_path=data/train_clean_sp_hires
 feat_dim=`feat-to-dim scp:${feat_path}/feats.scp -`
-....
-# Defining xconfig
-input dim=$feat_dim name=input
-...
-```
 
-The most basic input layer in xconfig would be:
-```
-feat_dim=40
+# Using the feat_dim in xconfig
 input dim=$feat_dim name=input
 ```
-And is parse to an input node in final.config as:
+
+#### MFCC features 
+The most basic input layer in xconfig would be defined with the layer **input**. It is important that set the name of this layer as input.
 ```
-input-node name=input dim=40
+input dim=40 name=input
 ```
 
-But, if you add want to add iVectors, you need to add:
+#### MFCC + iVectors features
+If you want to concatenate iVectors with the MFCC, you need to define another input layer called ivector and a **fixed-affine-layer**. In the following example, the notation inside of the Append function assumes that exists an input-layer named as *input*, and it will replace the -1,0,1 notation to input[-1], input[0], input[1].
+
 ```
 input dim=100 name=ivector
 input dim=40 name=input
 fixed-affine-layer name=lda input=Append(-1,0,1,ReplaceIndex(ivector, t, 0)) affine-transform-file=foo/lda.mat
 ```
-which will be expanded in final.config as:
+
+#### Multiview features
+In some scenarios, you may want to add different levels of features, e.g. frame, utterance, speaker, recording party, so on..
+To do this you can concatenate the features as:
 ```
-input-node name=ivector dim=100
-input-node name=input dim=40
-component name=lda type=FixedAffineComponent matrix=foo/lda.mat
-component-node name=lda component=lda input=Append(Offset(input, -1), input, Offset(input, 1), ReplaceIndex(ivector, t, 0))
-``` 
+TODO add the example
+```  
+
+
+
 
 # Terminology 
 Some of the terms have a link to the definition on the deepai.org website.
