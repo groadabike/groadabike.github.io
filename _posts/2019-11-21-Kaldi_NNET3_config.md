@@ -43,9 +43,8 @@ This is an explanation how a line in xconfig is parse into the final configurati
 Kaldi groups the layers into several kinds.
 I will list all of the layers. But, I will only detail some of them.
 
-* [basic_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py){:target="_blank"}
-
-<details><summary> <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py"> basic_layers</a></summary>
+<details><summary>basic_layers</summary>
+<a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py" target="_blank">basic_layer.py</a>
 <ul>
      <li>input</li>
      <li>output (not real outputs, they just directly map to an output-node in nnet3) </li>
@@ -67,10 +66,17 @@ I will list all of the layers. But, I will only detail some of them.
 </ul> 
  </details>
  
-* [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py){:target="_blank"}
+<details><summary>convolution</summary>
+<a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py" target="_blank">convolution.py</a>
+<ul>
+     <li>conv-batchnorm-layer</li>
+     <li>conv-renorm-layer</li>
+     <li>res-block (residual block as in ResNets)</li>
+     <li>res2-block (residual block with post-activations, with no support downsampling)</li>
+     <li>SumBlockComponent (For channel averaging)</li>
+</ul> 
+ </details>
 
-    | conv-batchnorm-layer | conv-renorm-layer | res-block (residual block as in ResNets) |
-    | res2-block (residual block with post-activations, with no support downsampling) | SumBlockComponent (For channel averaging) | |
 * [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py){:target="_blank"}
     * attention-renorm-layer
     * attention-relu-renorm-layer
