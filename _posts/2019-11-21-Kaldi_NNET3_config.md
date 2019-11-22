@@ -57,7 +57,7 @@ I will list all of the layers. But, I will only detail some of them.
     * batchnorm-layer
     * sigmoid-layer
     * tanh-layer
-    * fixed-affine-layer
+    * fixed-affine-layer (is an affine transform that is supplied at network initialization time and is not trainable).
     * affine-layer (fully connected layer)
     * idct-layer (to convert input MFCC-features to Filterbank features)
     * spec-augment-layer
@@ -112,11 +112,11 @@ I will list all of the layers. But, I will only detail some of them.
 
 
 # How to..
-The order to construct a network definition in kaldi is first, define the network.xconfig file.
- Second, parse the xconfig to config with steps/nnet3/xconfig_to_configs.py script. Then, run the steps/nnet3/chain/train.py.
+The order to construct a network definition in kaldi is first, define the **network.xconfig** file.
+ Second, parse the xconfig to config with **steps/nnet3/xconfig_to_configs.py** script. Then, run the **steps/nnet3/chain/train.py**.
 This pipeline is assuming that all the features and egs files already exists.  
 
-## network.xconfig file construction
+## The network.xconfig file construction
 
 One way to construct the xconfig is inserting the lines into the network.xconfig file directly in the sh script file. In this way, you will be able to set the different parameters using variables, keeping the script organize and easy to modify.
 
@@ -124,19 +124,18 @@ One way to construct the xconfig is inserting the lines into the network.xconfig
 dir=exp/chain/tdnn_sp
 mkdir -p $dir/configs
 cat <<EOF > $dir/configs/network.xconfig
-input ...
-...
-output ...
+  input ...
+  ...
+  output-layer ...
 EOF
 steps/nnet3/xconfig_to_configs.py --xconfig-file $dir/configs/network.xconfig \
                                   --config-dir $dir/configs/
 ```
- 
 
 ## Input layer
 
-In the recipes, it is common to find that the dimension of the input layer is 40 MFCC and, it is a fix value in the input layer in the xconfig file.
-But, sometimes, you may have vectors with a different size so, you may want that parameters as a dynamic value.
+In the Kaldi recipes, it is common that the dimension of the input layer is 40 MFCC and, be used as a fix value  for the **dim** parameter for the input layer.
+But sometimes, you may have vectors with a different size. Therefore, you may want the dim to be a dynamic value.
 The way to do this is getting the dimension of the features vector and passing that value to the input layer.
 
 ```
@@ -146,9 +145,32 @@ feat_dim=`feat-to-dim scp:${feat_path}/feats.scp -`
 ....
 # Defining xconfig
 input dim=$feat_dim name=input
+...
 ```
 
+The most basic input layer in xconfig would be:
+```
+feat_dim=40
+input dim=$feat_dim name=input
+```
+And is parse to an input node in final.config as:
+```
+input-node name=input dim=40
+```
 
+But, if you add want to add iVectors, you need to add:
+```
+input dim=100 name=ivector
+input dim=40 name=input
+fixed-affine-layer name=lda input=Append(-1,0,1,ReplaceIndex(ivector, t, 0)) affine-transform-file=foo/lda.mat
+```
+which will be expanded in final.config as:
+```
+input-node name=ivector dim=100
+input-node name=input dim=40
+component name=lda type=FixedAffineComponent matrix=foo/lda.mat
+component-node name=lda component=lda input=Append(Offset(input, -1), input, Offset(input, 1), ReplaceIndex(ivector, t, 0))
+``` 
 
 # Terminology 
 Some of the terms have a link to the definition on the deepai.org website.
@@ -163,4 +185,5 @@ Some of the terms have a link to the definition on the deepai.org website.
 * [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory){:target="_blank"}: Long short-term memory 
 * [attention](https://deepai.org/machine-learning-glossary-and-terms/attention-models){:target="_blank"}: Attention models
 * [convolutional](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network){:target="_blank"}: Convolutional neural network
+* [lda](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158){:target="_blank"}: Latent Dirichlet allocation
 
