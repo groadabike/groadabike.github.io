@@ -12,7 +12,7 @@ published: True
 
 # Introduction
 
-Kaldi ["nnet3"](https://kaldi-asr.org/doc/dnn3.html) is a robust framework for DNN acoustic modelling.
+Kaldi ["nnet3"](https://kaldi-asr.org/doc/dnn3.html){:target="_blank"} is a robust framework for DNN acoustic modelling.
 In almost all the recipes, you can find examples of different configuration that can be adapted to use it in your own task.
 However, to understand how to adapt the xconfig file to implement more sophisticated (and not too sophisticated sometimes) ideas is not a process.
 
@@ -43,7 +43,7 @@ This is an explanation how a line in xconfig is parse into the final configurati
 Kaldi groups the layers into several kinds.
 I will list all of the layers. But, I will only detail some of them.
 
-* [basic_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py)
+* [basic_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py){:target="_blank"}
     * input
     * output (not real outputs, they just directly map to an output-node in nnet3)
     * output_layer (real output layer)
@@ -52,19 +52,19 @@ I will list all of the layers. But, I will only detail some of them.
     * affine-layer (fully connected layer)
     * idct-layer (to convert input MFCC-features to Filterbank features)
     * spec-augment-layer
-* [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py)
+* [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py){:target="_blank"}
     * conv-batchnorm-layer
     * conv-renorm-layer
     * res-block (residual block as in ResNets)
     * res2-block (residual block with post-activations, with no support downsampling)
     * SumBlockComponent (For channel averaging)
-* [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py)
+* [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py){:target="_blank"}
     * attention-renorm-layer
     * attention-relu-renorm-layer
     * attention-relu-batchnorm-layer
     * relu-renorm-attention-layer
     * or any combination of relu, attention, sigmoid, tanh, renorm, batchnorm, dropout
-* [lstm](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/lstm.py)
+* [lstm](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/lstm.py){:target="_blank"}
     * lstm-layer 
     * lstmp-layer
     * lstmp-batchnorm-layer (followed by batchnorm)
@@ -73,20 +73,20 @@ I will list all of the layers. But, I will only detail some of them.
     * lstmb-layer
     * fast-lstmp-layer
     * fast-lstmp-batchnorm-layer
-* [gru](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/gru.py)
+* [gru](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/gru.py){:target="_blank"}
     * gru-layer (Gated recurrent unit)
     * pgru-layer (Personalized Gated Recurrent Unit)
     * norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)
-    * opgru-layer (Output-Gate Projected Gated Recurrent Unit) [paper](http://www.danielpovey.com/files/2018_interspeech_opgru.pdf)
+    * opgru-layer (Output-Gate Projected Gated Recurrent Unit) [paper](http://www.danielpovey.com/files/2018_interspeech_opgru.pdf){:target="_blank"}
     * norm-opgru-layer (batchnorm in the forward direction, renorm in the recurrence)
     * fast-gru-layer 
     * fast-pgru-layer
     * fast-norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)
     * fast-opgru-layer
     * fast-norm-opgru-layer
-* [stats_layer](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py)
+* [stats_layer](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py){:target="_blank"}
     * stats-layer (adds statistics-pooling and statistics-extraction components)
-* [trivial_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py)
+* [trivial_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py){:target="_blank"}
     * renorm-component
     * batchnorm-component
     * no-op-component
@@ -97,18 +97,18 @@ I will list all of the layers. But, I will only detail some of them.
     * scale-component
     * offset-component
     * dim-range-component
-* [composite_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/composite_layers.py)
+* [composite_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/composite_layers.py){:target="_blank"}
     * tdnnf-layer (factorized TDNN)
     * prefinal-layer
 
 ## Some definitions from deepai.org
 
-* [batchnorm](https://deepai.org/machine-learning-glossary-and-terms/batch-normalization) 
-* [affine](https://deepai.org/machine-learning-glossary-and-terms/affine-layer) 
-* [sigmoid](https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function)
-* [relu](https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units)
-* [gru](https://deepai.org/machine-learning-glossary-and-terms/gated-recurrent-unit)
-* [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory)
-* [attention models](https://deepai.org/machine-learning-glossary-and-terms/attention-models)
-* [convolutional NN](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network)
+* [batchnorm](https://deepai.org/machine-learning-glossary-and-terms/batch-normalization){:target="_blank"} 
+* [affine](https://deepai.org/machine-learning-glossary-and-terms/affine-layer){:target="_blank"} 
+* [sigmoid](https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function){:target="_blank"}
+* [relu](https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units){:target="_blank"}
+* [gru](https://deepai.org/machine-learning-glossary-and-terms/gated-recurrent-unit){:target="_blank"}
+* [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory){:target="_blank"}
+* [attention models](https://deepai.org/machine-learning-glossary-and-terms/attention-models){:target="_blank"}
+* [convolutional NN](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network){:target="_blank"}
 
