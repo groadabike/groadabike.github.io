@@ -110,7 +110,47 @@ I will list all of the layers. But, I will only detail some of them.
     * tdnnf-layer (factorized TDNN)
     * prefinal-layer
 
-## Terminology 
+
+# How to..
+The order to construct a network definition in kaldi is first, define the network.xconfig file.
+ Second, parse the xconfig to config with steps/nnet3/xconfig_to_configs.py script. Then, run the steps/nnet3/chain/train.py.
+This pipeline is assuming that all the features and egs files already exists.  
+
+## network.xconfig file construction
+
+One way to construct the xconfig is inserting the lines into the network.xconfig file directly in the sh script file. In this way, you will be able to set the different parameters using variables, keeping the script organize and easy to modify.
+
+```
+dir=exp/chain/tdnn_sp
+mkdir -p $dir/configs
+cat <<EOF > $dir/configs/network.xconfig
+input ...
+...
+output ...
+EOF
+steps/nnet3/xconfig_to_configs.py --xconfig-file $dir/configs/network.xconfig \
+                                  --config-dir $dir/configs/
+```
+ 
+
+## Input layer
+
+In the recipes, it is common to find that the dimension of the input layer is 40 MFCC and, it is a fix value in the input layer in the xconfig file.
+But, sometimes, you may have vectors with a different size so, you may want that parameters as a dynamic value.
+The way to do this is getting the dimension of the features vector and passing that value to the input layer.
+
+```
+# Getting features vector dimension
+feat_path=data/train_clean_sp_hires
+feat_dim=`feat-to-dim scp:${feat_path}/feats.scp -`
+....
+# Defining xconfig
+input dim=$feat_dim name=input
+```
+
+
+
+# Terminology 
 Some of the terms have a link to the definition on the deepai.org website.
 
 
