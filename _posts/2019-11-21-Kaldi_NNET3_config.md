@@ -45,12 +45,26 @@ I will list all of the layers. But, I will only detail some of them.
 
 * [basic_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/basic_layers.py){:target="_blank"}
 
-    | input | output (not real outputs, they just directly map to an output-node in nnet3) | output_layer (real output layer) | 
-    | relu-layer |  relu-renorm-layer|  relu-batchnorm-dropout-layer |
-    |  relu-dropout-layer |  relu-batchnorm-layer | relu-batchnorm-so-layer | 
-    | batchnorm-so-relu-layer | batchnorm-layer | sigmoid-layer | 
-    | tanh-layer |  fixed-affine-layer (is an affine transform that is supplied at network initialization time and is not trainable).|  affine-layer (fully connected layer)|
-    |  idct-layer (to convert input MFCC-features to Filterbank features) |  spec-augment-layer | |
+<details>
+    * input 
+    * output (not real outputs, they just directly map to an output-node in nnet3) 
+    * output_layer (real output layer) 
+    *  relu-layer 
+    * relu-renorm-layer
+    * relu-batchnorm-dropout-layer 
+    * relu-dropout-layer 
+    * relu-batchnorm-layer 
+    * relu-batchnorm-so-layer 
+    * batchnorm-so-relu-layer 
+    * batchnorm-layer 
+    * sigmoid-layer 
+    * tanh-layer 
+    * fixed-affine-layer (is an affine transform that is supplied at network initialization time and is not trainable).
+    * affine-layer (fully connected layer)
+    * idct-layer (to convert input MFCC-features to Filterbank features)
+    * spec-augment-layer 
+ </details>
+ 
 * [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py){:target="_blank"}
 
     | conv-batchnorm-layer | conv-renorm-layer | res-block (residual block as in ResNets) |
