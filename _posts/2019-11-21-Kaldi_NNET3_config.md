@@ -158,16 +158,20 @@ This pipeline is assuming that all the features and egs files already exists.
 
 ## The network.xconfig file construction
 
-One way to construct the xconfig is inserting the lines into the network.xconfig file directly in the sh script file. In this way, you will be able to set the different parameters using variables, keeping the script organize and easy to modify.
+One way to construct the xconfig file is inserting the lines into the network.xconfig file directly from the run_net.sh script file. In this way, you will be able to set the different parameters using variables, keeping the script organized and easy to modify.
+
 
 ```
 dir=exp/chain/tdnn_sp
 mkdir -p $dir/configs
+
+# Definition of the  the xconfig
 cat <<EOF > $dir/configs/network.xconfig
   input ...
   ...
   output-layer ...
 EOF
+# Parse xconfig to final, init and ref configs
 steps/nnet3/xconfig_to_configs.py --xconfig-file $dir/configs/network.xconfig \
                                   --config-dir $dir/configs/
 ```
