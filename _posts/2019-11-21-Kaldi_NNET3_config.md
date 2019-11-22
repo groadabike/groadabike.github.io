@@ -52,11 +52,8 @@ I will list all of the layers. But, I will only detail some of them.
     | tanh-layer |  fixed-affine-layer (is an affine transform that is supplied at network initialization time and is not trainable).|  affine-layer (fully connected layer)|
     |  idct-layer (to convert input MFCC-features to Filterbank features) |  spec-augment-layer | |
 * [convolution](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/convolution.py){:target="_blank"}
-    * conv-batchnorm-layer
-    * conv-renorm-layer
-    * res-block (residual block as in ResNets)
-    * res2-block (residual block with post-activations, with no support downsampling)
-    * SumBlockComponent (For channel averaging)
+    | conv-batchnorm-layer | conv-renorm-layer | res-block (residual block as in ResNets) |
+    | res2-block (residual block with post-activations, with no support downsampling) | SumBlockComponent (For channel averaging) | |
 * [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py){:target="_blank"}
     * attention-renorm-layer
     * attention-relu-renorm-layer
