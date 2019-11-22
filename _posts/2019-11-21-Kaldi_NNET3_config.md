@@ -105,6 +105,7 @@ I will list all of the layers. But, I will only detail some of them.
 
 <details><summary>gru</summary>
 <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/gru.py" target="_blank">gru.py</a>
+<ul>
     <li>gru-layer (Gated recurrent unit)</li>
     <li>pgru-layer (Personalized Gated Recurrent Unit)</li>
     <li>norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)</li>
@@ -115,24 +116,39 @@ I will list all of the layers. But, I will only detail some of them.
     <li>fast-norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)</li>
     <li>fast-opgru-layer</li>
     <li>fast-norm-opgru-layer</li>
+</ul>    
 </details>
 
-* [stats_layer](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py){:target="_blank"}
-    * stats-layer (adds statistics-pooling and statistics-extraction components)
-* [trivial_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py){:target="_blank"}
-    * renorm-component
-    * batchnorm-component
-    * no-op-component
-    * delta-layer 
-    * linear-component
-    * combine-feature-maps-layer
-    * affine-component
-    * scale-component
-    * offset-component
-    * dim-range-component
-* [composite_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/composite_layers.py){:target="_blank"}
-    * tdnnf-layer (factorized TDNN)
-    * prefinal-layer
+ <details><summary>stats_layer</summary>
+ <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py" target="_blank">stats_layer.py</a>
+ <ul>
+      <li>stats-layer (adds statistics-pooling and statistics-extraction components)</li>
+ </ul> 
+  </details>
+  
+ <details><summary>trivial_layers</summary>
+ <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py" target="_blank">trivial_layers.py</a>
+ <ul>
+      <li>renorm-component</li>
+      <li>batchnorm-component</li>
+      <li>no-op-component</li>
+      <li>delta-layer</li>
+      <li>linear-component</li>
+      <li>combine-feature-maps-layer</li>
+      <li>affine-component</li>
+      <li>scale-component</li>
+      <li>offset-component</li>
+      <li>dim-range-component</li>
+ </ul> 
+  </details>
+
+ <details><summary>composite_layers</summary>
+ <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/composite_layers.py" target="_blank">composite_layers.py</a>
+ <ul>
+      <li>tdnnf-layer (factorized TDNN)</li>
+      <li>prefinal-layer</li>
+ </ul> 
+  </details>
 
 
 # How to..
