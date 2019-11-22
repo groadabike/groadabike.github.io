@@ -47,7 +47,16 @@ I will list all of the layers. But, I will only detail some of them.
     * input
     * output (not real outputs, they just directly map to an output-node in nnet3)
     * output_layer (real output layer)
-    * relu-renorm-layer (or any combination between relu, renorm, sigmoid and tanh)
+    * relu-layer
+    * relu-renorm-layer
+    * relu-batchnorm-dropout-layer
+    * relu-dropout-layer
+    * relu-batchnorm-layer
+    * relu-batchnorm-so-layer 
+    * batchnorm-so-relu-layer
+    * batchnorm-layer
+    * sigmoid-layer
+    * tanh-layer
     * fixed-affine-layer
     * affine-layer (fully connected layer)
     * idct-layer (to convert input MFCC-features to Filterbank features)
@@ -102,13 +111,13 @@ I will list all of the layers. But, I will only detail some of them.
     * prefinal-layer
 
 ## Some definitions from deepai.org
-
-* [batchnorm](https://deepai.org/machine-learning-glossary-and-terms/batch-normalization){:target="_blank"} 
-* [affine](https://deepai.org/machine-learning-glossary-and-terms/affine-layer){:target="_blank"} 
-* [sigmoid](https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function){:target="_blank"}
-* [relu](https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units){:target="_blank"}
-* [gru](https://deepai.org/machine-learning-glossary-and-terms/gated-recurrent-unit){:target="_blank"}
-* [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory){:target="_blank"}
-* [attention models](https://deepai.org/machine-learning-glossary-and-terms/attention-models){:target="_blank"}
-* [convolutional NN](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network){:target="_blank"}
+* so: Scale and offset
+* [batchnorm](https://deepai.org/machine-learning-glossary-and-terms/batch-normalization){:target="_blank"}:  Batch normalization
+* [affine](https://deepai.org/machine-learning-glossary-and-terms/affine-layer){:target="_blank"}: Affine layer
+* [sigmoid](https://deepai.org/machine-learning-glossary-and-terms/sigmoid-function){:target="_blank"}: Sigmoid function
+* [relu](https://deepai.org/machine-learning-glossary-and-terms/rectified-linear-units){:target="_blank"}: Rectified linear units
+* [gru](https://deepai.org/machine-learning-glossary-and-terms/gated-recurrent-unit){:target="_blank"}: Gated recurrent unit
+* [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory){:target="_blank"}: Long short-term memory 
+* [attention](https://deepai.org/machine-learning-glossary-and-terms/attention-models){:target="_blank"}: Attention models
+* [convolutional](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network){:target="_blank"}: Convolutional neural network
 
