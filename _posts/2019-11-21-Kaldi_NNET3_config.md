@@ -76,33 +76,47 @@ I will list all of the layers. But, I will only detail some of them.
      <li>SumBlockComponent (For channel averaging)</li>
 </ul> 
  </details>
+ 
+ <details><summary>attention</summary>
+ <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py" target="_blank">convolution.py</a>
+ <ul>
+      <li>attention-renorm-layer</li>
+      <li>attention-relu-renorm-layer</li>
+      <li>attention-relu-batchnorm-layer</li>
+      <li>relu-renorm-attention-layer</li>
+      <li>SumBlockComponent (For channel averaging)</li>
+      <li>or any combination of relu, attention, sigmoid, tanh, renorm, batchnorm, dropout</li>
+ </ul> 
+  </details>
 
-* [attention](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/attention.py){:target="_blank"}
-    * attention-renorm-layer
-    * attention-relu-renorm-layer
-    * attention-relu-batchnorm-layer
-    * relu-renorm-attention-layer
-    * or any combination of relu, attention, sigmoid, tanh, renorm, batchnorm, dropout
-* [lstm](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/lstm.py){:target="_blank"}
-    * lstm-layer 
-    * lstmp-layer
-    * lstmp-batchnorm-layer (followed by batchnorm)
-    * fast-lstm-layer
-    * fast-lstm-batchnorm-layer (followed by batchnorm)
-    * lstmb-layer
-    * fast-lstmp-layer
-    * fast-lstmp-batchnorm-layer
-* [gru](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/gru.py){:target="_blank"}
-    * gru-layer (Gated recurrent unit)
-    * pgru-layer (Personalized Gated Recurrent Unit)
-    * norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)
-    * opgru-layer (Output-Gate Projected Gated Recurrent Unit) [paper](http://www.danielpovey.com/files/2018_interspeech_opgru.pdf){:target="_blank"}
-    * norm-opgru-layer (batchnorm in the forward direction, renorm in the recurrence)
-    * fast-gru-layer 
-    * fast-pgru-layer
-    * fast-norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)
-    * fast-opgru-layer
-    * fast-norm-opgru-layer
+ <details><summary>lstm</summary>
+ <a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/lstm.py" target="_blank">lstm.py</a>
+ <ul>
+      <li>lstm-layer </li>
+      <li>lstmp-layer</li>
+      <li>lstmp-batchnorm-layer (followed by batchnorm)</li>
+      <li>fast-lstm-layer</li>
+      <li>fast-lstm-batchnorm-layer (followed by batchnorm)</li>
+      <li>lstmb-layer</li>
+      <li>fast-lstmp-layer</li>
+      <li>fast-lstmp-batchnorm-layer</li>
+ </ul> 
+  </details>
+
+<details><summary>gru</summary>
+<a href="https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/gru.py" target="_blank">gru.py</a>
+    <li>gru-layer (Gated recurrent unit)</li>
+    <li>pgru-layer (Personalized Gated Recurrent Unit)</li>
+    <li>norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)</li>
+    <li>opgru-layer (Output-Gate Projected Gated Recurrent Unit) <a href="http://www.danielpovey.com/files/2018_interspeech_opgru.pdf" target="_blank">paper</a></li>
+    <li>norm-opgru-layer (batchnorm in the forward direction, renorm in the recurrence)</li>
+    <li>fast-gru-layer</li>
+    <li>fast-pgru-layer</li>
+    <li>fast-norm-pgru-layer (batchnorm in the forward direction, renorm in the recurrence)</li>
+    <li>fast-opgru-layer</li>
+    <li>fast-norm-opgru-layer</li>
+</details>
+
 * [stats_layer](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/stats_layer.py){:target="_blank"}
     * stats-layer (adds statistics-pooling and statistics-extraction components)
 * [trivial_layers](https://github.com/kaldi-asr/kaldi/blob/master/egs/wsj/s5/steps/libs/nnet3/xconfig/trivial_layers.py){:target="_blank"}
