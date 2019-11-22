@@ -110,7 +110,10 @@ I will list all of the layers. But, I will only detail some of them.
     * tdnnf-layer (factorized TDNN)
     * prefinal-layer
 
-## Some definitions from deepai.org
+## Terminology 
+Some of the terms have a link to the definition on the deepai.org website.
+
+
 * so: Scale and offset
 * [batchnorm](https://deepai.org/machine-learning-glossary-and-terms/batch-normalization){:target="_blank"}:  Batch normalization
 * [affine](https://deepai.org/machine-learning-glossary-and-terms/affine-layer){:target="_blank"}: Affine layer
