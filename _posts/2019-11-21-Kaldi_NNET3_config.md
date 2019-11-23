@@ -194,17 +194,41 @@ input dim=$feat_dim name=input
 #### MFCC features 
 The most basic input layer in xconfig would be defined with the layer **input**. It is important that set the name of this layer as input.
 ```
-input dim=40 name=input
+ input dim=40 name=input
 ```
 
 #### MFCC + iVectors features
 If you want to concatenate iVectors with the MFCC, you need to define another input layer called ivector and a **fixed-affine-layer**. In the following example, the notation inside of the Append function assumes that exists an input-layer named as *input*, and it will replace the -1,0,1 notation to input[-1], input[0], input[1].
 
 ```
-input dim=100 name=ivector
-input dim=40 name=input
-fixed-affine-layer name=lda input=Append(-1,0,1,ReplaceIndex(ivector, t, 0)) affine-transform-file=foo/lda.mat
+ input dim=100 name=ivector
+ input dim=40 name=input
+
+ # please note that it is important to have input layer with the name=input
+ # as the layer immediately preceding the fixed-affine-layer to enable
+ # the use of short notation for the descriptor
+ fixed-affine-layer name=lda input=Append(-1,0,1,ReplaceIndex(ivector, t, 0)) affine-transform-file=foo/lda.mat
 ```
+
+#### Using Filterbanks 
+Kaldi preffers to save MFCC features because are more condense than the filterbanks features. So, if you, for example, want to train a cnn-tdnn network, you need to transform the MFCC to filterbanks to train the CNN part. To avoid to store both kind of features, in Kaldi exist the **idct-layer** that converts the MFCC into Filterbanks.
+
+```
+ input dim=40 name=input
+ idct-layer name=idct input=input dim=40 cepstral-lifter=22 affine-transform-file=$dir/configs/idct.mat
+```
+In the case of the CNN-TDNN example, the order of the layers is important. Probably, you should think about it as a convention.
+```
+ input dim=100 name=ivector
+ input dim=40 name=input
+ 
+# please note that it is important to have input layer with the name=input
+ # as the layer immediately preceding the fixed-affine-layer to enable
+ # the use of short notation for the descriptor
+ fixed-affine-layer name=lda input=Append(-1,0,1,ReplaceIndex(ivector, t, 0)) affine-transform-file=$dir/configs/lda.mat
+ idct-layer name=idct input=input dim=40 cepstral-lifter=22 affine-transform-file=$dir/configs/idct.mat
+```
+
 
 #### Multiview features
 In some scenarios, you may want to add different levels of features, e.g. frame, utterance, speaker, recording party, so on..
@@ -213,7 +237,51 @@ To do this you can concatenate the features as:
 TODO add the example
 ```  
 
+## [TDNN layers](https://www.danielpovey.com/files/2015_interspeech_multisplice.pdf)
 
+The following is an example of a common tdnn definition from librispeech recipe.
+```
+relu_dim=725
+num_targets=$(tree-info $tree_dir/tree |grep num-pdfs|awk '{print $2}')
+learning_rate_factor=$(echo "print (0.5/$xent_regularize)" | python)
+
+cat <<EOF > $dir/configs/network.xconfig
+  input dim=100 name=ivector
+  input dim=40 name=input
+
+  # please note that it is important to have input layer with the name=input
+  # as the layer immediately preceding the fixed-affine-layer to enable
+  # the use of short notation for the descriptor
+  fixed-affine-layer name=lda input=Append(-1,0,1,ReplaceIndex(ivector, t, 0)) affine-transform-file=$dir/configs/lda.mat
+
+  # the first splicing is moved before the lda layer, so no splicing here
+  relu-batchnorm-layer name=tdnn1 dim=$relu_dim
+  relu-batchnorm-layer name=tdnn2 dim=$relu_dim input=Append(-1,0,1,2)
+  relu-batchnorm-layer name=tdnn3 dim=$relu_dim input=Append(-3,0,3)
+  relu-batchnorm-layer name=tdnn4 dim=$relu_dim input=Append(-3,0,3)
+  relu-batchnorm-layer name=tdnn5 dim=$relu_dim input=Append(-3,0,3)
+  relu-batchnorm-layer name=tdnn6 dim=$relu_dim input=Append(-6,-3,0)
+
+  ## adding the layers for chain branch
+  relu-batchnorm-layer name=prefinal-chain dim=$relu_dim target-rms=0.5
+  output-layer name=output include-log-softmax=false dim=$num_targets max-change=1.5
+
+  # adding the layers for xent branch
+  # This block prints the configs for a separate output that will be
+  # trained with a cross-entropy objective in the 'chain' models... this
+  # has the effect of regularizing the hidden parts of the model.  we use
+  # 0.5 / args.xent_regularize as the learning rate factor- the factor of
+  # 0.5 / args.xent_regularize is suitable as it means the xent
+  # final-layer learns at a rate independent of the regularization
+  # constant; and the 0.5 was tuned so as to make the relative progress
+  # similar in the xent and regular final layers.
+  relu-batchnorm-layer name=prefinal-xent input=tdnn6 dim=$relu_dim target-rms=0.5
+  output-layer name=output-xent dim=$num_targets learning-rate-factor=$learning_rate_factor max-change=1.5
+EOF
+  steps/nnet3/xconfig_to_configs.py --xconfig-file $dir/configs/network.xconfig --config-dir $dir/configs/
+
+
+```
 
 
 # Terminology 
@@ -230,4 +298,14 @@ Some of the terms have a link to the definition on the deepai.org website.
 * [attention](https://deepai.org/machine-learning-glossary-and-terms/attention-models){:target="_blank"}: Attention models
 * [convolutional](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network){:target="_blank"}: Convolutional neural network
 * [lda](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158){:target="_blank"}: Latent Dirichlet allocation
+
+
+# Documentation of Components
+If you check the **final.config** file after parse the xconfig, you will see that several components are inserted. Many of then are implicit when the definition of the network.
+1. The [NaturalGradientAffineComponent](http://kaldi-asr.org/doc/nnet-simple-component_8h_source.html#l00745) component is the *Natural Gradient for Stochastic Gradient Descent* described in [paper](http://www.danielpovey.com/files/2015_aistats_dnn.pdf).
+
+2. The [LinearComponent](http://kaldi-asr.org/doc/nnet-simple-component_8h_source.html#l00862) represents a linear (matrix) transformation of its input, with a matrix as its trainable parameters.  It's the same as NaturalGradientAffineComponent, but without the bias term.
+
+2. The [TdnnComponent](http://kaldi-asr.org/doc/classkaldi_1_1nnet3_1_1TdnnComponent.html#details) is a more memory-efficient alternative to manually splicing several frames of input.
+
 
