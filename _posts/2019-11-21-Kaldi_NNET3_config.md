@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kaldi-nnet3
-subtitle: Notes about the config file
+subtitle: Notes about the xconfig file
 image: 
 bigimg: /img/2018-02-05/baby-penguin.jpg
 
@@ -236,6 +236,9 @@ To do this you can concatenate the features as:
 ```
 TODO add the example
 ```  
+
+#### Multi-task 
+I will not explain here how to construct a multi-task learning but, Josh Meyer has a nice template you can follow. [https://github.com/JRMeyer/multi-task-kaldi](https://github.com/JRMeyer/multi-task-kaldi)
 
 ## [TDNN layers](https://www.danielpovey.com/files/2015_interspeech_multisplice.pdf)
 
