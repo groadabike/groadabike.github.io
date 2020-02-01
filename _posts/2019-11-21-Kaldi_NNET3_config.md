@@ -300,7 +300,7 @@ Some of the terms have a link to the definition on the deepai.org website.
 * [lstm](https://deepai.org/machine-learning-glossary-and-terms/long-short-term-memory){:target="_blank"}: Long short-term memory 
 * [attention](https://deepai.org/machine-learning-glossary-and-terms/attention-models){:target="_blank"}: Attention models
 * [convolutional](https://deepai.org/machine-learning-glossary-and-terms/convolutional-neural-network){:target="_blank"}: Convolutional neural network
-* [lda](https://towardsdatascience.com/light-on-math-machine-learning-intuitive-guide-to-latent-dirichlet-allocation-437c81220158){:target="_blank"}: Latent Dirichlet allocation
+* [lda](https://kaldi-asr.org/doc/transform.html#transform_lda){:target="_blank"}: Linear Discriminat Analyis
 
 
 # Documentation of Components
