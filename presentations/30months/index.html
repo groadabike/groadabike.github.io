@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<!-- <link rel="stylesheet" href="dist/theme/sky.css" id="theme"> -->
+		<link rel="stylesheet" href="dist/theme/spandh.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+
+		<!-- 
+			Simulating realistically-spatialised simultaneous speech using video-driven speaker detection and the CHiME-5 dataset
+
+			Key contributions
+				Distance between speakers plays a crutial role in the performance of source separation results. Simulated datasets are used
+				to test and train algorithms for source separation. The position of these speakers are often chosen at random or have little motivation.
+				This paper illutrates that current datasets contain utterances that are very different to what is observed in a real dataset. We show that
+				this can have detrimental effects on the performance of source separation system.
+
+
+			In multi-channel source separation / speech enhancement, spatial cues are used to aid in separating the sources. If sources are closer together then this separation is more difficult.
+			In conversational settings people tend to stand closer to each-other.
+			In this paper we explored this conflict by analysing the behaviour of people in an unscripted dinner party scenario. Then projected this analysis into a simulated scenario.
+			In this paper we aimed to contribute motivation for deciding speaker location.
+
+			CHiME-5
+			Unscripted
+			Multiple devices in each room (overlapping cameras)
+			Kinects -- 4-channels, 1080p
+			3 phases
+			4 speakers
+			20 sessions
+			6 devices
+
+			Developed tools to annotate the data to evaluate the performance of automatic approach
+			Face annotator (link to tools)
+			Track annotator (link to tools)
+
+
+			Dlib face detection library
+			OpenPose keypoint detection
+
+			Results using isolated frames
+			Both good at detecting people
+
+
+		 -->
+
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<div class="title">
+							Simulating realistically-spatialised simultaneous speech using video-driven speaker detection and the CHiME-5 dataset
+					</div>
+					<span class="authors">
+							<u>Jack Deadman</u> &
+							Jon Barker
+							<br><br>
+							jdeadman1@sheffield.ac.uk <br>
+							j.p.barker@sheffield.ac.uk
+					</span>
+				</section>
+				<!-- <section>
+					<h2>Presentation Overview</h2>
+				</section> -->
+
+				<section>
+					<h2>Motivation</h2>
+					<ul>
+						<li class="fragment">Smart home assistants becoming popular</li>
+						<li class="fragment">Multi-channel devices exploit spatial information in sound sources</li>
+						<li class="fragment">Algorithms tested in simulation often do not perform well on real data.</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Problem setup</h2>
+					<ul>
+						<li class="fragment">Using unreleased video from CHiME-5 dataset</li>
+						<!-- <li class="fragment">Unscripted Social Setting.</li> -->
+						<li class="fragment">20 unscripted parties taking place in different homes.</li>
+						<li class="fragment">4 participants in each party</li>
+						<li class="fragment">6 cameras in each home.</li>
+						<li class="fragment">2 cameras in each room.</li>
+						<li class="fragment">Devices placed at the side of a room.</li>
+						<li class="fragment">114 recordings in total</li>
+						<!-- <li class="fragment">Overlapping cameras.</li> -->
+					</ul>
+				</section>
+
+				<!-- <section>
+					<h2>Example floorplan</h2>
+					<img src="dist/images/floorplan.png" alt="">
+				</section> -->
+
+				<section>
+					<h2>Recording Device</h2>
+					<ul>
+						<li>Devices recorded using a Microsoft Kinect v2.</li>
+						<li>Camera is attached to a 4-channel microphone array.</li>
+					</ul>
+					<figure style="width: 700px; margin: auto;">
+						<img src="dist/images/kinect_mics.png" alt="">
+					</figure>
+				</section>
+
+				<section>
+						<h2>Recording Device</h2>
+						<div class="side-by-side big-left">
+							<li class="left">
+									<ul>
+											<li class="fragment" data-fragment-index="1">1080p camera</li>
+											<li class="fragment" data-fragment-index="2">Field of view of 84.1 degrees</li>
+											<li class="fragment" data-fragment-index="3">Mapping can be roughly approximated as linear</li>
+										</ul >
+										<div class="fragment" data-fragment-index="3">
+											\[\begin{aligned}
+												pixel2angle(x) = \frac{x \times 84.1}{1920}
+											\end{aligned} \]
+										</div>
+							</li>
+
+							<li class="right fragment">
+								<figure class="bg-white">
+									<img src="dist/images/angle.png" alt="">
+								</figure>
+							</li>
+								
+						</div>
+					</section>
+
+				<section>
+					<h2>Automatically Estimating positions</h2>
+					<ul class="side-by-side">
+						<li class="fragment">
+							Pose Detection <em>(Pose)</em>
+							<figure>
+								<img src="dist/images/placeholder-image.png" alt="">
+							</figure>
+							<small>OpenPose [1]</small>
+						</li>
+						<li class="fragment">
+							Face Detection <em>(Face)</em>
+							<figure>
+								<img src="dist/images/placeholder-image.png" alt="">
+							</figure>
+							<small>Dlib [2]</small>
+						</li>
+					</ul>
+				</section>
+
+				<!-- <section>
+					<h2>Annotating the data</h2>
+					<ul>
+						<li class="fragment">Need to know how well these methods find people <em>(Detection)</em></li>
+						<li class="fragment">When these people are found how accurate are the estimations <em>(Accuracy)</em></li>
+					</ul>
+				</section> -->
+
+				<section>
+					<h2>Annotating the data</h2>
+					<ul class="side-by-side">
+						<li class="fragment">
+							Face+Mouth position
+							<video muted loop autoplay src="dist/videos/face_demo.mp4"></video>
+							<!-- <figure class="white">
+								<img src="dist/images/face_annotator.png" alt="">
+							</figure> -->
+						</li>
+						<li class="fragment">
+							Tracking
+							<video muted loop autoplay src="dist/videos/tracking.mp4"></video>
+							<small><em>Demo not using CHiME-5 data.</em></small>
+						</li>
+					</ul>
+					<div class="fragment smaller">
+						Tools available online: <a href="https://github.com/jackdeadman/video-annotation-tools">https://github.com/jackdeadman/video-annotation-tools</a>
+					</div>
+
+				</section>
+
+
+				<!-- <section>
+					<h2>Label visualisation</h2>
+					<iframe scrolling="no" src="http://localhost:8080/presentation.html" frameborder="0" width="700" height="700"></iframe>
+				</section> -->
+
+				<!-- <section>
+					<h2>Comparing distributions</h2>
+					<img class="fit-height" src="dist/images/comparing_distributions_with_tracks.png" alt="">
+				</section> -->
+
+				<section>
+					<h2>Performance of automatic methods</h2>
+					<div class="side-by-side automatic-performance">
+						<div class="fragment">
+							Detection
+							<table>
+								<tr>
+									<th></th>
+									<th>Precision</th>
+									<th>Recall</th>
+									<th>F-Score</th>
+								</tr>
+								<tr>
+									<td><b>Face</b></td>
+									<td>98.7%</td>
+									<td>36.6%</td>
+									<td>52.5%</td>
+								</tr>
+								<tr>
+									<td><b>Pose</b></td>
+									<td>94.1%</td>
+									<td>60.5%</td>
+									<td>72.9%</td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="fragment">
+							Accuracy (Pixels*)
+							<table>
+								<tr>
+									<th></th>
+									<th>X</th>
+									<th>Y</th>
+									<th>Euclidean</th>
+								</tr>
+								<tr>
+									<td>Face</td>
+									<td>23±2</td>
+									<td>18±1</td>
+									<td>32±2</td>
+								</tr>
+								<tr>
+									<td>Pose</td>
+									<td>24±3</td>
+									<td>27±2</td>
+									<td>40±4</td>
+								</tr>
+							</table>
+							* ± standard error
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Speaker identity is not required
+						</h2>
+					<!-- <ul>
+						<li>Do not need speaker identity, sampling random visible speaker yields a very similar distribution</li>
+						<li>Therefore do not need to label entire dataset</li>
+					</ul> -->
+					<figure>
+						<img class="bg-white" src="dist/images/speaking_compressed.png" alt="">
+					</figure>
+				</section>
+
+				<section>
+					<h2>Speaker separation in the dataset</h2>
+					<!-- <ul>
+						<li>Approaches yield similar distributions</li>
+					</ul> -->
+					<figure>
+						<img src="dist/images/detection_comparison.png" alt="">
+					</figure>
+				</section>
+
+				<section>
+						<h2>Speaker separation in the dataset</h2>
+						<div class="space-above side-by-side automatic-performance">
+								<div class="fragment" data-fragment-index="1">
+									Separation
+									<table>
+										<tr>
+											<th></th>
+											<th>Screen (px)</th>
+											<th>Angle (°)</th>
+										</tr>
+										<tr>
+											<td>Face</td>
+											<td>380±268</td>
+											<td>17±12</td>
+										</tr>
+										<tr>
+											<td>Pose</td>
+											<td>427±274</td>
+											<td>19±12</td>
+										</tr>
+									</table>
+								</div>
+
+								<div class="fragment" data-fragment-index="2">
+									Position
+									<table>
+										<tr>
+											<th></th>
+											<th>Screen (px)</th>
+											<th>Angle (°)</th>
+										</tr>
+										<tr>
+											<td><b>Pose</b></td>
+											<td>−23±323</td>
+											<td>−1±14</td>
+										</tr>
+										<tr>
+											<td><b>Face</b></td>
+											<td>−35±302</td>
+											<td>−2±13</td>
+										</tr>
+									</table>
+									<small class="fragment bigger" data-fragment-index="2">
+											We define pixel 0 to be the centre of the screen.
+											<!-- <li>Only 17 degree of separation between speakers</li> -->
+										</small>
+								</div>
+							</div>
+							<br>
+							<small class="fragment" data-fragment-index="1">
+									± standard deviation
+							</small>
+											
+							<br>
+					</section>
+
+				<section>
+					<h2>Analysis of simulated datasets</h2>
+					<ul>
+						<li class="fragment">
+							<b>SMS_WSJ [3]: </b>Speaker <u>separation</u> sampled from uniform distribution
+						</li>
+
+						<li class="fragment">
+							<b>WSJ0-2Mix spatialised [4]: </b>Speaker <u> 3D positions</u> in room randomly sampled with constraint on minimum distance
+						</li>
+						<li class="fragment">
+							<b>Proposed: </b>Speaker <u>location angles</u> sampled from a normal distribution fit on the real data
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Analysis of simulated datasets</h2>
+					<figure style="height: 400px;">
+						<img src="dist/images/comparison_1.png" alt="">
+					</figure>
+				</section>
+
+				<section>
+					<h2>Analysis of simulated datasets</h2>
+					<ul>
+						<li class="fragment">
+							<b>WSJ0-original: </b> Device in the centre of the room.
+						</li>
+
+						<li class="fragment">
+							<b>WSJ0-edges: </b>Same but with the device placed at the edge of the room.
+						</li>
+						<li class="fragment">
+							<b>WSJ0-edges-realistic: </b> devices at the edges with realistic positions for speakers.
+						</li>
+
+					</ul>
+				</section>
+
+				<section>
+					<h2>Analysis of simulated datasets</h2>
+					<figure style="height: 400px;">
+						<img src="dist/images/comparison_2.png" alt="">
+					</figure>
+				</section>
+
+				<section>
+						<h2>Experiments</h2>
+						<!-- <ul>
+							<li>Looked at how using a realistic distribution affects performance of speech enhancement and speech recognition.</li>
+						</ul> -->
+					</section>
+	
+					<section>
+						<h2>Baseline system</h2>
+						<ul>
+							<li class="fragment">Baseline system from SMS_WSJ [3]</li>
+							<li class="fragment">cACGMM mask estimator</li>
+							<li class="fragment">MVDR beamformer</li>
+							<li class="fragment">MFCC + ivector frontend</li>
+							<li class="fragment">f-TDNN acoustic model</li>
+							<li class="fragment">3-gram language model</li>
+						</ul>
+					</section>
+
+				<!-- <section>
+					<h2>Experimental Setup</h2>
+					<ul>
+						<li>Setup is based off SMS_WSJ [3]</li>
+						<li>Random room configuration</li>
+						<li>Microphone Array placed in the centre of the room with some pertubation</li>
+					</ul>
+				</section> -->
+
+				<section>
+					<h2>Results using SMS_WSJ</h2>
+					<table class="automatic-performance asr-results">
+						<tr>
+							<th>Mask</th>
+							<th>Enhancement</th>
+							<th>Dataset</th>
+							<th>SDR</th>
+							<th>PESQ</th>
+							<th>STOI</th>
+							<th>WER</th>
+						</tr>
+						
+						<tr class="fragment" data-fragment-index="1">
+							<td>cACGMM</td>
+							<td>MVDR</td>
+							<td>Proposed</td>
+							<td>9.0</td>
+							<td>1.85</td>
+							<td>0.74</td>
+							<td>31.49</td>
+						</tr>
+						<tr class="fragment" data-fragment-index="1">
+							<td>cACGMM</td>
+							<td>MVDR</td>
+							<td>SMS_WSJ</td>
+							<td>12.3</td>
+							<td>2.07</td>
+							<td>0.82</td>
+							<td>18.15</td>
+						</tr>
+
+						<tr class="fragment" data-fragment-index="2">
+							<td>cACGMM</td>
+							<td>Mask</td>
+							<td>Proposed</td>
+							<td>7.1</td>
+							<td>1.73</td>
+							<td>0.71</td>
+							<td>49.09</td>
+						</tr>
+						<tr class="fragment" data-fragment-index="2">
+							<td>cACGMM</td>
+							<td>Mask</td>
+							<td>SMS_WSJ</td>
+							<td>9.5</td>
+							<td>1.83</td>
+							<td>0.78</td>
+							<td>40.01</td>
+						</tr>
+
+			
+						<tr class="fragment" data-fragment-index="3">
+							<td>None</td>
+							<td>Channel=0</td>
+							<td>Proposed</td>
+							<td>-0.4</td>
+							<td>1.49</td>
+							<td>0.66</td>
+							<td>78.93</td>
+						</tr>
+						<tr class="fragment" data-fragment-index="3">
+							<td>None</td>
+							<td>Channel=0</td>
+							<td>SMS_WSJ</td>
+							<td>-0.4</td>
+							<td>1.50</td>
+							<td>0.66</td>
+							<td>78.73</td>
+						</tr>
+
+						<tr class="fragment gray" data-fragment-index="4">
+							<td>IBM</td>
+							<td>MVDR</td>
+							<td>Proposed</td>
+							<td>10.4</td>
+							<td>1.88</td>
+							<td>0.77</td>
+							<td>21.23</td>
+						</tr>
+						<tr class="fragment gray" data-fragment-index="4">
+							<td>IBM</td>
+							<td>MVDR</td>
+							<td>SMS_WSJ</td>
+							<td>12.9</td>
+							<td>2.06</td>
+							<td>0.83</td>
+							<td>14.23</td>
+						</tr>
+						
+					</table>
+				</section>
+
+				<!-- <section>
+					<h2>SMS_WSJ example</h2>
+					<ul>
+						<li>Show example utterances</li>
+						<li>Show coherence</li>
+						<li>Show speech enhancement</li>
+						<li>Show transcript</li>
+					</ul>
+				</section> -->
+
+				<section>
+					<h2>Results using WSJ0-2Mix</h2>
+					<table class="automatic-performance">
+							<tr>
+								<th>Dataset</th>
+								<th>SDR</th>
+								<th>PESQ</th>
+								<th>STOI</th>
+							</tr>
+							
+							<tr class="fragment" data-fragment-index="1">
+								<td>WSJ0-original</td>
+								<td>15.1</td>
+								<td>2.50</td>
+								<td>0.83</td>
+							</tr>
+							<tr class="fragment" data-fragment-index="2">
+								<td>WSJ0-edges</td>
+								<td>15.2</td>
+								<td>2.61</td>
+								<td>0.82</td>
+							</tr>
+	
+
+							<tr class="fragment" data-fragment-index="3">
+								<td>WSJ0-edges-realistic</td>
+								<td>14.5</td>
+								<td>2.61</td>
+								<td>0.71</td>
+							</tr>
+							
+						</table>
+				</section>
+	
+
+				<section>
+					<h2>Conclusion</h2>
+					<ul>
+						<li class="fragment">Speaker position is a variable not often discussed</li>
+						<li class="fragment">Can have a large impact on the performance of speech enhancement and ASR</li>
+						<li class="fragment">Argue that is should be a larger consideration incase algorithm that work only in simulations are persued just because they exploit easier speaker distributions</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>References</h2>
+				</section>
+
+			</div>
+			<div class="footer">
+				<img src="dist/university_logo.jpg" alt="uni logo">
+				<img src="dist/logo_big.jpg" alt="SpandH logo">
+				<span>INTERSPEECH2020</span>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMath, RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
