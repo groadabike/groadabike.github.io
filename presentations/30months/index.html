@@ -59,7 +59,7 @@
 			<div class="slides">
 				<section>
 					<div class="title">
-						Automatic Lyrics Transcription from Single Audio Channel Polyphonic Music Recordings
+						Automatic Lyrics Transcription from Single Audio Channel Homophonic Music Recordings
 					</div>
 					<span class="authors">
 							Gerardo Roa Dabike
@@ -83,26 +83,31 @@
 						<li class="fragment smaller left">Contain one main melody and an accompaniment harmony.</li>
 					</ul>
 				</section>
-				
+
+				<!--
 				<section>
 					<h2>Problem setup</h2>
 					<ul>
 						<li class="fragment">Using unreleased video from CHiME-5 dataset</li>
-						<!-- <li class="fragment">Unscripted Social Setting.</li> -->
+						<li class="fragment">Unscripted Social Setting.</li>
 						<li class="fragment">20 unscripted parties taking place in different homes.</li>
 						<li class="fragment">4 participants in each party</li>
 						<li class="fragment">6 cameras in each home.</li>
 						<li class="fragment">2 cameras in each room.</li>
 						<li class="fragment">Devices placed at the side of a room.</li>
 						<li class="fragment">114 recordings in total</li>
-						<!-- <li class="fragment">Overlapping cameras.</li> -->
+					 <li class="fragment">Overlapping cameras.</li>
 					</ul>
 				</section>
 
-				<!-- <section>
+
+
+				<section>
 					<h2>Example floorplan</h2>
 					<img src="dist/images/floorplan.png" alt="">
-				</section> -->
+				</section>
+
+
 
 				<section>
 					<h2>Recording Device</h2>
@@ -160,13 +165,13 @@
 					</ul>
 				</section>
 
-				<!-- <section>
+				<section>
 					<h2>Annotating the data</h2>
 					<ul>
 						<li class="fragment">Need to know how well these methods find people <em>(Detection)</em></li>
 						<li class="fragment">When these people are found how accurate are the estimations <em>(Accuracy)</em></li>
 					</ul>
-				</section> -->
+				</section>
 
 				<section>
 					<h2>Annotating the data</h2>
@@ -174,9 +179,9 @@
 						<li class="fragment">
 							Face+Mouth position
 							<video muted loop autoplay src="dist/videos/face_demo.mp4"></video>
-							<!-- <figure class="white">
+							<figure class="white">
 								<img src="dist/images/face_annotator.png" alt="">
-							</figure> -->
+							</figure>
 						</li>
 						<li class="fragment">
 							Tracking
@@ -191,7 +196,7 @@
 				</section>
 
 
-				<!-- <section>
+				<section>
 					<h2>Label visualisation</h2>
 					<iframe scrolling="no" src="http://localhost:8080/presentation.html" frameborder="0" width="700" height="700"></iframe>
 				</section> -->
@@ -199,7 +204,7 @@
 				<!-- <section>
 					<h2>Comparing distributions</h2>
 					<img class="fit-height" src="dist/images/comparing_distributions_with_tracks.png" alt="">
-				</section> -->
+				</section>
 
 				<section>
 					<h2>Performance of automatic methods</h2>
@@ -258,10 +263,10 @@
 				<section>
 					<h2>Speaker identity is not required
 						</h2>
-					<!-- <ul>
+					<ul>
 						<li>Do not need speaker identity, sampling random visible speaker yields a very similar distribution</li>
 						<li>Therefore do not need to label entire dataset</li>
-					</ul> -->
+					</ul>
 					<figure>
 						<img class="bg-white" src="dist/images/speaking_compressed.png" alt="">
 					</figure>
@@ -269,9 +274,9 @@
 
 				<section>
 					<h2>Speaker separation in the dataset</h2>
-					<!-- <ul>
+					<ul>
 						<li>Approaches yield similar distributions</li>
-					</ul> -->
+					</ul>
 					<figure>
 						<img src="dist/images/detection_comparison.png" alt="">
 					</figure>
@@ -322,7 +327,7 @@
 									</table>
 									<small class="fragment bigger" data-fragment-index="2">
 											We define pixel 0 to be the centre of the screen.
-											<!-- <li>Only 17 degree of separation between speakers</li> -->
+											 <li>Only 17 degree of separation between speakers</li>
 										</small>
 								</div>
 							</div>
@@ -383,9 +388,9 @@
 
 				<section>
 						<h2>Experiments</h2>
-						<!-- <ul>
+						<ul>
 							<li>Looked at how using a realistic distribution affects performance of speech enhancement and speech recognition.</li>
-						</ul> -->
+						</ul>
 					</section>
 	
 					<section>
@@ -400,15 +405,14 @@
 						</ul>
 					</section>
 
-				<!-- <section>
+				<section>
 					<h2>Experimental Setup</h2>
 					<ul>
 						<li>Setup is based off SMS_WSJ [3]</li>
 						<li>Random room configuration</li>
 						<li>Microphone Array placed in the centre of the room with some pertubation</li>
 					</ul>
-				</section> -->
-
+				</section>
 				<section>
 					<h2>Results using SMS_WSJ</h2>
 					<table class="automatic-performance asr-results">
@@ -502,7 +506,7 @@
 					</table>
 				</section>
 
-				<!-- <section>
+				<section>
 					<h2>SMS_WSJ example</h2>
 					<ul>
 						<li>Show example utterances</li>
@@ -510,7 +514,7 @@
 						<li>Show speech enhancement</li>
 						<li>Show transcript</li>
 					</ul>
-				</section> -->
+				</section>
 
 				<section>
 					<h2>Results using WSJ0-2Mix</h2>
@@ -559,7 +563,7 @@
 				<section>
 					<h2>References</h2>
 				</section>
-
+			-->
 			</div>
 			<div class="footer">
 				<img src="dist/university_logo.jpg" alt="uni logo">
