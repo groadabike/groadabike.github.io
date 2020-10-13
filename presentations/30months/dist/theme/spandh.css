@@ -405,3 +405,27 @@ small {
 .bigger {
   margin-top: 20px;
   font-size: 0.8em !important; }
+
+.notch-left {
+  position: relative !important;
+  right: 140px !important; }
+
+.notch-left130 {
+  position: relative !important;
+  right: 130px !important; }
+
+.notch-left120 {
+  position: relative !important;
+  right: 120px !important; }
+
+.notch-left110 {
+  position: relative !important;
+  right: 110px !important; }
+
+.notch-left100 {
+  position: relative !important;
+  right: 100px !important; }
+
+.notch-right80 {
+  position: relative !important;
+  left: 80px !important; }

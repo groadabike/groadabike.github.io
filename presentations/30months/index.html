@@ -16,99 +16,434 @@
 	</head>
 	<body>
 
-		<!-- 
-			Simulating realistically-spatialised simultaneous speech using video-driven speaker detection and the CHiME-5 dataset
-
-			Key contributions
-				Distance between speakers plays a crutial role in the performance of source separation results. Simulated datasets are used
-				to test and train algorithms for source separation. The position of these speakers are often chosen at random or have little motivation.
-				This paper illutrates that current datasets contain utterances that are very different to what is observed in a real dataset. We show that
-				this can have detrimental effects on the performance of source separation system.
-
-
-			In multi-channel source separation / speech enhancement, spatial cues are used to aid in separating the sources. If sources are closer together then this separation is more difficult.
-			In conversational settings people tend to stand closer to each-other.
-			In this paper we explored this conflict by analysing the behaviour of people in an unscripted dinner party scenario. Then projected this analysis into a simulated scenario.
-			In this paper we aimed to contribute motivation for deciding speaker location.
-
-			CHiME-5
-			Unscripted
-			Multiple devices in each room (overlapping cameras)
-			Kinects -- 4-channels, 1080p
-			3 phases
-			4 speakers
-			20 sessions
-			6 devices
-
-			Developed tools to annotate the data to evaluate the performance of automatic approach
-			Face annotator (link to tools)
-			Track annotator (link to tools)
-
-
-			Dlib face detection library
-			OpenPose keypoint detection
-
-			Results using isolated frames
-			Both good at detecting people
-
-
-		 -->
-
-
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<div class="title">
+					<div>
+					    <br><br><br>
 						Automatic Lyrics Transcription from Single Audio Channel Homophonic Music Recordings
 					</div>
 					<span class="authors">
 							Gerardo Roa Dabike
 					</span>
 				</section>
-				<!-- <section>
-					<h2>Presentation Overview</h2>
-				</section> -->
+
+
+				<!-- section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li>Work done.</li>
+						<li>Current work</li>
+						<li>Plan for the following 18 months</li>
+					</ol>
+				</section -->
+
+
+				<!-- section>
+					<h2>Aims</h2>
+					<p class="">
+						To automatically recognise the sung speech from a homophonic single-channel audio recording,
+						by adapting robust systems for typical speech and taking advantages of the musical prosody
+						information of both the background accompaniment and the sung speech.
+					</p>
+				</section -->
+
 
 				<section>
 					<h2>The Task</h2>
-					<div class="fragment" align="left">To recognise sung speech from an accompaniment singing.</div>
-					<div class="fragment">
-						<figure style="width: 700px; margin: auto;">
+					<div class="" >To recognise sung speech from an accompaniment singing.</div>
+					<br>
+					<div class="">
+						<figure style="width: 900px; margin: auto;">
 							<img src="dist/images/thetask.png" alt="">
 						</figure>
 					</div>
+					<!--
 					<div class="fragment" align="left">Homophonic texture:</div>
-					<ul>
-						<li class="fragment smaller left">The common texture when lyrics need to be understood.</li>
+					<ul class="notch-left">
+						<li class="fragment left smaller">The common texture when lyrics need to be understood.</li>
 						<li class="fragment smaller left">Contain one main melody and an accompaniment harmony.</li>
 					</ul>
+				 	-->
 				</section>
 
-				<!--
 				<section>
-					<h2>Problem setup</h2>
-					<ul>
-						<li class="fragment">Using unreleased video from CHiME-5 dataset</li>
-						<li class="fragment">Unscripted Social Setting.</li>
-						<li class="fragment">20 unscripted parties taking place in different homes.</li>
-						<li class="fragment">4 participants in each party</li>
-						<li class="fragment">6 cameras in each home.</li>
-						<li class="fragment">2 cameras in each room.</li>
-						<li class="fragment">Devices placed at the side of a room.</li>
-						<li class="fragment">114 recordings in total</li>
-					 <li class="fragment">Overlapping cameras.</li>
+					<h2>Breaking down the task</h2>
+					<div class="">The project was split into three components or stages.</div>
+					<br>
+					<ol>
+						<li class=" left smaller">Unaccompanied singing recognition.</li>
+						<li class=" smaller left">Audio source separation and singer enhancement.</li>
+						<li class=" smaller left">Jointly optimise the singer enhancement with the acoustic model</li>
+					</ol>
+					<div><br></div>
+					<div class="">
+						<figure style="width: 700px; margin: auto;">
+							<img src="dist/images/splitTask2.png" alt="">
+						</figure>
+					</div>
+
+
+
+				</section>
+
+				<section>
+					<h2>Stage 1</h2>
+					<p class="fragment">Considered a complete stage!</p>
+					<ul class="fragment">
+						<li>Two papers</li>
+						<ul>
+							<li>Automatic  Lyric  Transcription  from  Karaoke  Vocal Tracks: Resources and a Baseline System (Interspeech 2019).</li>
+							<li>The  Use  of  Voice  Source  Features  for  Sung  Speech Recognition (to be submitted ICASSP 2021).</li>
+						</ul>
+					</ul>
+					<aside class="notes">
+						P1<br>
+						- Present a baseline for English spoken sung recognition task. <br>
+						- Processing step to use Sing!300x30x2 Dataset for ASR. Including alignment, segmentation<br>
+						- Human annotators correct the alignment timings and re-transcribe the speech. <br>
+						P2<br>
+						- Presents performances using voice source features<br>
+						- Pitch may help to improve voiced/unvoiced and vowels sounds discrimination, normalise for different speakers<br>
+						- Jitter, shimmer and HNR are associated with speaker identity may improve speaker normalisation.<br>
+						- This was the first study using this features on a large sung speech data.<br>
+						- Only beneficial for small size data.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<div class="fragment">
+						Plan Proposed in 24-month panel
+					</div>
+					<br>
+					<ul class="fragment">
+						<li>Baseline replication.</li>
+						<li>Audio source separation (ASS) experiments.</li>
+						<li>Musically motivated features for ASS.</li>
+						<li>Beat information for AM.</li>
+					</ul>
+					<aside class="notes">
+						1-Baseline replication  -> replace by side-by-side comparison of SOTA techniques.
+						<br>
+						2-ASS Experiments -> Experiments on 2 different datasets.
+						<br>
+						3-Musically motivated features -> Starting experiment by using instruments encoding features.
+						<br>
+						4-Beat information for AM -> pending
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3 class="fragment">Dataset</h3>
+					<ul class="fragment">
+						<li class="notch-left">Damp Vocal Separation - DAMP-VSEP</li>
+						<ul>
+							<li class="notch-left">41000 30-sec segments - 20800 solo ensemble.</li>
+							<li class="notch-left">155 countries and 36 languages - 8500 English performances.</li>
+							<li class="notch-left">6456 singers.</li>
+							<li class="notch-left">11494 song arrangements.</li>
+						</ul>
 					</ul>
 				</section>
 
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Dataset</h3>
+					<div>
+						<div class="">
+							<table>
+								<tr>
+									<th><b>Dataset</b></th>
+									<th><b>Utt</b></th>
+									<th><b>Size</b></th>
+								</tr>
+								<tr>
+									<td>English train</td>
+									<td>9243</td>
+									<td>77 Hrs</td>
+								</tr>
+								<tr>
+									<td>Solo train</td>
+									<td>20660</td>
+									<td>174 Hrs</td>
+								</tr>
+								<tr>
+									<td>Validation</td>
+									<td>100</td>
+									<td>0.8 Hrs</td>
+								</tr>
+								<tr>
+									<td>Evaluation</td>
+									<td>100</td>
+									<td>0.8 Hrs</td>
+								</tr>
+							</table>
+						</div>
 
+
+					</div>
+				</section>
 
 				<section>
-					<h2>Example floorplan</h2>
-					<img src="dist/images/floorplan.png" alt="">
+					<h2>Stage 2</h2>
+					<h3>DAMP-VSEP characteristics</h3>
+					<div>
+						Different backgrounds are perceptually identical.
+						<div class="notch-left">
+							<figure style="width: 1200px; margin: auto;">
+								<img src="dist/images/offset.png" alt="">
+							</figure>
+						</div>
+					</div>
+					<aside class="notes">
+						Example of why  cross correlation to group the backgrounds was needed.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>DAMP-VSEP challenges</h3>
+					<div class="side-by-side automatic-performance">
+						<div>
+							<br>
+							<br>
+							<ul class="notch-left100">
+								<li>Non-linear effects.</li>
+								<li>Vocal in mixture is scaled.</li>
+								<li>Vocal in background.</li>
+							</ul>
+
+						</div>
+						<div>
+							<div>
+								Mixture : &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/nonlineareffect/mix.wav" ></audio>
+							</div>
+							<div>
+								Vocal : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/nonlineareffect/vocal.wav" ></audio>
+							</div>
+							<div>
+								Background : <audio controls src="dist/audio/nonlineareffect/background.wav" ></audio>
+							</div>
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						Vocal in mixture tend to be louder.
+
+						Example of non-linear effect:<br>
+						- Chorus<br>
+						- Distortion<br>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>DAMP-VSEP challenges</h3>
+
+					<div class="side-by-side automatic-performance">
+						<div>
+							<br>
+							<br>
+							<ul class="notch-left100">
+								<li>Vocal is shifted in relation with the mixture.</li>
+								<li>Vocal mixed in the background.</li>
+							</ul>
+						</div>
+						<div>
+							<div>
+								Mixture : &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/vocalshifted/mix.wav" ></audio>
+							</div>
+							<div>
+								Vocal : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/vocalshifted/vocal.wav" ></audio>
+							</div>
+							<div>
+								Background : <audio controls src="dist/audio/vocalshifted/background.wav" ></audio>
+							</div>
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						Forward vocal to second 19 to match mixture.
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Model Architecture</h3>
+					<div>
+						<div class="">
+							<figure style="width: 1000px; margin: auto;">
+								<img src="dist/images/tasnet_arch.png" alt="">
+							</figure>
+						</div>
+
+
+					</div>
+					<aside class="notes">
+						TasNet = Deep LSTM network plus fully connected with softmask for mask generation<br>
+
+						ConvTasNet = Temporal Convolutional Network as replacement of RNNs for sequence modelling tasks<br>
+						Series of stacked 1D dilated convolutional blocks with increased dilation factors.<br>
+						M convolutional blocks are then repeated R times.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Preliminary Results</h3>
+					<div class="side-by-side automatic-performance">
+						<div class="notch-left100">
+							<h4>English train set</h4>
+							<table>
+								<tr>
+									<th><b>Exp</b></th>
+									<th><b>Mixture</b></th>
+									<th><b>M</b></th>
+									<th><b>R</b></th>
+									<th><b>SDR</b></th>
+									<th nowrap><b>SI-SDR</b></th>
+									<th><b>STOI</b></th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Remix</td>
+									<td>8</td>
+									<td>4</td>
+									<td>10.65</td>
+									<td>9.62</td>
+									<td>0.6943</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Remix</td>
+									<td>10</td>
+									<td>4</td>
+									<td>14.43</td>
+									<td>13.90</td>
+									<td>0.7597</td>
+								</tr>
+							</table>
+						</div>
+						<div class="notch-right80">
+							<h4>Solo ensemble train set</h4>
+							<table>
+								<tr>
+									<th><b>Exp</b></th>
+									<th><b>Mixture</b></th>
+									<th><b>M</b></th>
+									<th><b>R</b></th>
+									<th><b>SDR</b></th>
+									<th nowrap><b>SI-SDR</b></th>
+									<th><b>STOI</b></th>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Remix</td>
+									<td>10</td>
+									<td>4</td>
+									<td>15.21</td>
+									<td>14.70</td>
+									<td>0.7666</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Original</td>
+									<td>10</td>
+									<td>4</td>
+									<td>3.37</td>
+									<td>-13.47</td>
+									<td>0.5771</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="automatic-performance">
+						<br>
+						<h4>Composite Loss function</h4>
+						<table>
+							<tr>
+								<th><b>Exp</b></th>
+								<th><b>M</b></th>
+								<th><b>R</b></th>
+								<th><b>Alpha</b></th>
+								<th align="center"><b>SDR (V/B)</b></th>
+								<th nowrap align="center"><b>SI-SDR (V/B)</b></th>
+								<th><b>STOI (V)</b></th>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>10</td>
+								<td>4</td>
+								<td>0.1</td>
+								<td>2.38/13.62</td>
+								<td>-15.92/-2.04</td>
+								<td>0.6530</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>10</td>
+								<td>4</td>
+								<td>0.5</td>
+								<td>2.85/11.81</td>
+								<td>-3.67/-1.62</td>
+								<td>0.6401</td>
+							</tr>
+
+						</table>
+					</div>
+					<aside class="notes">
+						Previous performances represents the total average of the average performance between vocal and background.
+						I fixed the score to show average per source.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Musically Motivated Features</h3>
+					<div>
+						The use instrument embedding features.
+						<div class="side-by-side automatic-performance">
+							<div class="notch-left">
+								<br>
+								<br>
+								<ul>
+									<li>Train a convolutional autoencoder for instrument classification.</li>
+									<li>Use embedding features to inform the model about the music. </li>
+								</ul>
+							</div>
+							<div>
+								<figure style="width: 700px; margin: auto;">
+									<img src="dist/images/tasnet_arch.png" alt="">
+								</figure>
+
+							</div>
+
+						</div>
+
+
+					</div>
+					<aside class="notes">
+						TasNet = Deep LSTM network plus fully connected with softmask for mask generation<br>
+
+						ConvTasNet = Temporal Convolutional Network as replacement of RNNs for sequence modelling tasks<br>
+						Series of stacked 1D dilated convolutional blocks with increased dilation factors.<br>
+						M convolutional blocks are then repeated R times.
+					</aside>
 				</section>
 
 
 
+
+				<!--
 				<section>
 					<h2>Recording Device</h2>
 					<ul>
@@ -122,7 +457,7 @@
 
 				<section>
 						<h2>Recording Device</h2>
-						<div class="side-by-side big-left">
+
 							<li class="left">
 									<ul>
 											<li class="fragment" data-fragment-index="1">1080p camera</li>
@@ -199,7 +534,8 @@
 				<section>
 					<h2>Label visualisation</h2>
 					<iframe scrolling="no" src="http://localhost:8080/presentation.html" frameborder="0" width="700" height="700"></iframe>
-				</section> -->
+				</section>
+				-->
 
 				<!-- <section>
 					<h2>Comparing distributions</h2>
@@ -585,7 +921,8 @@
 			Reveal.initialize({
 				hash: true,
 				slideNumber: true,
-
+                center: false,
+                
 				math: {
 					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
 					config: 'TeX-AMS_HTML-full',
