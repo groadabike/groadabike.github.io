@@ -29,16 +29,16 @@
 				</section>
 
 
-				<!-- section>
+				<section>
 					<h2>Presentation Outline</h2>
 					<br>
 					<ol>
 						<li>Overview of the project</li>
-						<li>Work done.</li>
-						<li>Current work</li>
+						<li>State of Stage 1</li>
+						<li>State of Stage 2</li>
 						<li>Plan for the following 18 months</li>
 					</ol>
-				</section -->
+				</section>
 
 
 				<!-- section>
@@ -140,12 +140,12 @@
 					<h2>Stage 2</h2>
 					<h3 class="fragment">Dataset</h3>
 					<ul class="fragment">
-						<li class="notch-left">Damp Vocal Separation - DAMP-VSEP</li>
+						<li class="notch-left100">Damp Vocal Separation - DAMP-VSEP</li>
 						<ul>
-							<li class="notch-left">41000 30-sec segments - 20800 solo ensemble.</li>
-							<li class="notch-left">155 countries and 36 languages - 8500 English performances.</li>
-							<li class="notch-left">6456 singers.</li>
-							<li class="notch-left">11494 song arrangements.</li>
+							<li class="notch-left100">41000 30-sec segments - 20800 solo ensemble.</li>
+							<li class="notch-left100">155 countries and 36 languages - 8500 English performances.</li>
+							<li class="notch-left100">6456 singers.</li>
+							<li class="notch-left100">11494 song arrangements.</li>
 						</ul>
 					</ul>
 				</section>
@@ -154,7 +154,7 @@
 					<h2>Stage 2</h2>
 					<h3>Dataset</h3>
 					<div>
-						<div class="">
+						<div class="fragment">
 							<table>
 								<tr>
 									<th><b>Dataset</b></th>
@@ -190,8 +190,8 @@
 
 				<section>
 					<h2>Stage 2</h2>
-					<h3>DAMP-VSEP characteristics</h3>
-					<div>
+					<h3>DAMP-VSEP challenges</h3>
+					<div class="fragment">
 						Different backgrounds are perceptually identical.
 						<div class="notch-left">
 							<figure style="width: 1200px; margin: auto;">
@@ -207,14 +207,13 @@
 				<section>
 					<h2>Stage 2</h2>
 					<h3>DAMP-VSEP challenges</h3>
-					<div class="side-by-side automatic-performance">
+					<div class="fragment side-by-side automatic-performance">
 						<div>
 							<br>
 							<br>
 							<ul class="notch-left100">
-								<li>Non-linear effects.</li>
-								<li>Vocal in mixture is scaled.</li>
-								<li>Vocal in background.</li>
+								<li>Mixture include non-linear effects.</li>
+								<li>Vocal energy is scaled in mixture.</li>
 							</ul>
 
 						</div>
@@ -246,7 +245,7 @@
 					<h2>Stage 2</h2>
 					<h3>DAMP-VSEP challenges</h3>
 
-					<div class="side-by-side automatic-performance">
+					<div class="fragment side-by-side automatic-performance">
 						<div>
 							<br>
 							<br>
@@ -270,7 +269,8 @@
 
 
 					<aside class="notes">
-						Forward vocal to second 19 to match mixture.
+						Forward vocal to second 19 to match mixture.<br>
+						Take 1 sec chunks of vocal and correlate with mixture.
 
 					</aside>
 				</section>
@@ -279,9 +279,10 @@
 					<h2>Stage 2</h2>
 					<h3>Model Architecture</h3>
 					<div>
+						<br>
 						<div class="">
 							<figure style="width: 1000px; margin: auto;">
-								<img src="dist/images/tasnet_arch.png" alt="">
+								<img src="dist/images/TasNet.png" alt="">
 							</figure>
 						</div>
 
@@ -300,39 +301,39 @@
 					<h2>Stage 2</h2>
 					<h3>Preliminary Results</h3>
 					<div class="side-by-side automatic-performance">
-						<div class="notch-left100">
+						<div class="fragment notch-left200">
 							<h4>English train set</h4>
 							<table>
 								<tr>
-									<th><b>Exp</b></th>
-									<th><b>Mixture</b></th>
-									<th><b>M</b></th>
-									<th><b>R</b></th>
-									<th><b>SDR</b></th>
-									<th nowrap><b>SI-SDR</b></th>
-									<th><b>STOI</b></th>
+									<th>Exp</th>
+									<th>Mixture</th>
+									<th>M</th>
+									<th>R</th>
+									<th nowrap>SDR (V/B)</th>
+									<th nowrap>SI-SDR (V/B)</th>
+									<th>STOI</th>
 								</tr>
 								<tr>
 									<td>1</td>
 									<td>Remix</td>
 									<td>8</td>
 									<td>4</td>
-									<td>10.65</td>
-									<td>9.62</td>
-									<td>0.6943</td>
+									<td>6.13/13.70</td>
+									<td>4.84/12.85</td>
+									<td>0.5364</td>
 								</tr>
 								<tr>
 									<td>2</td>
 									<td>Remix</td>
 									<td>10</td>
 									<td>4</td>
-									<td>14.43</td>
-									<td>13.90</td>
-									<td>0.7597</td>
+									<td>6.24/13.73</td>
+									<td>5.05/12.83</td>
+									<td>0.5317</td>
 								</tr>
 							</table>
 						</div>
-						<div class="notch-right80">
+						<div class="fragment ">
 							<h4>Solo ensemble train set</h4>
 							<table>
 								<tr>
@@ -340,8 +341,8 @@
 									<th><b>Mixture</b></th>
 									<th><b>M</b></th>
 									<th><b>R</b></th>
-									<th><b>SDR</b></th>
-									<th nowrap><b>SI-SDR</b></th>
+									<th nowrap><b>SDR (V/B)</b></th>
+									<th nowrap><b>SI-SDR (V/B)</b></th>
 									<th><b>STOI</b></th>
 								</tr>
 								<tr>
@@ -349,24 +350,24 @@
 									<td>Remix</td>
 									<td>10</td>
 									<td>4</td>
-									<td>15.21</td>
-									<td>14.70</td>
-									<td>0.7666</td>
+									<td>15.02/14.76</td>
+									<td>14.14/14.48</td>
+									<td>0.6808</td>
 								</tr>
 								<tr>
 									<td>4</td>
 									<td>Original</td>
 									<td>10</td>
 									<td>4</td>
-									<td>3.37</td>
-									<td>-13.47</td>
-									<td>0.5771</td>
+									<td>-8.44/11.71</td>
+									<td>-23.42/-2.33</td>
+									<td>0.2750</td>
 								</tr>
 							</table>
 						</div>
 					</div>
 
-					<div class="automatic-performance">
+					<div class="fragment automatic-performance">
 						<br>
 						<h4>Composite Loss function</h4>
 						<table>
@@ -377,7 +378,7 @@
 								<th><b>Alpha</b></th>
 								<th align="center"><b>SDR (V/B)</b></th>
 								<th nowrap align="center"><b>SI-SDR (V/B)</b></th>
-								<th><b>STOI (V)</b></th>
+								<th><b>STOI</b></th>
 							</tr>
 							<tr>
 								<td>5</td>
@@ -407,22 +408,104 @@
 				</section>
 
 				<section>
+					<h3>Preliminary Results</h3>
+					<div class="side-by-side automatic-performance">
+						<div class="notch-left">
+							<ul>
+								<li>Vocal : &nbsp; &nbsp; &nbsp;<audio controls src="dist/audio/enhSamples/vocal.wav" ></audio></li>
+								<br>
+								<br>
+								<li>Remix : &nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/remix.wav" ></audio></li>
+								<br>
+								<br>
+								<li>Mixture :  <audio controls src="dist/audio/enhSamples/mixture.wav" ></audio></li>
+							</ul>
+						</div>
+						<div class="">
+							<ul>
+							<li>Exp 1: <audio controls src="dist/audio/enhSamples/exp1.wav" ></audio></li>
+							<li>Exp 2: <audio controls src="dist/audio/enhSamples/exp2.wav" ></audio></li></li>
+							<li>Exp 3:<audio controls src="dist/audio/enhSamples/exp3.wav" ></audio></li>
+								<br>
+								<br>
+							<li>Exp 4:<audio controls src="dist/audio/enhSamples/exp4.wav" ></audio></li>
+							<li>Exp 5:<audio controls src="dist/audio/enhSamples/exp5.wav" ></audio></li>
+							<li>Exp 6:<audio controls src="dist/audio/enhSamples/exp6.wav" ></audio></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+
+				<section>
 					<h2>Stage 2</h2>
-					<h3>Musically Motivated Features</h3>
+					<h3>ASR evaluation</h3>
+					<div class="fragment side-by-side automatic-performance">
+						<div class="notch-left">
+							<figure style="width: 700px; margin: auto;">
+								<img src="dist/images/system_pipeline.png" alt="">
+							</figure>
+						</div>
+						<div class="notch-right80">
+							<table>
+								<tr>
+									<th nowrap>Sung speech</th>
+									<th nowrap>ASS Exp</th>
+									<th nowrap>DAMP-VSEP</th>
+									<th>DALI</th>
+								</tr>
+								<tr>
+									<td rowspan="2">Reference</td>
+									<td nowrap>Clean Vocal</td>
+									<td>23.83</td>
+									<td>-</td>
+							   </tr>
+								<tr>
+									<td>Mixture</td>
+									<td>63.98</td>
+									<td>89.81</td>
+								</tr>
+								<tr>
+									<td rowspan="2">Enhanced</td>
+									<td>Exp 2</td>
+									<td>49.90</td>
+									<td>79.83</td>
+								</tr>
+								<tr>
+									<td>Exp 5</td>
+									<td>68.93</td>
+									<td>89.35</td>
+								</tr>
+
+
+							</table>
+						</div>
+
+
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Plan next 18 months</h2>
+					<h3 class="fragment">Musically Motivated Features</h3>
 					<div>
-						The use instrument embedding features.
-						<div class="side-by-side automatic-performance">
+						<p class="fragment">The use instrument embedding features.</p>
+						<div class="fragment side-by-side automatic-performance">
 							<div class="notch-left">
 								<br>
 								<br>
 								<ul>
 									<li>Train a convolutional autoencoder for instrument classification.</li>
-									<li>Use embedding features to inform the model about the music. </li>
+									<li>Use embedding features to inform the model about the musical accompaniment. </li>
 								</ul>
 							</div>
 							<div>
+								<br>
 								<figure style="width: 700px; margin: auto;">
-									<img src="dist/images/tasnet_arch.png" alt="">
+									<img src="dist/images/TasNetplusEmbedding.png" alt="">
 								</figure>
 
 							</div>
@@ -432,474 +515,61 @@
 
 					</div>
 					<aside class="notes">
-						TasNet = Deep LSTM network plus fully connected with softmask for mask generation<br>
 
-						ConvTasNet = Temporal Convolutional Network as replacement of RNNs for sequence modelling tasks<br>
-						Series of stacked 1D dilated convolutional blocks with increased dilation factors.<br>
-						M convolutional blocks are then repeated R times.
+					</aside>
+				</section>
+				<section>
+					<h2>Plan next 18 months</h2>
+					<h3 class="fragment">Jointly optimised system</h3>
+					<div>
+						<br>
+						<div class="fragment side-by-side automatic-performance">
+							<figure style="width: 1000px; margin: auto;">
+								<img src="dist/images/end2end.png" alt="">
+							</figure>
+						</div>
+
+
+
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section>
+					<h2>Gantt Chart</h2>
+
+					<div class="fragment automatic-performance">
+						<figure style="width: 1000px; margin: auto;">
+							<img src="dist/images/Gantt.png" alt="">
+						</figure>
+					</div>
+					<aside class="notes">
+
 					</aside>
 				</section>
 
-
-
-
-				<!--
 				<section>
-					<h2>Recording Device</h2>
+					<h2>Review 24-month panel recommendations</h2>
 					<ul>
-						<li>Devices recorded using a Microsoft Kinect v2.</li>
-						<li>Camera is attached to a 4-channel microphone array.</li>
+						<li  class="fragment">Improve explanation of ideas and writing skills.</li>
+						<li class="fragment">Attention mechanisms.</li>
+						<li class="fragment">Listening experiments.</li>
 					</ul>
-					<figure style="width: 700px; margin: auto;">
-						<img src="dist/images/kinect_mics.png" alt="">
-					</figure>
-				</section>
-
-				<section>
-						<h2>Recording Device</h2>
-
-							<li class="left">
-									<ul>
-											<li class="fragment" data-fragment-index="1">1080p camera</li>
-											<li class="fragment" data-fragment-index="2">Field of view of 84.1 degrees</li>
-											<li class="fragment" data-fragment-index="3">Mapping can be roughly approximated as linear</li>
-										</ul >
-										<div class="fragment" data-fragment-index="3">
-											\[\begin{aligned}
-												pixel2angle(x) = \frac{x \times 84.1}{1920}
-											\end{aligned} \]
-										</div>
-							</li>
-
-							<li class="right fragment">
-								<figure class="bg-white">
-									<img src="dist/images/angle.png" alt="">
-								</figure>
-							</li>
-								
-						</div>
-					</section>
-
-				<section>
-					<h2>Automatically Estimating positions</h2>
-					<ul class="side-by-side">
-						<li class="fragment">
-							Pose Detection <em>(Pose)</em>
-							<figure>
-								<img src="dist/images/placeholder-image.png" alt="">
-							</figure>
-							<small>OpenPose [1]</small>
-						</li>
-						<li class="fragment">
-							Face Detection <em>(Face)</em>
-							<figure>
-								<img src="dist/images/placeholder-image.png" alt="">
-							</figure>
-							<small>Dlib [2]</small>
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Annotating the data</h2>
-					<ul>
-						<li class="fragment">Need to know how well these methods find people <em>(Detection)</em></li>
-						<li class="fragment">When these people are found how accurate are the estimations <em>(Accuracy)</em></li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Annotating the data</h2>
-					<ul class="side-by-side">
-						<li class="fragment">
-							Face+Mouth position
-							<video muted loop autoplay src="dist/videos/face_demo.mp4"></video>
-							<figure class="white">
-								<img src="dist/images/face_annotator.png" alt="">
-							</figure>
-						</li>
-						<li class="fragment">
-							Tracking
-							<video muted loop autoplay src="dist/videos/tracking.mp4"></video>
-							<small><em>Demo not using CHiME-5 data.</em></small>
-						</li>
-					</ul>
-					<div class="fragment smaller">
-						Tools available online: <a href="https://github.com/jackdeadman/video-annotation-tools">https://github.com/jackdeadman/video-annotation-tools</a>
-					</div>
-
-				</section>
-
-
-				<section>
-					<h2>Label visualisation</h2>
-					<iframe scrolling="no" src="http://localhost:8080/presentation.html" frameborder="0" width="700" height="700"></iframe>
-				</section>
-				-->
-
-				<!-- <section>
-					<h2>Comparing distributions</h2>
-					<img class="fit-height" src="dist/images/comparing_distributions_with_tracks.png" alt="">
-				</section>
-
-				<section>
-					<h2>Performance of automatic methods</h2>
-					<div class="side-by-side automatic-performance">
-						<div class="fragment">
-							Detection
-							<table>
-								<tr>
-									<th></th>
-									<th>Precision</th>
-									<th>Recall</th>
-									<th>F-Score</th>
-								</tr>
-								<tr>
-									<td><b>Face</b></td>
-									<td>98.7%</td>
-									<td>36.6%</td>
-									<td>52.5%</td>
-								</tr>
-								<tr>
-									<td><b>Pose</b></td>
-									<td>94.1%</td>
-									<td>60.5%</td>
-									<td>72.9%</td>
-								</tr>
-							</table>
-						</div>
-
-						<div class="fragment">
-							Accuracy (Pixels*)
-							<table>
-								<tr>
-									<th></th>
-									<th>X</th>
-									<th>Y</th>
-									<th>Euclidean</th>
-								</tr>
-								<tr>
-									<td>Face</td>
-									<td>23±2</td>
-									<td>18±1</td>
-									<td>32±2</td>
-								</tr>
-								<tr>
-									<td>Pose</td>
-									<td>24±3</td>
-									<td>27±2</td>
-									<td>40±4</td>
-								</tr>
-							</table>
-							* ± standard error
-						</div>
-					</div>
-				</section>
-
-				<section>
-					<h2>Speaker identity is not required
-						</h2>
-					<ul>
-						<li>Do not need speaker identity, sampling random visible speaker yields a very similar distribution</li>
-						<li>Therefore do not need to label entire dataset</li>
-					</ul>
-					<figure>
-						<img class="bg-white" src="dist/images/speaking_compressed.png" alt="">
-					</figure>
-				</section>
-
-				<section>
-					<h2>Speaker separation in the dataset</h2>
-					<ul>
-						<li>Approaches yield similar distributions</li>
-					</ul>
-					<figure>
-						<img src="dist/images/detection_comparison.png" alt="">
-					</figure>
-				</section>
-
-				<section>
-						<h2>Speaker separation in the dataset</h2>
-						<div class="space-above side-by-side automatic-performance">
-								<div class="fragment" data-fragment-index="1">
-									Separation
-									<table>
-										<tr>
-											<th></th>
-											<th>Screen (px)</th>
-											<th>Angle (°)</th>
-										</tr>
-										<tr>
-											<td>Face</td>
-											<td>380±268</td>
-											<td>17±12</td>
-										</tr>
-										<tr>
-											<td>Pose</td>
-											<td>427±274</td>
-											<td>19±12</td>
-										</tr>
-									</table>
-								</div>
-
-								<div class="fragment" data-fragment-index="2">
-									Position
-									<table>
-										<tr>
-											<th></th>
-											<th>Screen (px)</th>
-											<th>Angle (°)</th>
-										</tr>
-										<tr>
-											<td><b>Pose</b></td>
-											<td>−23±323</td>
-											<td>−1±14</td>
-										</tr>
-										<tr>
-											<td><b>Face</b></td>
-											<td>−35±302</td>
-											<td>−2±13</td>
-										</tr>
-									</table>
-									<small class="fragment bigger" data-fragment-index="2">
-											We define pixel 0 to be the centre of the screen.
-											 <li>Only 17 degree of separation between speakers</li>
-										</small>
-								</div>
-							</div>
-							<br>
-							<small class="fragment" data-fragment-index="1">
-									± standard deviation
-							</small>
-											
-							<br>
-					</section>
-
-				<section>
-					<h2>Analysis of simulated datasets</h2>
-					<ul>
-						<li class="fragment">
-							<b>SMS_WSJ [3]: </b>Speaker <u>separation</u> sampled from uniform distribution
-						</li>
-
-						<li class="fragment">
-							<b>WSJ0-2Mix spatialised [4]: </b>Speaker <u> 3D positions</u> in room randomly sampled with constraint on minimum distance
-						</li>
-						<li class="fragment">
-							<b>Proposed: </b>Speaker <u>location angles</u> sampled from a normal distribution fit on the real data
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Analysis of simulated datasets</h2>
-					<figure style="height: 400px;">
-						<img src="dist/images/comparison_1.png" alt="">
-					</figure>
-				</section>
-
-				<section>
-					<h2>Analysis of simulated datasets</h2>
-					<ul>
-						<li class="fragment">
-							<b>WSJ0-original: </b> Device in the centre of the room.
-						</li>
-
-						<li class="fragment">
-							<b>WSJ0-edges: </b>Same but with the device placed at the edge of the room.
-						</li>
-						<li class="fragment">
-							<b>WSJ0-edges-realistic: </b> devices at the edges with realistic positions for speakers.
-						</li>
-
-					</ul>
-				</section>
-
-				<section>
-					<h2>Analysis of simulated datasets</h2>
-					<figure style="height: 400px;">
-						<img src="dist/images/comparison_2.png" alt="">
-					</figure>
-				</section>
-
-				<section>
-						<h2>Experiments</h2>
-						<ul>
-							<li>Looked at how using a realistic distribution affects performance of speech enhancement and speech recognition.</li>
-						</ul>
-					</section>
-	
-					<section>
-						<h2>Baseline system</h2>
-						<ul>
-							<li class="fragment">Baseline system from SMS_WSJ [3]</li>
-							<li class="fragment">cACGMM mask estimator</li>
-							<li class="fragment">MVDR beamformer</li>
-							<li class="fragment">MFCC + ivector frontend</li>
-							<li class="fragment">f-TDNN acoustic model</li>
-							<li class="fragment">3-gram language model</li>
-						</ul>
-					</section>
-
-				<section>
-					<h2>Experimental Setup</h2>
-					<ul>
-						<li>Setup is based off SMS_WSJ [3]</li>
-						<li>Random room configuration</li>
-						<li>Microphone Array placed in the centre of the room with some pertubation</li>
-					</ul>
+					<aside class="notes">
+						I registered to ELTC Writing Advisory Service (WAS). Help to find sources of weaknesses in my writing and get tools to improve.<br>
+						Attention mechanism can be explored now during the separation.<br>
+						Desided to perform an intelligibility analysis to show the difficulties of the task.
+					</aside>
 				</section>
 				<section>
-					<h2>Results using SMS_WSJ</h2>
-					<table class="automatic-performance asr-results">
-						<tr>
-							<th>Mask</th>
-							<th>Enhancement</th>
-							<th>Dataset</th>
-							<th>SDR</th>
-							<th>PESQ</th>
-							<th>STOI</th>
-							<th>WER</th>
-						</tr>
-						
-						<tr class="fragment" data-fragment-index="1">
-							<td>cACGMM</td>
-							<td>MVDR</td>
-							<td>Proposed</td>
-							<td>9.0</td>
-							<td>1.85</td>
-							<td>0.74</td>
-							<td>31.49</td>
-						</tr>
-						<tr class="fragment" data-fragment-index="1">
-							<td>cACGMM</td>
-							<td>MVDR</td>
-							<td>SMS_WSJ</td>
-							<td>12.3</td>
-							<td>2.07</td>
-							<td>0.82</td>
-							<td>18.15</td>
-						</tr>
+					<br>
+					<br>
+					<br>
+					<br>
+					<h2>Thank you!!</h2>
 
-						<tr class="fragment" data-fragment-index="2">
-							<td>cACGMM</td>
-							<td>Mask</td>
-							<td>Proposed</td>
-							<td>7.1</td>
-							<td>1.73</td>
-							<td>0.71</td>
-							<td>49.09</td>
-						</tr>
-						<tr class="fragment" data-fragment-index="2">
-							<td>cACGMM</td>
-							<td>Mask</td>
-							<td>SMS_WSJ</td>
-							<td>9.5</td>
-							<td>1.83</td>
-							<td>0.78</td>
-							<td>40.01</td>
-						</tr>
-
-			
-						<tr class="fragment" data-fragment-index="3">
-							<td>None</td>
-							<td>Channel=0</td>
-							<td>Proposed</td>
-							<td>-0.4</td>
-							<td>1.49</td>
-							<td>0.66</td>
-							<td>78.93</td>
-						</tr>
-						<tr class="fragment" data-fragment-index="3">
-							<td>None</td>
-							<td>Channel=0</td>
-							<td>SMS_WSJ</td>
-							<td>-0.4</td>
-							<td>1.50</td>
-							<td>0.66</td>
-							<td>78.73</td>
-						</tr>
-
-						<tr class="fragment gray" data-fragment-index="4">
-							<td>IBM</td>
-							<td>MVDR</td>
-							<td>Proposed</td>
-							<td>10.4</td>
-							<td>1.88</td>
-							<td>0.77</td>
-							<td>21.23</td>
-						</tr>
-						<tr class="fragment gray" data-fragment-index="4">
-							<td>IBM</td>
-							<td>MVDR</td>
-							<td>SMS_WSJ</td>
-							<td>12.9</td>
-							<td>2.06</td>
-							<td>0.83</td>
-							<td>14.23</td>
-						</tr>
-						
-					</table>
 				</section>
-
-				<section>
-					<h2>SMS_WSJ example</h2>
-					<ul>
-						<li>Show example utterances</li>
-						<li>Show coherence</li>
-						<li>Show speech enhancement</li>
-						<li>Show transcript</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Results using WSJ0-2Mix</h2>
-					<table class="automatic-performance">
-							<tr>
-								<th>Dataset</th>
-								<th>SDR</th>
-								<th>PESQ</th>
-								<th>STOI</th>
-							</tr>
-							
-							<tr class="fragment" data-fragment-index="1">
-								<td>WSJ0-original</td>
-								<td>15.1</td>
-								<td>2.50</td>
-								<td>0.83</td>
-							</tr>
-							<tr class="fragment" data-fragment-index="2">
-								<td>WSJ0-edges</td>
-								<td>15.2</td>
-								<td>2.61</td>
-								<td>0.82</td>
-							</tr>
-	
-
-							<tr class="fragment" data-fragment-index="3">
-								<td>WSJ0-edges-realistic</td>
-								<td>14.5</td>
-								<td>2.61</td>
-								<td>0.71</td>
-							</tr>
-							
-						</table>
-				</section>
-	
-
-				<section>
-					<h2>Conclusion</h2>
-					<ul>
-						<li class="fragment">Speaker position is a variable not often discussed</li>
-						<li class="fragment">Can have a large impact on the performance of speech enhancement and ASR</li>
-						<li class="fragment">Argue that is should be a larger consideration incase algorithm that work only in simulations are persued just because they exploit easier speaker distributions</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>References</h2>
-				</section>
-			-->
 			</div>
 			<div class="footer">
 				<img src="dist/university_logo.jpg" alt="uni logo">

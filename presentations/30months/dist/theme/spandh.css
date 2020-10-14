@@ -429,3 +429,7 @@ small {
 .notch-right80 {
   position: relative !important;
   left: 80px !important; }
+
+.notch-left200 {
+  position: relative !important;
+  right: 200px !important; }
