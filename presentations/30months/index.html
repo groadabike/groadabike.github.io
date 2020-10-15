@@ -33,10 +33,10 @@
 					<h2>Presentation Outline</h2>
 					<br>
 					<ol>
-						<li>Overview of the project</li>
-						<li>State of Stage 1</li>
-						<li>State of Stage 2</li>
-						<li>Plan for the following 18 months</li>
+						<li class="fragment highlight-red">Overview of the project</li>
+						<li>Stage 1</li>
+						<li>Stage 2</li>
+						<li>Plan next 18 months</li>
 					</ol>
 				</section>
 
@@ -50,9 +50,9 @@
 					</p>
 				</section -->
 
-
 				<section>
-					<h2>The Task</h2>
+					<h2>Overview of the project</h2>
+					<h3>The Task</h3>
 					<div class="" >To recognise sung speech from an accompaniment singing.</div>
 					<br>
 					<div class="">
@@ -70,33 +70,42 @@
 				</section>
 
 				<section>
-					<h2>Breaking down the task</h2>
+					<h2>Overview of the project</h2>
+					<h3>Breaking down the task</h3>
 					<div class="">The project was split into three components or stages.</div>
-					<br>
 					<ol>
 						<li class=" left smaller">Unaccompanied singing recognition.</li>
 						<li class=" smaller left">Audio source separation and singer enhancement.</li>
 						<li class=" smaller left">Jointly optimise the singer enhancement with the acoustic model</li>
 					</ol>
-					<div><br></div>
 					<div class="">
 						<figure style="width: 700px; margin: auto;">
 							<img src="dist/images/splitTask2.png" alt="">
 						</figure>
 					</div>
+				</section>
 
-
-
+				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li class="fragment highlight-red">Stage 1</li>
+						<li>Stage 2</li>
+						<li>Plan next 18 months</li>
+					</ol>
 				</section>
 
 				<section>
 					<h2>Stage 1</h2>
 					<p class="fragment">Considered a complete stage!</p>
-					<ul class="fragment">
-						<li>Two papers</li>
+					<ul class="fragment automatic-performance">
+						<li>Two papers:</li>
+						<br>
 						<ul>
-							<li>Automatic  Lyric  Transcription  from  Karaoke  Vocal Tracks: Resources and a Baseline System (Interspeech 2019).</li>
-							<li>The  Use  of  Voice  Source  Features  for  Sung  Speech Recognition (to be submitted ICASSP 2021).</li>
+							<li>Roa Dabike, Gerardo and Barker, Jon. "Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System". In <em>Proc. Interspeech</em>. 2019.</li>
+							<br>
+							<li>Roa Dabike, Gerardo and Barker, Jon. "The Use of Voice Source Features for Sung Speech Recognition". To be submitted to <em>Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>. 2021.</li>
 						</ul>
 					</ul>
 					<aside class="notes">
@@ -114,9 +123,20 @@
 				</section>
 
 				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li>Stage 1</li>
+						<li class="fragment highlight-red">Stage 2</li>
+						<li>Plan next 18 months</li>
+					</ol>
+				</section>
+
+				<section>
 					<h2>Stage 2</h2>
 					<div class="fragment">
-						Plan Proposed in 24-month panel
+						Plan Proposed in 24-months panel
 					</div>
 					<br>
 					<ul class="fragment">
@@ -148,6 +168,9 @@
 							<li class="notch-left100">11494 song arrangements.</li>
 						</ul>
 					</ul>
+					<aside class="notes">
+						Released on Oct 2019. I was inform by the Smule research tem after the 24 month panel.
+					</aside>
 				</section>
 
 				<section>
@@ -193,7 +216,7 @@
 					<h3>DAMP-VSEP challenges</h3>
 					<div class="fragment">
 						Different backgrounds are perceptually identical.
-						<div class="notch-left">
+						<div class="fragment notch-left">
 							<figure style="width: 1200px; margin: auto;">
 								<img src="dist/images/offset.png" alt="">
 							</figure>
@@ -230,7 +253,6 @@
 						</div>
 					</div>
 
-
 					<aside class="notes">
 						Vocal in mixture tend to be louder.
 
@@ -253,6 +275,11 @@
 								<li>Vocal is shifted in relation with the mixture.</li>
 								<li>Vocal mixed in the background.</li>
 							</ul>
+							<div class="fragment notch-left automatic-performance">
+								<figure style="width: 700px; margin: auto;">
+									<img src="dist/images/missmatch.png" alt="">
+								</figure>
+							</div>
 						</div>
 						<div>
 							<div>
@@ -278,9 +305,10 @@
 				<section>
 					<h2>Stage 2</h2>
 					<h3>Model Architecture</h3>
+					Convolutional TasNet
 					<div>
 						<br>
-						<div class="">
+						<div class="fragment">
 							<figure style="width: 1000px; margin: auto;">
 								<img src="dist/images/TasNet.png" alt="">
 							</figure>
@@ -408,6 +436,7 @@
 				</section>
 
 				<section>
+					<h2>Stage 2</h2>
 					<h3>Preliminary Results</h3>
 					<div class="side-by-side automatic-performance">
 						<div class="notch-left">
@@ -427,7 +456,7 @@
 							<li>Exp 2: <audio controls src="dist/audio/enhSamples/exp2.wav" ></audio></li></li>
 							<li>Exp 3:<audio controls src="dist/audio/enhSamples/exp3.wav" ></audio></li>
 								<br>
-								<br>
+
 							<li>Exp 4:<audio controls src="dist/audio/enhSamples/exp4.wav" ></audio></li>
 							<li>Exp 5:<audio controls src="dist/audio/enhSamples/exp5.wav" ></audio></li>
 							<li>Exp 6:<audio controls src="dist/audio/enhSamples/exp6.wav" ></audio></li>
@@ -479,6 +508,11 @@
 
 
 							</table>
+							<div class="fragment">
+								<p>
+									DALI is a collection of polyphonic songs sourced from YouTube with synchronised audio, lyrics and notes
+								</p>
+							</div>
 						</div>
 
 
@@ -487,6 +521,18 @@
 
 					</aside>
 				</section>
+
+				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li>Stage 1</li>
+						<li>Stage 2</li>
+						<li class="fragment highlight-red">Plan next 18 months</li>
+					</ol>
+				</section>
+
 
 				<section>
 					<h2>Plan next 18 months</h2>
@@ -537,10 +583,11 @@
 					</aside>
 				</section>
 				<section>
-					<h2>Gantt Chart</h2>
+					<h2>Plan next 18 months</h2>
+					<h3>Gantt Chart</h3>
 
 					<div class="fragment automatic-performance">
-						<figure style="width: 1000px; margin: auto;">
+						<figure style="width: 900px; margin: auto;">
 							<img src="dist/images/Gantt.png" alt="">
 						</figure>
 					</div>
