@@ -304,7 +304,9 @@ Some of the terms have a link to the definition on the deepai.org website.
 
 
 # Documentation of Components
-If you check the **final.config** file after parse the xconfig, you will see that several components are inserted. Many of then are implicit when the definition of the network.
+If you check the **final.config** file after parse the xconfig, 
+you will see that several components are inserted. 
+Many of then are implicit when the definition of the network.
 1. The [NaturalGradientAffineComponent](http://kaldi-asr.org/doc/nnet-simple-component_8h_source.html#l00745) component is the *Natural Gradient for Stochastic Gradient Descent* described in [paper](http://www.danielpovey.com/files/2015_aistats_dnn.pdf).
 
 2. The [LinearComponent](http://kaldi-asr.org/doc/nnet-simple-component_8h_source.html#l00862) represents a linear (matrix) transformation of its input, with a matrix as its trainable parameters.  It's the same as NaturalGradientAffineComponent, but without the bias term.
