@@ -1,0 +1,831 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Panel Meeting</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<!-- <link rel="stylesheet" href="dist/theme/sky.css" id="theme"> -->
+		<link rel="stylesheet" href="dist/theme/spandh.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<div>
+					    <br><br><br>
+						Automatic Lyrics Transcription from Single Audio Channel Homophonic Music Recordings
+					</div>
+					<span class="authors">
+							Gerardo Roa Dabike
+					</span>
+				</section>
+
+
+				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li class="fragment highlight-red">Overview of the project</li>
+						<li>Stage 1</li>
+						<li>Stage 2</li>
+						<li>Plan next 18 months</li>
+					</ol>
+				</section>
+
+
+				<section>
+					<h2>Overview of the project</h2>
+					<h3>The Task</h3>
+					<div class="" >To recognise sung speech from an accompaniment singing.</div>
+					<br>
+					<div class="">
+						<figure style="width: 900px; margin: auto;">
+							<img src="dist/images/thetask.png" alt="">
+						</figure>
+					</div>
+				</section>
+
+				<section>
+					<h2>Overview of the project</h2>
+					<h3>Aims</h3>
+					<p class="">
+						To automatically recognise the sung speech from a homophonic single-channel audio recording,
+						by adapting robust systems for typical speech and taking advantages of the musical prosody
+						information of both the background accompaniment and the sung speech.
+					</p>
+				</section>
+
+				<section>
+					<h2>Overview of the project</h2>
+					<h3>Breaking down the task</h3>
+					<div class="">The project was split into three components or stages.</div>
+					<ol>
+						<li class=" left smaller">Unaccompanied singing recognition.</li>
+						<li class=" smaller left">Audio source separation and singer enhancement.</li>
+						<li class=" smaller left">Jointly optimise the singer enhancement with the acoustic model</li>
+					</ol>
+					<div class="">
+						<figure style="width: 700px; margin: auto;">
+							<img src="dist/images/splitTask2.png" alt="">
+						</figure>
+					</div>
+				</section>
+
+				<section>
+					<h2>Overview of the project</h2>
+					<h3>Research Questions - Stage 1</h3>
+					<ol class="automatic-performance_1">
+						<li>Using state-of-the-art ASR systems for spoken speech, is it possible to construct a robust and fair DNN ASR baseline system for an unaccompanied singing scenario?
+						</li>
+						<li>Given a baseline system for an unaccompanied singing scenario, can the performance of the system be improved by incorporating musically motivated features?
+						</li>
+
+					</ol>
+				</section>
+				<section>
+					<h2>Overview of the project</h2>
+					<h3>Research Questions - Stage 2</h3>
+					<ol class="automatic-performance_1">
+						<li>Given that suitable training databases are small by modern ASR standards. How can a singing enhancement DNN approach be trained to obtain a high-quality singing segment suitable for ASR task?
+						</li>
+						<li>Can musically motivated features to be used to increase the performance of the DNN singer enhancement model?
+						</li>
+						<li>Can the singing enhancement model be extended also to recover the background accompaniment?
+						</li>
+						<li>
+							Given the background accompaniment, are there useful musically motivated features that can be exploited for acoustic modelling?
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Overview of the project</h2>
+					<h3>Research Questions - Stage 3</h3>
+					<ol class="automatic-performance_1">
+						<li>Given the source separation and the ASR system, can they be joined in a single system?</li>
+						<li>Is there an advantage to jointly optimising the separation and ASR stages, compared to training them as separated systems?
+
+						</li>
+					</ol>
+				</section>
+
+
+				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li class="fragment highlight-red">Stage 1</li>
+						<li>Stage 2</li>
+						<li>Plan next 18 months</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Stage 1</h2>
+					<p class="fragment">Considered a complete stage!</p>
+					<ul class="fragment automatic-performance">
+						<li>Two papers:</li>
+						<br>
+						<ul>
+							<li>Roa Dabike, Gerardo and Barker, Jon. "Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System". In <em>Proc. Interspeech</em>. 2019.</li>
+							<br>
+							<li>Roa Dabike, Gerardo and Barker, Jon. "The Use of Voice Source Features for Sung Speech Recognition". To be submitted to <em>Proc. IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>. 2021.</li>
+						</ul>
+					</ul>
+					<aside class="notes">
+						P1<br>
+						- Present a baseline for English spoken sung recognition task. <br>
+						- Processing step to use Sing!300x30x2 Dataset for ASR. Including alignment, segmentation<br>
+						- Human annotators correct the alignment timings and re-transcribe the speech. <br>
+						P2<br>
+						- Presents performances using voice source features<br>
+						- Pitch may help to improve voiced/unvoiced and vowels sounds discrimination, normalise for different speakers<br>
+						- Jitter, shimmer and HNR are associated with speaker identity may improve speaker normalisation.<br>
+						- This was the first study using this features on a large sung speech data.<br>
+						- Only beneficial for small size data.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li>Stage 1</li>
+						<li class="fragment highlight-red">Stage 2</li>
+						<li>Plan next 18 months</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<div class="fragment">
+						Plan Proposed in 24-months panel
+					</div>
+					<br>
+					<ul class="fragment">
+						<li>Baseline replication.</li>
+						<li>Audio source separation (ASS) experiments.</li>
+						<li>Musically motivated features for ASS.</li>
+						<li>Beat information for AM.</li>
+					</ul>
+					<aside class="notes">
+						1-Baseline replication  -> replace by side-by-side comparison of SOTA techniques.
+						<br>
+						2-ASS Experiments -> Experiments on 2 different datasets.
+						<br>
+						3-Musically motivated features -> Starting experiment by using instruments encoding features.
+						<br>
+						4-Beat information for AM -> pending
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3 class="fragment">Dataset</h3>
+					<ul class="fragment">
+						<li class="notch-left100">Damp Vocal Separation - DAMP-VSEP</li>
+						<ul>
+							<li class="notch-left100">41000 30-sec segments - 20800 solo ensemble.</li>
+							<li class="notch-left100">155 countries and 36 languages - 8500 English performances.</li>
+							<li class="notch-left100">6456 singers.</li>
+							<li class="notch-left100">11494 song arrangements.</li>
+						</ul>
+					</ul>
+					<aside class="notes">
+						Released on Oct 2019. I was inform by the Smule research tem after the 24 month panel.<br>
+						User (vocal) as a consumer of arrangements (background)<br>
+						User as a provider of arrangement (In duet user provider id vocal 2)<br>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Dataset</h3>
+					<div>
+						<div class="fragment">
+							<table>
+								<tr>
+									<th><b>Dataset</b></th>
+									<th><b>Utt</b></th>
+									<th><b>Size</b></th>
+								</tr>
+								<tr>
+									<td>English train</td>
+									<td>9243</td>
+									<td>77 Hrs</td>
+								</tr>
+								<tr>
+									<td>Solo train</td>
+									<td>20660</td>
+									<td>174 Hrs</td>
+								</tr>
+								<tr>
+									<td>Validation</td>
+									<td>100</td>
+									<td>0.8 Hrs</td>
+								</tr>
+								<tr>
+									<td>Evaluation</td>
+									<td>100</td>
+									<td>0.8 Hrs</td>
+								</tr>
+							</table>
+						</div>
+
+
+					</div>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>DAMP-VSEP challenges</h3>
+					<div class="fragment">
+						Different backgrounds are perceptually identical.
+						<div class="fragment notch-left">
+							<figure style="width: 1200px; margin: auto;">
+								<img src="dist/images/offset.png" alt="">
+							</figure>
+						</div>
+					</div>
+					<aside class="notes">
+						Example of why  cross correlation to group the backgrounds was needed.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>DAMP-VSEP challenges</h3>
+					<div class="fragment side-by-side automatic-performance">
+						<div>
+							<br>
+							<br>
+							<ul class="notch-left100">
+								<li>Mixture include non-linear effects.</li>
+								<li>Vocal energy is scaled in mixture.</li>
+							</ul>
+
+						</div>
+						<div>
+							<div>
+								Mixture : &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/nonlineareffect/mix.wav" ></audio>
+							</div>
+							<div>
+								Vocal : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/nonlineareffect/vocal.wav" ></audio>
+							</div>
+							<div>
+								Background : <audio controls src="dist/audio/nonlineareffect/background.wav" ></audio>
+							</div>
+						</div>
+					</div>
+
+					<aside class="notes">
+						Vocal in mixture tend to be louder.
+
+						Example of non-linear effect:<br>
+						- Chorus<br>
+						- Distortion<br>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>DAMP-VSEP challenges</h3>
+
+					<div class="fragment side-by-side automatic-performance">
+						<div>
+							<br>
+							<br>
+							<ul class="notch-left100">
+								<li>Vocal is shifted in relation with the mixture.</li>
+								<li>Vocal mixed in the background.</li>
+							</ul>
+							<div class="fragment notch-left automatic-performance">
+								<figure style="width: 700px; margin: auto;">
+									<img src="dist/images/missmatch.png" alt="">
+								</figure>
+							</div>
+						</div>
+						<div>
+							<div>
+								Mixture : &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/vocalshifted/mix.wav" ></audio>
+							</div>
+							<div>
+								Vocal : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <audio controls src="dist/audio/vocalshifted/vocal.wav" ></audio>
+							</div>
+							<div>
+								Background : <audio controls src="dist/audio/vocalshifted/background.wav" ></audio>
+							</div>
+						</div>
+					</div>
+
+
+					<aside class="notes">
+						Forward vocal to second 19 to match mixture.<br>
+						Take 1 sec chunks of vocal and correlate with mixture.
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Model Architecture</h3>
+					Convolutional TasNet
+					<div>
+						<br>
+						<div class="fragment">
+							<figure style="width: 1000px; margin: auto;">
+								<img src="dist/images/TasNet.png" alt="">
+							</figure>
+						</div>
+
+
+					</div>
+					<aside class="notes">
+						TasNet = Deep LSTM network plus fully connected with softmask for mask generation<br>
+
+						ConvTasNet = Temporal Convolutional Network as replacement of RNNs for sequence modelling tasks<br>
+						Series of stacked 1D dilated convolutional blocks with increased dilation factors.<br>
+						M convolutional blocks are then repeated R times.
+					</aside>
+				</section>
+
+				<!-- section>
+					<h2>Stage 2</h2>
+					<h3>Preliminary Results</h3>
+					<div class="side-by-side automatic-performance">
+						<div class="fragment notch-left200">
+							<h4>English train set</h4>
+							<table>
+								<tr>
+									<th>Exp</th>
+									<th>Mixture</th>
+									<th>M</th>
+									<th>R</th>
+									<th nowrap>SDR (V/B)</th>
+									<th nowrap>SI-SDR (V/B)</th>
+									<th>STOI</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Remix</td>
+									<td>8</td>
+									<td>4</td>
+									<td>6.13/13.70</td>
+									<td>4.84/12.85</td>
+									<td>0.5364</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Remix</td>
+									<td>10</td>
+									<td>4</td>
+									<td>6.24/13.73</td>
+									<td>5.05/12.83</td>
+									<td>0.5317</td>
+								</tr>
+							</table>
+						</div>
+						<div class="fragment ">
+							<h4>Solo ensemble train set</h4>
+							<table>
+								<tr>
+									<th><b>Exp</b></th>
+									<th><b>Mixture</b></th>
+									<th><b>M</b></th>
+									<th><b>R</b></th>
+									<th nowrap><b>SDR (V/B)</b></th>
+									<th nowrap><b>SI-SDR (V/B)</b></th>
+									<th><b>STOI</b></th>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Remix</td>
+									<td>10</td>
+									<td>4</td>
+									<td>15.02/14.76</td>
+									<td>14.14/14.48</td>
+									<td>0.6808</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Original</td>
+									<td>10</td>
+									<td>4</td>
+									<td>-8.44/11.71</td>
+									<td>-23.42/-2.33</td>
+									<td>0.2750</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div class="fragment automatic-performance">
+						<br>
+						<h4>Composite Loss function</h4>
+						<table>
+							<tr>
+								<th><b>Exp</b></th>
+								<th><b>M</b></th>
+								<th><b>R</b></th>
+								<th><b>Alpha</b></th>
+								<th align="center"><b>SDR (V/B)</b></th>
+								<th nowrap align="center"><b>SI-SDR (V/B)</b></th>
+								<th><b>STOI</b></th>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>10</td>
+								<td>4</td>
+								<td>0.1</td>
+								<td>2.38/13.62</td>
+								<td>-15.92/-2.04</td>
+								<td>0.6530</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>10</td>
+								<td>4</td>
+								<td>0.5</td>
+								<td>2.85/11.81</td>
+								<td>-3.67/-1.62</td>
+								<td>0.6401</td>
+							</tr>
+
+						</table>
+					</div>
+					<aside class="notes">
+						Previous performances represents the total average of the average performance between vocal and background.
+						I fixed the score to show average per source.
+					</aside>
+				</section -->
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Preliminary Results</h3>
+					<div class="side-by-side automatic-performance">
+						<div class="fragment notch-left">
+							<h4>English train set</h4>
+							<table>
+								<tr>
+									<th>Exp</th>
+									<th>Mixture</th>
+									<th>M</th>
+									<th>R</th>
+									<th nowrap>SDR (V/B)</th>
+									<th nowrap>SI-SDR (V/B)</th>
+									<th>STOI</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Remix</td>
+									<td>8</td>
+									<td>4</td>
+									<td>6.13/13.70</td>
+									<td>4.84/12.85</td>
+									<td>0.5364</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Remix</td>
+									<td>10</td>
+									<td>4</td>
+									<td>6.24/13.73</td>
+									<td>5.05/12.83</td>
+									<td>0.5317</td>
+								</tr>
+							</table>
+						</div>
+						<div>
+							<ul class="fragment notch-right80">
+								<li>Vocal : &nbsp; &nbsp; &nbsp;<audio controls src="dist/audio/enhSamples/vocal.wav" ></audio></li>
+								<li>Remix : &nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/remix.wav" ></audio></li>
+								<li>Exp 1: &nbsp; &nbsp;&nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/exp1.wav" ></audio></li>
+								<li>Exp 2: &nbsp; &nbsp;&nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/exp2.wav" ></audio></li>
+							</ul>
+						</div>
+					</div>
+
+
+
+					<aside class="notes">
+						Previous performances represents the total average of the average performance between vocal and background.
+						I fixed the score to show average per source.
+					</aside>
+				</section>
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Preliminary Results</h3>
+					<div class="side-by-side automatic-performance">
+						<div class="fragment notch-left">
+							<h4>Solo ensemble train set</h4>
+							<table>
+								<tr>
+									<th><b>Exp</b></th>
+									<th><b>Mixture</b></th>
+									<th><b>M</b></th>
+									<th><b>R</b></th>
+									<th nowrap><b>SDR (V/B)</b></th>
+									<th nowrap><b>SI-SDR (V/B)</b></th>
+									<th><b>STOI</b></th>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Remix</td>
+									<td>10</td>
+									<td>4</td>
+									<td>15.02/14.76</td>
+									<td>14.14/14.48</td>
+									<td>0.6808</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Original</td>
+									<td>10</td>
+									<td>4</td>
+									<td>-8.44/11.71</td>
+									<td>-23.42/-2.33</td>
+									<td>0.2750</td>
+								</tr>
+							</table>
+						</div>
+						<div>
+							<ul class="fragment notch-right80">
+								<li>Vocal : &nbsp; &nbsp; &nbsp;<audio controls src="dist/audio/enhSamples/vocal.wav" ></audio></li>
+								<li>Remix : &nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/remix.wav" ></audio></li>
+								<li>Mixture :  <audio controls src="dist/audio/enhSamples/mixture.wav" ></audio></li>
+								<li>Exp 3: &nbsp; &nbsp;&nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/exp3.wav" ></audio></li>
+								<li>Exp 4: &nbsp; &nbsp;&nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/exp4.wav" ></audio></li>
+
+							</ul>
+						</div>
+					</div>
+
+
+
+					<aside class="notes">
+						Previous performances represents the total average of the average performance between vocal and background.
+						I fixed the score to show average per source.
+					</aside>
+				</section>
+				<section>
+					<h2>Stage 2</h2>
+					<h3>Preliminary Results</h3>
+					<div class="side-by-side automatic-performance">
+						<div class="notch-left">
+							<div class="fragment notch-left200">
+								<figure style="width: 1000px; margin: auto;">
+									<img src="dist/images/lossfn.png" alt="">
+								</figure>
+							</div>
+
+							<div class="fragment">
+							<h4>Composite Loss function</h4>
+							<table>
+								<tr>
+									<th><b>Exp</b></th>
+									<th><b>Alpha</b></th>
+									<th align="center"><b>SDR (V/B)</b></th>
+									<th nowrap align="center"><b>SI-SDR (V/B)</b></th>
+									<th><b>STOI</b></th>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>0.1</td>
+									<td>2.38/13.62</td>
+									<td>-15.92/-2.04</td>
+									<td>0.6530</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>0.5</td>
+									<td>2.85/11.81</td>
+									<td>-3.67/-1.62</td>
+									<td>0.6401</td>
+								</tr>
+
+							</table>
+							<p>Mixture=Original, M=10, R=4</p>
+							</div>
+						</div>
+						<div>
+							<ul class="fragment notch-right80">
+								<li>Vocal : &nbsp; &nbsp; &nbsp;<audio controls src="dist/audio/enhSamples/vocal.wav" ></audio></li>
+								<li>Mixture :  <audio controls src="dist/audio/enhSamples/mixture.wav" ></audio></li>
+								<li>Exp 5: &nbsp; &nbsp;&nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/exp5.wav" ></audio></li>
+								<li>Exp 6: &nbsp; &nbsp;&nbsp; &nbsp; <audio controls src="dist/audio/enhSamples/exp6.wav" ></audio></li>
+
+							</ul>
+						</div>
+					</div>
+
+
+
+					<aside class="notes">
+						Previous performances represents the total average of the average performance between vocal and background.
+						I fixed the score to show average per source.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Stage 2</h2>
+					<h3>ASR evaluation</h3>
+					<div class="fragment side-by-side automatic-performance">
+						<div class="notch-left">
+							<figure style="width: 700px; margin: auto;">
+								<img src="dist/images/system_pipeline.png" alt="">
+							</figure>
+						</div>
+						<div class="notch-right80">
+							<table>
+								<tr>
+									<th nowrap>Sung speech</th>
+									<th nowrap>ASS Exp</th>
+									<th nowrap>DAMP-VSEP</th>
+									<th>DALI</th>
+								</tr>
+								<tr>
+									<td rowspan="2">Reference</td>
+									<td nowrap>Clean Vocal</td>
+									<td>23.83</td>
+									<td>-</td>
+							   </tr>
+								<tr>
+									<td>Mixture</td>
+									<td>63.98</td>
+									<td>89.81</td>
+								</tr>
+								<tr>
+									<td rowspan="2">Enhanced</td>
+									<td>Exp 2</td>
+									<td>49.90</td>
+									<td>79.83</td>
+								</tr>
+								<tr>
+									<td>Exp 5</td>
+									<td>68.93</td>
+									<td>89.35</td>
+								</tr>
+
+
+							</table>
+							<div class="fragment automatic-performance">
+								<p>
+									DALI is a collection of polyphonic songs sourced from YouTube with synchronised audio, lyrics and notes
+								</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="fragment automatic-performance">
+						<ul>
+						<li>Roa Dabike, Gerardo and Barker, Jon. "The Sheffield University System for the MIREX 2020:Lyrics Transcription Task".
+							Submitted to <emp>International Society for Music Information Retrieval (ISMIR)</emp>. 2020.</li>
+						</ul>
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Presentation Outline</h2>
+					<br>
+					<ol>
+						<li>Overview of the project</li>
+						<li>Stage 1</li>
+						<li>Stage 2</li>
+						<li class="fragment highlight-red">Plan next 18 months</li>
+					</ol>
+				</section>
+
+
+				<section>
+					<h2>Plan next 18 months</h2>
+					<h3 class="fragment">Musically Motivated Features</h3>
+					<div>
+						<p class="fragment">The use instrument embedding features.</p>
+						<div class="fragment side-by-side automatic-performance">
+							<div class="notch-left">
+								<br>
+								<br>
+								<ul>
+									<li>Train a convolutional autoencoder for instrument classification.</li>
+									<li>Use embedding features to inform the model about the musical accompaniment. </li>
+								</ul>
+							</div>
+							<div>
+								<br>
+								<figure style="width: 700px; margin: auto;">
+									<img src="dist/images/TasNetplusEmbedding.png" alt="">
+								</figure>
+
+							</div>
+
+						</div>
+
+
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section>
+					<h2>Plan next 18 months</h2>
+					<h3 class="fragment">Jointly optimised system</h3>
+					<div>
+						<br>
+						<div class="fragment side-by-side automatic-performance">
+							<figure style="width: 1000px; margin: auto;">
+								<img src="dist/images/end2end.png" alt="">
+							</figure>
+						</div>
+
+
+
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+				<section>
+					<h2>Plan next 18 months</h2>
+					<h3>Gantt Chart</h3>
+
+					<div class="fragment automatic-performance">
+						<figure style="width: 900px; margin: auto;">
+							<img src="dist/images/Gantt.png" alt="">
+						</figure>
+					</div>
+					<aside class="notes">
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Review 24-month panel recommendations</h2>
+					<ul>
+						<li  class="fragment">Improve explanation of ideas and writing skills.</li>
+						<li class="fragment">Attention mechanisms.</li>
+						<li class="fragment">Listening experiments.</li>
+					</ul>
+					<aside class="notes">
+						I registered to ELTC Writing Advisory Service (WAS). Help to find sources of weaknesses in my writing and get tools to improve.<br>
+						Attention mechanism can be explored now during the separation.<br>
+						Desided to perform an intelligibility analysis to show the difficulties of the task.
+					</aside>
+				</section>
+				<section>
+					<br>
+					<br>
+					<br>
+					<br>
+					<h2>Thank you!!</h2>
+
+				</section>
+			</div>
+			<div class="footer">
+				<img src="dist/university_logo.jpg" alt="uni logo">
+				<img src="dist/logo_big.jpg" alt="SpandH logo">
+				<span>30-Months Panel Meeting</span>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+                center: false,
+                
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMath, RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
