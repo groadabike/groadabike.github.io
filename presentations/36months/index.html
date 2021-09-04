@@ -18,77 +18,106 @@
 
 		<div class="reveal">
 			<div class="slides">
+				<!--TITLE-->
 				<section>
 					<div>
 					    <br><br><br>
 						Automatic Sung Speech Recognition from Single Channel Music Recordings
+						<br><br>
 					</div>
 					<span class="authors">
 							Gerardo Roa Dabike
 					</span>
 				</section>
 
-
+				<!--OUTLINE-->
 				<section>
 					<h2>Presentation Outline</h2>
 					<br>
 					<ol>
-						<li class="fragment highlight-red">Overview of the project</li>
-						<li>Stage 1</li>
-						<li>Stage 2</li>
-						<li>Plan next 18 months</li>
+						<li class="fragment highlight-red">Project Description</li>
 					</ol>
 				</section>
 
-
+				<!--PROJECT DESCRIPTION-->
 				<section>
-					<h2>Overview of the project</h2>
-					<h3>The Task</h3>
-					<div class="" >To recognise sung speech from a musical accompanied singing.</div>
-					<br>
-					<div class="">
-						<figure style="width: 900px; margin: auto;">
-							<img src="dist/images/thetask.png" alt="">
-						</figure>
-					</div>
-				</section>
-
-				<section>
-					<h2>Overview of the project</h2>
+					<h2>Project Description</h2>
 					<h3>Aims</h3>
 					<p class="">
-						To automatically recognise the sung speech from a homophonic single-channel audio recording,
-						by adapting robust systems for typical speech and taking advantages of the musical prosody
-						information of both the background accompaniment and the sung speech.
+						To automatically recognise the sung speech from a single channel music recording by
+						analysing robust spoken speech technologies and adapting them by exploiting musical
+						information from both the background accompaniment and the sung speech.
 					</p>
 				</section>
 
-				<section>
-					<h2>Overview of the project</h2>
+				<section data-auto-animate>
+					<h2>Project Description</h2>
 					<h3>Breaking down the task</h3>
-					<div class="">The project was split into three components or stages.</div>
 					<ol>
-						<li class=" left smaller">Unaccompanied singing recognition.</li>
-						<li class=" smaller left">Audio source separation and singer enhancement.</li>
-						<li class=" smaller left">Jointly optimise the singer enhancement with the acoustic model</li>
+						<li class="fragment smaller left highlight-red" data-fragment-index="1">Clean sung speech recognition.</li>
+						<li class="smaller left">Musical audio source separation.</li>
+						<li class="smaller left">Polyphonic lyrics transcription.</li>
 					</ol>
-					<div class="">
+
+					<div class="fragment" data-fragment-index="1">
 						<figure style="width: 700px; margin: auto;">
-							<img src="dist/images/splitTask2.png" alt="">
+							<img src="dist/images/singer.png" alt="">
+						</figure>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2>Project Description</h2>
+					<h3>Breaking down the task</h3>
+					<ol>
+						<li class="smaller left">Clean sung speech recognition.</li>
+						<li class="fragment smaller left highlight-red" data-fragment-index="1">Musical audio source separation.</li>
+						<li class="smaller left">Polyphonic lyrics transcription.</li>
+					</ol>
+
+					<div class="fragment" data-fragment-index="1">
+						<figure style="width: 700px; margin: auto;">
+							<img  src="dist/images/instruments.png" alt="">
+						</figure>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2>Project Description</h2>
+					<h3>Breaking down the task</h3>
+					<ol>
+						<li class="smaller left">Clean sung speech recognition.</li>
+						<li class="smaller left">Musical audio source separation.</li>
+						<li class="fragment smaller left highlight-red" data-fragment-index="1">Polyphonic lyrics transcription.</li>
+					</ol>
+
+					<div class="fragment" data-fragment-index="1">
+						<figure style="width: 700px; margin: auto;">
+							<img  src="dist/images/band.png" alt="">
 						</figure>
 					</div>
 				</section>
 
-				<section>
-					<h2>Overview of the project</h2>
-					<h3>Research Questions - Stage 1</h3>
-					<ol class="automatic-performance_1">
-						<li>Using state-of-the-art ASR systems for spoken speech, is it possible to construct a robust and fair DNN ASR baseline system for an unaccompanied singing scenario?
-						</li>
-						<li>Given a baseline system for an unaccompanied singing scenario, can the performance of the system be improved by incorporating musically motivated features?
-						</li>
 
+				<section>
+					<h2>Project Description</h2>
+					<h3>Research Questions - Acoustic Modelling</h3>
+					<ol class="automatic-performance_1">
+						<li>In what ways is sung speech acoustic modelling more challenging than spoken speech modelling, and how should these challenges be best addressed?
+						</li>
 					</ol>
+					<section>
+						<ol class="automatic-performance_1">
+							<li>How does the production of sung speech differ from that of spoken speech? What are the implications of the differences for the phoneme discrimination that underpins speech recognition?</li>
+							<li>How well does the existing state-of-the-art for speech recognition perform on the sung speech task? What datasets and techniques can be used to measure this performance? What can we learn about how to adapt acoustic modelling techniques by examining the pattern of errors produced by these techniques?</li>
+							<li>What are the musical properties that can be used to characterise a sung speech signal? How can we best capture these properties when designing sung speech feature vectors? To what extent does modelling these properties improve speech recognition performance?</li>
+						</ol>
+					</section>
+					<section>
+						<ol class="automatic-performance_1">
+							<li>How does the production of sung speech differ from that of spoken speech? What are the implications of the differences for the phoneme discrimination that underpins speech recognition?</li>
+							<li>How well does the existing state-of-the-art for speech recognition perform on the sung speech task? What datasets and techniques can be used to measure this performance? What can we learn about how to adapt acoustic modelling techniques by examining the pattern of errors produced by these techniques?</li>
+							<li>What are the musical properties that can be used to characterise a sung speech signal? How can we best capture these properties when designing sung speech feature vectors? To what extent does modelling these properties improve speech recognition performance?</li>
+						</ol>
+					</section>
 				</section>
 				<section>
 					<h2>Overview of the project</h2>
