@@ -14,12 +14,15 @@ spoken speech to sung speech.
 
 
 ## Education
+- PhD Computer Science  
+  University of Sheffield, UK  
+  2018-2022  
 
 - MSc Advanced Computer Science  
   University of Sheffield, UK  
   2015-2016  
   
-- Bs Informatics Engineering.  
+- Bs Informatics Engineering  
   Universidad Diego Portales, Chile  
   1998-2004  
   
