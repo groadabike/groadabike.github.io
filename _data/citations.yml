@@ -1,0 +1,119 @@
+metadata:
+  last_updated: '2026-04-10'
+papers:
+  BfYwEGMAAAAJ:0EnyYjriUFMC:
+    citations: 0
+    title: The Clarity & Cadenza Challenges
+    year: '2024'
+  BfYwEGMAAAAJ:4DMP91E08xMC:
+    citations: 0
+    title: 'Cadenza Challenge (CAD1): databases for the First Cadenza Challenge-Task1'
+    year: '2024'
+  BfYwEGMAAAAJ:4TOpqqG69KYC:
+    citations: 1
+    title: 'The First Cadenza Signal Processing Challenge: Improving Music for Those With a Hearing Loss'
+    year: '2023'
+  BfYwEGMAAAAJ:7PzlFSSx8tAC:
+    citations: 0
+    title: Article title The Cadenza Lyric Intelligibility Prediction (CLIP) Dataset.
+    year: Unknown Year
+  BfYwEGMAAAAJ:8k81kl-MbHgC:
+    citations: 8
+    title: Muddy, muddled, or muffled? Understanding the perception of audio quality in music by hearing aid users
+    year: '2024'
+  BfYwEGMAAAAJ:9ZlFYXVOiuMC:
+    citations: 0
+    title: Challenges in predicting the lyric intelligibility of musical segments for older individuals with hearing loss
+    year: Unknown Year
+  BfYwEGMAAAAJ:KlAtU1dfN6UC:
+    citations: 7
+    title: 'The first Cadenza challenges: using machine learning competitions to improve music for listeners with a hearing loss'
+    year: '2025'
+  BfYwEGMAAAAJ:L8Ckcad2t8MC:
+    citations: 5
+    title: 'Overview and results of the ICASSP SP cadenza challenge: Music demixing/remixing for hearing aids'
+    year: '2024'
+  BfYwEGMAAAAJ:LkGwnXOMwfcC:
+    citations: 8
+    title: 'The first cadenza signal processing challenge: Improving music for those with a hearing loss'
+    year: '2023'
+  BfYwEGMAAAAJ:M3ejUd6NZC8C:
+    citations: 0
+    title: 'Source Separation of Small Classical Ensembles: Challenges and Opportunities'
+    year: '2025'
+  BfYwEGMAAAAJ:MXK_kJrjxJIC:
+    citations: 0
+    title: Development of the 2nd Cadenza challenge for improving music listening for people with a hearing loss
+    year: '2024'
+  BfYwEGMAAAAJ:QIV2ME_5wuYC:
+    citations: 1
+    title: The Cadenza Lyric Intelligibility Prediction (CLIP) Dataset.
+    year: '2026'
+  BfYwEGMAAAAJ:Tyk-4Ss8FVUC:
+    citations: 6
+    title: 'THE SHEFFIELD UNIVERSITY SYSTEM FOR THE MIREX 2020: LYRICS TRANSCRIPTION TASK'
+    year: '2020'
+  BfYwEGMAAAAJ:ULOm3_A8WrAC:
+    citations: 5
+    title: 'The cadenza woodwind dataset: Synthesised quartets for music information retrieval and machine learning'
+    year: '2024'
+  BfYwEGMAAAAJ:UebtZRa9Y70C:
+    citations: 0
+    title: Automatic Speech Recognition in Music using the ACOMUS Musical Corpus
+    year: Unknown Year
+  BfYwEGMAAAAJ:Wp0gIr-vW9MC:
+    citations: 1
+    title: 'Cadenza challenge (CAD2): databases for rebalancing classical music task'
+    year: '2024'
+  BfYwEGMAAAAJ:Y0pCki6q_DkC:
+    citations: 3
+    title: The use of Voice Source Features for Sung Speech Recognition
+    year: '2021'
+  BfYwEGMAAAAJ:YOwf2qJgpHMC:
+    citations: 0
+    title: 'Bannister et al.(153): Perceptual Evaluation of Machine Learning Systems to Improve Music Audio Quality for Hearing Loss'
+    year: Unknown Year
+  BfYwEGMAAAAJ:_FxGoFyzp5QC:
+    citations: 1
+    title: The Cadenza ICASSP 2024 Grand Challenge
+    year: '2023'
+  BfYwEGMAAAAJ:_kc_bZDykSQC:
+    citations: 0
+    title: Lyric intelligibility of musical segments for older individuals with hearing loss
+    year: '2024'
+  BfYwEGMAAAAJ:aqlVkmm33-oC:
+    citations: 0
+    title: 'Cadenza Challenge (CAD2): databases for lyric intelligibility task'
+    year: '2024'
+  BfYwEGMAAAAJ:dhFuZR0502QC:
+    citations: 0
+    title: 'The first cadenza challenge: perceptual evaluation of machine learning systems to improve audio quality of popular music for those with hearing loss'
+    year: '2026'
+  BfYwEGMAAAAJ:hqOjcs7Dif8C:
+    citations: 0
+    title: Planning The 2nd Cadenza Challenge for Improving Music for People With a Hearing Loss
+    year: '2023'
+  BfYwEGMAAAAJ:kNdYIx-mwKoC:
+    citations: 5
+    title: 'The ICASSP SP cadenza challenge: Music demixing/remixing for hearing aids'
+    year: '2024'
+  BfYwEGMAAAAJ:mVmsd5A6BfQC:
+    citations: 1
+    title: 'Cadenza Challenge (ICASSP24): databases for ICASSP 2024 Cadenza Grand Challenge'
+    year: '2024'
+  BfYwEGMAAAAJ:qxL8FJ1GzNcC:
+    citations: 0
+    title: 'The second Cadenza machine learning challenge (CAD2): Improving music for people with hearing loss'
+    year: '2025'
+  BfYwEGMAAAAJ:roLk4NBRz8UC:
+    citations: 0
+    title: "A systematic review of measurements of real-world interior car noise for the \u201CCadenza\u201D machine-learning project"
+    year: '2023'
+  BfYwEGMAAAAJ:u5HHmVD_uO8C:
+    citations: 45
+    title: 'Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System'
+    year: '2019'
+  BfYwEGMAAAAJ:ufrVoPGSRksC:
+    citations: 0
+    title: Deep Learning Approaches for Automatic Sung Speech Recognition
+    year: '2022'
