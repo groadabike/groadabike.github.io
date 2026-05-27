@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.gerardoroadabike.com/sitemap.xml
+Sitemap: https://groadabike.github.io/sitemap.xml
