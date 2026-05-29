@@ -6,7 +6,7 @@ subtitle: <a href='https://sheffield.ac.uk/'>University of Sheffield</a>. School
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic2.jpg
   image_circular: true # crops the image to make it circular
 #  more_info: >
 #    <p>555 your office number</p>
