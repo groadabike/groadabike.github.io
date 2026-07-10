@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-19'
+  last_updated: '2026-07-10'
 papers:
   BfYwEGMAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -26,7 +26,7 @@ papers:
     title: Challenges in predicting the lyric intelligibility of musical segments for older individuals with hearing loss
     year: Unknown Year
   BfYwEGMAAAAJ:KlAtU1dfN6UC:
-    citations: 7
+    citations: 8
     title: 'The first Cadenza challenges: using machine learning competitions to improve music for listeners with a hearing loss'
     year: '2025'
   BfYwEGMAAAAJ:LkGwnXOMwfcC:
@@ -42,7 +42,7 @@ papers:
     title: Development of the 2nd Cadenza challenge for improving music listening for people with a hearing loss
     year: '2024'
   BfYwEGMAAAAJ:QIV2ME_5wuYC:
-    citations: 7
+    citations: 8
     title: The Cadenza Lyric Intelligibility Prediction (CLIP) Dataset.
     year: '2026'
   BfYwEGMAAAAJ:Tyk-4Ss8FVUC:
@@ -50,7 +50,7 @@ papers:
     title: 'THE SHEFFIELD UNIVERSITY SYSTEM FOR THE MIREX 2020: LYRICS TRANSCRIPTION TASK'
     year: '2020'
   BfYwEGMAAAAJ:ULOm3_A8WrAC:
-    citations: 6
+    citations: 7
     title: 'The cadenza woodwind dataset: Synthesised quartets for music information retrieval and machine learning'
     year: '2024'
   BfYwEGMAAAAJ:UebtZRa9Y70C:
@@ -70,8 +70,8 @@ papers:
     title: 'Bannister et al.(153): Perceptual Evaluation of Machine Learning Systems to Improve Music Audio Quality for Hearing Loss'
     year: Unknown Year
   BfYwEGMAAAAJ:ZeXyd9-uunAC:
-    citations: 5
-    title: 'Overview of the ICASSP 2026 cadenza challenge: Predicting lyric intelligibility'
+    citations: 6
+    title: 'Overview of the icassp 2026 cadenza challenge: Predicting lyric intelligibility'
     year: '2026'
   BfYwEGMAAAAJ:_FxGoFyzp5QC:
     citations: 1
