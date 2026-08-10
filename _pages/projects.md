@@ -12,9 +12,13 @@ horizontal: True
 <!-- Paste this right under the front matter -->
 <style>
   h2.category {
-    font-weight: 700 !important;   
+    font-weight: 400 !important;   
     color: var(--global-text-color) !important; 
     opacity: 1 !important;         
+  }
+    /* Make the horizontal divider line darker/more visible */
+  .projects .category {
+    border-bottom: 1px solid var(--global-text-color) !important; 
   }
 </style>
 
