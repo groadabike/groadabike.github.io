@@ -7,13 +7,13 @@ nav: true
 nav_order: 3
 ---
 <style>
-  h2.bibliography {
+  .publications h2.bibliography {
     font-weight: 400 !important;   
     color: var(--global-text-color) !important; 
     opacity: 1 !important;         
   }
     /* Make the horizontal divider line darker/more visible */
-  .projects .bibliography {
+  .publications h2.bibliography {
     border-bottom: 1px solid var(--global-text-color) !important; 
   }
 </style>
