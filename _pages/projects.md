@@ -9,6 +9,15 @@ display_categories: [Cadenza Project, PhD]
 horizontal: True
 ---
 
+<!-- Paste this right under the front matter -->
+<style>
+  h2.category {
+    font-weight: 700 !important;   
+    color: var(--global-text-color) !important; 
+    opacity: 1 !important;         
+  }
+</style>
+
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
