@@ -10,7 +10,7 @@ related_publications: true
 
 ## Deep Learning Approaches for Automatic Sung Speech Recognition: Adapting Spoken Technologies to Sung Speech
 
-I did my PhD at the University of Sheffield during the years 2018-2022.
+I did my PhD at the University of Sheffield during the years 2018-2022 {% cite RoaPHD %}.
 
 My research focuses on automatic sung speech recognition and lyric transcription using deep learning and audio signal processing techniques.
 Through this project, I explore the challenges of understanding singing voices, including the effects of musical accompaniment,
