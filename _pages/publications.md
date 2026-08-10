@@ -14,7 +14,7 @@ nav_order: 3
   }
     /* Make the horizontal divider line darker/more visible */
   .publications .bibliography {
-    border-bottom: 1px solid var(--global-text-color) !important; 
+    border-top: 1px solid var(--global-text-color) !important; 
   }
 </style>
 
