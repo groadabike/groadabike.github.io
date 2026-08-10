@@ -1,6 +1,0 @@
-/* Make project category headers bold and highly visible */
-h2.category {
-  font-weight: 700 !important;   /* Makes the text bold */
-  color: var(--global-text-color) !important; /* Matches your theme's main text color */
-  opacity: 1 !important;         /* Removes the faint transparency if applied */
-}
