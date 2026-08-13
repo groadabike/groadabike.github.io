@@ -5,22 +5,9 @@ permalink: /projects/
 description: Some of the projects I've worked on.
 nav: true
 nav_order: 2
-display_categories: [Cadenza Project, PhD]
-horizontal: True
+display_categories: [Cadenza Project, Datasets, PhD]
+horizontal: false
 ---
-
-<!-- Paste this right under the front matter -->
-<style>
-  h2.category {
-    font-weight: 400 !important;   
-    color: var(--global-text-color) !important; 
-    opacity: 1 !important;         
-  }
-    /* Make the horizontal divider line darker/more visible */
-  .projects .category {
-    border-bottom: 1px solid var(--global-text-color) !important; 
-  }
-</style>
 
 <!-- pages/projects.md -->
 <div class="projects">

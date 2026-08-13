@@ -1,0 +1,17 @@
+/* Make project categories bold and highly visible */
+h2.category {
+  font-weight: 400 !important;
+  color: var(--global-text-color) !important;
+  opacity: 1 !important;
+}
+.projects .category {
+  border-bottom: 1px solid var(--global-text-color) !important;
+}
+
+/* Make publication and reference year headers bold and clear everywhere */
+.publications h2.bibliography {
+  font-weight: 400 !important;
+  color: var(--global-text-color) !important;
+  opacity: 1 !important;
+  border-top: 0px solid var(--global-text-color) !important;
+}
