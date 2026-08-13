@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 1st Cadenza Challenge
+title: CAD1
 description: Machine Learning Challenges to improve music for people with hearing loss
 img: assets/img/logos/cadenza_logo.png
 importance: 1

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ICASSP 2024 Cadenza Grand Challenge
+title: ICASSP 2024
 description: Personalised remixing of music for hearing aid users, accounting for loudspeaker cross-talk
 img: assets/img/logos/cadenza_logo.png
 importance: 2
