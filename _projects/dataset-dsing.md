@@ -6,6 +6,7 @@ importance: 1
 category: ASR
 related_publications: true
 img: assets/img/projects/dsing/dsing_menu.png
+giscus_comments: true
 ---
 
 {% include figure.liquid path="assets/img/projects/dsing/dsing.png" title="A karaoke microphone on a stand in front of a TV screen displaying song lyrics in a cozy home living room" class="img-fluid rounded z-depth-1" %}

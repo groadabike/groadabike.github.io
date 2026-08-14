@@ -6,6 +6,7 @@ img: assets/img/logos/cadenza_logo.png
 importance: 1
 category: Cadenza Project
 related_publications: true
+giscus_comments: true
 ---
 
 ## Improving music listening for those with hearing impairment

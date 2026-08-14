@@ -6,6 +6,7 @@ importance: 2
 category: ASR
 related_publications: false
 img: assets/img/projects/acomus/acomus_menu.png
+giscus_comments: true
 ---
 
 {% include figure.liquid path="assets/img/projects/acomus/acomus.png" title="Female singer performing with a classical guitar" class="img-fluid rounded z-depth-1" %}

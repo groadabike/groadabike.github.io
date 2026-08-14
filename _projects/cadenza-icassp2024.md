@@ -6,6 +6,7 @@ img: assets/img/logos/cadenza_logo.png
 importance: 2
 category: Cadenza Project
 related_publications: true
+giscus_comments: true
 ---
 
 ## [ICASSP 2024 Grand Challenge](https://cadenzachallenge.org/docs/icassp_2024/intro)
