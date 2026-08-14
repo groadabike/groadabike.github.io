@@ -1,3 +1,16 @@
+
+/* Change global colour */
+:root {
+  --global-theme-color: #0f766e;
+  --global-hover-color: #115e59;
+}
+
+/* Capital section in About Me */
+.post h2 a[href="/news/"],
+.post h2 a[href="/publications/"] {
+  text-transform: capitalize;
+}
+
 /* Make project categories bold and highly visible */
 h2.category {
   font-weight: 400 !important;
@@ -14,4 +27,44 @@ h2.category {
   color: var(--global-text-color) !important;
   opacity: 1 !important;
   border-top: 0px solid var(--global-text-color) !important;
+}
+
+/* Make toc in CV larger */
+#toc-sidebar {
+  font-size: 1.10rem; /* increase as needed */
+  line-height: 1.5;
+  overflow-y: visible !important;
+  max-height: none !important;
+}
+
+#toc-sidebar .toc-link {
+  font-size: inherit;
+  overflow-y: visible !important;
+}
+
+/* make CV location aligned to left */
+.cv .date-column .location {
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+.cv .date-column {
+  min-width: 80px;
+  flex: 0 0 80px;
+  max-width: 80px;
+}
+
+.cv ul.items {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.cv ul.items li::marker {
+  content: "" !important;
+}
+
+.cv ul.items li {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
