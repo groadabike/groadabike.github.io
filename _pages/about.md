@@ -5,7 +5,7 @@ permalink: /
 subtitle: <a href='https://sheffield.ac.uk/'>University of Sheffield</a>. School of Computer Science
 
 profile:
-  align: right
+  align: right 
   image: prof_pic2.jpg
   image_circular: true # crops the image to make it circular
 #  more_info: >
@@ -32,3 +32,6 @@ latest_posts:
 I am a postdoctoral researcher in machine learning and audio signal processing at the University of Sheffield. My research focuses on developing perceptually motivated signal processing and deep learning methods to improve music perception for people with hearing loss. I am a core contributor to the <a href='https://cadenzachallenge.org/'>Cadenza challenges</a>, working on dataset design, evaluation methodologies, and benchmark development.
 
 My broader interests include audio representation learning, music information retrieval, and real-time DSP systems, with a particular emphasis on translating research outcomes into robust, real-time solutions for hearing technologies and audio applications.
+
+{% include figure.liquid path="assets/img/pinguino_rey.jpg" title="King penguins in a grassy coastal field" class="img-fluid rounded z-depth-1" %}
+*Not related to my research — just a nice memory from a trip to Chilean Patagonia.*
