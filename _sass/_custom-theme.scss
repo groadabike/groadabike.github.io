@@ -53,18 +53,3 @@ h2.category {
   flex: 0 0 80px;
   max-width: 80px;
 }
-
-.cv ul.items {
-  list-style: none !important;
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-}
-
-.cv ul.items li::marker {
-  content: "" !important;
-}
-
-.cv ul.items li {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
