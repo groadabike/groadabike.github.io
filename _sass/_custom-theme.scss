@@ -53,3 +53,8 @@ h2.category {
   flex: 0 0 80px;
   max-width: 80px;
 }
+
+/* Keep the navbar "More" dropdown width consistent across environments */
+.navbar .dropdown-menu {
+  min-width: 12rem !important;
+}
