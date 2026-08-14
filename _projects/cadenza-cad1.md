@@ -1,40 +1,78 @@
 ---
 layout: page
 title: CAD1
-description: Machine Learning Challenges to improve music for people with hearing loss
-img: assets/img/logos/cadenza_logo.png
+description: A tutorial-style guide to the first Cadenza Challenge, its tasks, resources, and how to build on it
+img: assets/img/cad1/cad1-thumbnail.png
 importance: 1
 category: Cadenza Project
 related_publications: true
 giscus_comments: true
 ---
 
-## Improving music listening for those with hearing impairment
+<h2 style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+  <img
+    src="{{ 'assets/img/logos/cadenza_logo.png' | relative_url }}"
+    alt="Cadenza project logo"
+    style="height: 60px; width: auto;"
+  >
+  <span>First Cadenza Challenge (CAD1)</span>
+</h2>
 
-Cadenza is a 4.5-year project that aims to improve music listening for people with hearing impairments.
-It addresses the need for better music processing through machine learning challenges.
+<div style="margin: 0 0 1.5rem 0;" markdown="1">
 
-In the duration of this project, we ran five challenges covering issues in music audio quality and lyric intelligibility.
+{% include figure.liquid path="assets/img/projects/cad1/cad1-banner.png" title="Abstract CAD1 banner showing a network-like flow of audio signals splitting and recombining to represent source separation, personalised processing, and remixing" class="img-fluid rounded z-depth-1" %}
+
+</div>
+
+This page is written as a practical introduction to the first Cadenza Challenge: what we built, what we learned, and how others can still use the materials.
+Although the original challenge closed in July 2023, its data, submitted signals, and evaluation results remain openly available for further research.
+
+If you are new to the project, the best way to start is reading the official
+[CAD1 introduction](https://cadenzachallenge.org/docs/cadenza1/cc1_intro), which explains all the deatils of the challenge.
+This page complements it with a more research-project-oriented summary.
 
 ---
 
-## [CAD1 - The first Cadenza Challenge](https://cadenzachallenge.org/docs/cadenza1/cc1_intro)
+## What we did
 
-CAD1 {% cite roadabike2025_ojsp %} was the first challenge presented in March 2023.  
-It included two listening scenarios: (A) Music over headphones, and (B) Music over car's loudspeakers.
+CAD1 {% cite roadabike2025_ojsp %} was the first Cadenza challenge, launched in March 2023 to study how machine learning could improve music listening for people with hearing loss.
+The project combined:
 
-(A) The scenario considered a listener listening to music over headphones without wearing their hearing aid, so the headphones had to compensate for the hearing loss.
-The challenge was presented as a demixing/remixing task in which participants had to demix stereo tracks into vocal, drums, bass and other (``VDBO'') stems,
-to allow these to be remixed in a way that improves audio quality. Unlike traditional demixing challenges,
-this task used HAAQI to evaluate the VDBO stems and the remix. Additionally, the remixed signal were evaluated by a listening panel
-using audio quality scales developed withing the project.
+1. **A realistic hearing-focused audio task** rather than a standard music information retrieval benchmark.
+2. **Open baselines and shared evaluation** so participants could compare systems fairly.
+3. **Objective and perceptual testing** using both HAAQI and listening-panel ratings.
 
-(B) This scenario was about listening to music over the car's loudspeakers in the presence of car noise.
-Here, listeners are wearing their hearing aids. Participants' algorithms had to process the music played by the car stereo in a way that increases its audio quality, while accounting for the car noise.
-For this, participants have access to: (i) the clean reference song, (ii) the audiogram of the listener,
-and (iii) the car speed, which gives an estimate of the noise's power spectrum — participants did not have
-access to the noise signal itself (this was not a noise-cancellation task).
-The output signals were evaluated using both the objective metric HAAQI and a listening panel.
+The challenge covered two listening scenarios:
+
+### Task A: Headphone listening without hearing aids
+
+Listeners heard music over headphones and were not wearing hearing aids, so the system had to compensate directly for the hearing loss.
+Participants processed stereo songs by separating them into vocals, drums, bass, and other (VDBO) stems, then remixing and amplifying them for a listener-specific audiogram.
+
+### Task B: In-car listening with hearing aids
+
+Listeners heard music over a car audio system while wearing hearing aids and in the presence of road noise.
+Participants were given the clean song, the listener audiogram, and the car speed as a proxy for the noise spectrum.
+The goal was not noise cancellation, but hearing-aware music processing that improved perceived audio quality in context.
+
+Across both tasks, CAD1 framed music enhancement as a personalised remixing problem rather than a generic denoising or separation benchmark.
+
+<div style="max-width: 650px; margin: 0 auto;"  markdown="1">
+
+{% include figure.liquid path="assets/img/projects/cad1/task2-scenario.png" title="Diagram of the CAD1 Task 2 scenario, where a hearing-aid user listens to music through a car audio system in the presence of speed-dependent car noise" class="iimg-fluid rounded z-depth-1" %}
+
+***Figure 1**. The baseline for the headphone listening scenario. For simplicity, not all signal paths are shown.*
+</div>
+
+
+## How the challenge worked
+
+Participants submitted processed audio signals, which we evaluated in two complementary ways:
+
+1. **HAAQI**, to estimate hearing-aid-related audio quality objectively.
+2. **Listening tests**, to measure perceived quality with human listeners.
+
+This mattered because a system could look good from a signal-processing perspective but still fail to improve the actual listening experience.
 
 ## Baseline systems
 
@@ -44,27 +82,66 @@ The output signals were evaluated using both the objective metric HAAQI and a li
 
 Each system demixes the stereo track into eight VDBO stems (left/right for vocals, drums, bass, other), applies NAL-R amplification and compression personalised to each listener's audiogram, and produces a remix by linearly summing the processed stems.
 
+<div style="max-width: 650px; margin: 0 auto;"  markdown="1">
+
+{% include figure.liquid path="assets/img/projects/cad1/task1-baseline.png" title="Block diagram of the CAD1 headphone baseline: a stereo music mixture is separated into vocals, drums, bass, and other stems, each stem is processed with listener-specific hearing-loss compensation, and the processed stems are remixed into a personalised stereo output" class="img-fluid rounded z-depth-1" %}
+***Figure 2**. The baseline for the headphone listening scenario. For simplicity, not all signal paths are shown.*
+
+</div>
+
 **Task 2 (car).** A single baseline was provided, applying a level constraint to the music mixture at the hearing aid microphones to prevent clipping caused by the NAL-R amplification.
 
-### Results
+<div style="max-width: 650px; margin: 0 auto;"  markdown="1">
+
+{% include figure.liquid path="assets/img/projects/cad1/task2-baseline.png" title="Block diagram of the CAD1 car-listening baseline: the clean music signal is adjusted using listener audiogram information and car-speed-based noise estimates, with level control to avoid clipping at the hearing-aid microphones, producing a personalised in-car listening" class="img-fluid rounded z-depth-1" %}
+***Figure 3**. The baseline for the car listening scenario. For simplicity, not all signal paths are shown.*
+
+</div>
+
+These baselines were important because they gave participants a concrete starting point and made it possible to understand whether a proposed method offered a real benefit over strong off-the-shelf systems.
+
+## What we learned
+
+For the headphone task, the Demucs baseline was already very strong and none of the submitted systems surpassed it on HAAQI.
+That result was scientifically useful: it showed that Demucs source separation models are robust enough for studio recordings, leaving limited room for improvement when combined with hearing-aid-style amplification.
+
+This directly informed the design of the later ICASSP 2024 Cadenza Challenge, where loudspeaker reproduction and cross-talk made the problem harder and created more headroom for participant methods.
+
+### Selected results
 
 Of the two Task 1 baselines, Demucs scored highest and none of the participant entries managed to beat it on HAAQI:
 
-| Team     | HAAQI Avg | HAAQI L | HAAQI R | BAQ (listening panel) |
-|----------|-----------|---------|---------|------------------------|
-| **Baseline (Demucs)** | **0.706** | 0.703 | 0.709 | 41.68 |
-| E012 | 0.684 | 0.681 | 0.688 | 41.47 |
-| E005 | 0.677 | 0.675 | 0.679 | 42.16 |
-| Baseline (Open-Unmix) | 0.638 | 0.635 | 0.642 | — |
-| E014 | 0.530 | 0.538 | 0.523 | 33.16 |
-| E015 | 0.475 | 0.480 | 0.470 | — |
-| E021 | 0.440 | 0.432 | 0.447 | 42.75 |
-| E017 | 0.275 | 0.275 | 0.276 | 41.80 |
-| E016 | 0.270 | 0.311 | 0.229 | 38.66 |
-| E022 | 0.217 | 0.279 | 0.156 | 35.65 |
+| Team                   | HAAQI Avg   | HAAQI L | HAAQI R | BAQ (listening panel) |
+|------------------------|-------------|---------|---------|-----------------------|
+| **Baseline (Demucs)**  | **0.706**   | 0.703   | 0.709   | 41.68                 |
+| E012                   | 0.684       | 0.681   | 0.688   | 41.47                 |
+| E005                   | 0.677       | 0.675   | 0.679   | 42.16                 |
+| Baseline (Open-Unmix)  | 0.638       | 0.635   | 0.642   | —                     |
+| E014                   | 0.530       | 0.538   | 0.523   | 33.16                 |
+| E015                   | 0.475       | 0.480   | 0.470   | —                     |
+| E021                   | 0.440       | 0.432   | 0.447   | 42.75                 |
+| E017                   | 0.275       | 0.275   | 0.276   | 41.80                 |
+| E016                   | 0.270       | 0.311   | 0.229   | 38.66                 |
+| E022                   | 0.217       | 0.279   | 0.156   | 35.65                 |
 
-*(HAAQI: Hearing Aid Audio Quality Index, 0–1 scale. BAQ: Basic Audio Quality, listener panel score.)*
+*(**HAAQI**: Hearing Aid Audio Quality Index, 0–1 scale. **BAQ**: Basic Audio Quality, listener panel score, 0-100 scale.)*
 
-No entrant surpassed the Demucs baseline — likely because it was already a strong, state-of-the-art demixing model, leaving little room for improvement. This finding directly motivated the design of the subsequent ICASSP 2024 Cadenza Challenge, which introduced loudspeaker reproduction and independent VDBO gains to make the task harder to "solve" with off-the-shelf separation alone.
+## How to participate now
 
-All submitted signals and HAAQI scores are openly available on [Zenodo](https://zenodo.org/records/13271525).
+Even though the original competition is over, CAD1 is still useful as research resource.
+
+You can participate by:
+
+1. **Reading the original challenge docs** at [cadenzachallenge.org](https://cadenzachallenge.org/docs/cadenza1/cc1_intro) to understand the task definition.
+2. **Downloading the public datasets** for [Task 1](https://zenodo.org/records/13285384) or [Task 2](https://zenodo.org/records/13329972)
+3. **Reproducing the baselines** and comparing new systems against the published HAAQI results.
+4. **Citing the challenge papers** if you build on the data or task.
+
+
+
+## Open resources
+
+- [Official CAD1 introduction](https://cadenzachallenge.org/docs/cadenza1/cc1_intro)
+- [Submitted signals and HAAQI scores on Zenodo](https://zenodo.org/records/15738909)
+- Our journal paper: {% cite roadabike2025_ojsp %}
+- Listener panel paper: <br />Bannister, S., Firth, J., Roa-Dabike, G., Vos, R., Whitmer, W., Greasley, A. E., Graetzer, S., Fazenda, B., Cox, T., Barker, J., & Akeroyd, M. A. (2026). *The First Cadenza Challenge: Perceptual Evaluation of Machine Learning Systems to Improve Audio Quality of Popular Music for Those with Hearing Loss*. Trends in Hearing.
