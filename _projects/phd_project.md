@@ -2,7 +2,7 @@
 layout: page
 title: PhD Project
 description: Deep Learning Approaches for Automatic Sung Speech Recognition
-img: assets/img/12.jpg
+img: assets/img/projects/phd/phd_menu.png
 importance: 1
 category: PhD
 related_publications: true

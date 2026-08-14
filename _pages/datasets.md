@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
-description: Research and technical projects I've worked on.
+title: Datasets
+permalink: /datasets/
+description: Datasets I've created for research and other projects.
 nav: true
-nav_order: 2
-display_categories: [Cadenza Project, PhD]
+nav_order: 3
+display_categories: [ASR]
 horizontal: false
 ---
 
