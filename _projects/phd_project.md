@@ -6,6 +6,7 @@ img: assets/img/projects/phd/phd_menu.png
 importance: 1
 category: PhD
 related_publications: true
+giscus_comments: true
 ---
 
 ## Deep Learning Approaches for Automatic Sung Speech Recognition: Adapting Spoken Technologies to Sung Speech
