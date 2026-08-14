@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-10'
+  last_updated: '2026-08-14'
 papers:
   BfYwEGMAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -14,20 +14,24 @@ papers:
     title: 'The First Cadenza Signal Processing Challenge: Improving Music for Those With a Hearing Loss'
     year: '2023'
   BfYwEGMAAAAJ:7PzlFSSx8tAC:
-    citations: 0
-    title: Article title The Cadenza Lyric Intelligibility Prediction (CLIP) Dataset.
-    year: Unknown Year
+    citations: 9
+    title: The Cadenza Lyric Intelligibility Prediction (CLIP) Dataset
+    year: '2026'
   BfYwEGMAAAAJ:8k81kl-MbHgC:
-    citations: 10
+    citations: 14
     title: Muddy, muddled, or muffled? Understanding the perception of audio quality in music by hearing aid users
     year: '2024'
   BfYwEGMAAAAJ:9ZlFYXVOiuMC:
     citations: 0
     title: Challenges in predicting the lyric intelligibility of musical segments for older individuals with hearing loss
     year: Unknown Year
+  BfYwEGMAAAAJ:IWHjjKOFINEC:
+    citations: 0
+    title: 'Cadenza Challenge (CAD1): Submission audio samples for listening to music over the headphones challenge'
+    year: '2025'
   BfYwEGMAAAAJ:KlAtU1dfN6UC:
-    citations: 8
-    title: 'The first Cadenza challenges: using machine learning competitions to improve music for listeners with a hearing loss'
+    citations: 9
+    title: 'The first cadenza challenges: Using machine learning competitions to improve music for listeners with a hearing loss'
     year: '2025'
   BfYwEGMAAAAJ:LkGwnXOMwfcC:
     citations: 8
@@ -41,10 +45,6 @@ papers:
     citations: 0
     title: Development of the 2nd Cadenza challenge for improving music listening for people with a hearing loss
     year: '2024'
-  BfYwEGMAAAAJ:QIV2ME_5wuYC:
-    citations: 8
-    title: The Cadenza Lyric Intelligibility Prediction (CLIP) Dataset.
-    year: '2026'
   BfYwEGMAAAAJ:Tyk-4Ss8FVUC:
     citations: 6
     title: 'THE SHEFFIELD UNIVERSITY SYSTEM FOR THE MIREX 2020: LYRICS TRANSCRIPTION TASK'
@@ -71,7 +71,7 @@ papers:
     year: Unknown Year
   BfYwEGMAAAAJ:ZeXyd9-uunAC:
     citations: 6
-    title: 'Overview of the icassp 2026 cadenza challenge: Predicting lyric intelligibility'
+    title: 'Overview of the ICASSP 2026 Cadenza challenge: Predicting lyric intelligibility'
     year: '2026'
   BfYwEGMAAAAJ:_FxGoFyzp5QC:
     citations: 1
@@ -87,7 +87,7 @@ papers:
     year: '2024'
   BfYwEGMAAAAJ:dhFuZR0502QC:
     citations: 0
-    title: 'The first cadenza challenge: perceptual evaluation of machine learning systems to improve audio quality of popular music for those with hearing loss'
+    title: 'The First Cadenza Challenge: Perceptual Evaluation of Machine Learning Systems to Improve Audio Quality of Popular Music for Those with Hearing Loss'
     year: '2026'
   BfYwEGMAAAAJ:hqOjcs7Dif8C:
     citations: 0
@@ -110,7 +110,7 @@ papers:
     title: "A systematic review of measurements of real-world interior car noise for the \u201CCadenza\u201D machine-learning project"
     year: '2023'
   BfYwEGMAAAAJ:u5HHmVD_uO8C:
-    citations: 45
+    citations: 46
     title: 'Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System'
     year: '2019'
   BfYwEGMAAAAJ:ufrVoPGSRksC:
