@@ -233,12 +233,14 @@ cv:
           a collaborative spirit.
 
     Service:
-      - label: Co-Guest Editor (2024)
+      - name: Co-Guest Editor
+        lavel: 2024
         details: >-
-          Special Issue: Music and Hearing Loss, Musicae Scientiae (SAGE).
+          Special Issue: [Music and Hearing Loss](https://journals.sagepub.com/topic/collections-mns/mns-1-music_and_hearing_loss/mns) (SAGE).
           Co-guest edited a special issue on music and hearing loss.
 
-      - label: Peer Reviewer (2021-2024)
+      - name: Peer Reviewer
+        label: 2024-2026
         details: >-
           EURASIP Journal on Audio, Speech, and Music Processing. Reviewed
           three submissions.
