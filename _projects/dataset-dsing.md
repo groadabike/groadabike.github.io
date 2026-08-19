@@ -15,7 +15,17 @@ DSing {% cite roadabike2019_interspeech %} is an unaccompanied singing dataset c
 It is derived from the [Smule DAMP-MVP 300x30x2](https://zenodo.org/records/2747436) dataset,
 a collection of thousands of solo-singing karaoke recordings.
 
-## Repository structure
+## Construction Process
+
+I built this dataset following these steps:
+
+1. **Source data** — I obtained the [Sing! 300x30x2](https://zenodo.org/records/2747436) dataset from the DAMP datasets collection.
+2. **Language filtering** — I filtered the recordings and kept only songs with English lyrics.
+3. **Lyrics download** — Using each song's unique ID, I downloaded the corresponding lyrics from the [Smule](https://www.smule.com) website.
+4. **Lyrics alignment** — I aligned the audio recordings with the downloaded lyrics.
+5. **Audio segmentation** — I split the audio into complete lyric phrases.
+
+## Download the Data
 
 The DSing [repository](https://github.com/groadabike/Kaldi-Dsing-task) contains the following directories:
 

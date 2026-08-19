@@ -34,4 +34,4 @@ I am a postdoctoral researcher in machine learning and audio signal processing a
 My broader interests include audio representation learning, music information retrieval, and real-time DSP systems, with a particular emphasis on translating research outcomes into robust, real-time solutions for hearing technologies and audio applications.
 
 {% include figure.liquid path="assets/img/pinguino_rey.jpg" title="King penguins in a grassy coastal field" class="img-fluid rounded z-depth-1" %}
-*Not related to my research — just a nice memory from a trip to Chilean Patagonia.*
+*Not related to my work - just a nice memory from a trip to Chilean Patagonia.*

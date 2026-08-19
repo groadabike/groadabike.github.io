@@ -20,9 +20,19 @@ property of the creator artist, and all the credits belong to them.
 
 This is a small dataset that can be used for evaluation and benchmarking.
 
+## Construction Process
+
+I built this dataset following these steps:
+
+1. **Video collection** — Searched YouTube for hundreds of videos of people singing song covers accompanied by an acoustic guitar or piano.
+2. **Lyrics retrieval** — Searched online for the official lyrics of each song.
+3. **Audio extraction and segmentation** — Extracted the audio from each video and split it into complete lyric phrases.
+4. **Lyrics alignment** — Aligned the lyrics with the corresponding audio segments.
+5. **Lyrics correction** — Manually corrected any discrepancies between the lyrics and the words actually sung, which can occur when a singer deviates from the original text for artistic reasons.
+
 ## Characteristics
 
-The corpus is designed and constructed with the following specifications:
+The corpus was designed and constructed with the following specifications:
 
 1. The songs are mainly interpreted by **Amateur Artists** and around 10% are known artists.
 2. The dataset is separated in a balanced number of **Male** and **Female** artists.

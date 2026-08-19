@@ -15,5 +15,17 @@
 
 linkedin_username: gerardo-roa-dabike
 github_username: groadabike
+
+#zenodo:
+#  logo: ai ai-zenodo
+#  title: Zenodo
+#  url: https://zenodo.org/search?q=creators.orcid%3A0000-0001-7839-8061
+#
+#hugging_face:
+#  logo: https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/huggingface.svg
+#  title: Hugging Face
+#  url: https://huggingface.co/groadabike
+
+research_gate_profile: Gerardo-Roa-Dabike
 scholar_userid: BfYwEGMAAAAJ
 orcid_id: 0000-0001-7839-8061
