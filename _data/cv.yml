@@ -233,17 +233,15 @@ cv:
           a collaborative spirit.
 
     Service:
-      - name: Co-Guest Editor
-        label: 2024
+      - label: Co-Guest Editor (2024)
         details: >-
-          Special Issue: Music and Hearing Loss - Music & Science Journal (SAGE).
           Co-guest edited a special issue on music and hearing loss.
+          Special Issue: Music and Hearing Loss - Music & Science Journal (SAGE).
 
-      - name: Peer Reviewer
-        label: 2024-2026
+      - label: Peer Reviewer (2024-2026)
         details: >-
-          EURASIP Journal on Audio, Speech, and Music Processing. Reviewed
-          three submissions.
+          EURASIP Journal on Audio, Speech, and Music Processing.  
+          Reviewed three submissions.
 
     Skills:
       - name: Audio & Speech ML
