@@ -234,9 +234,9 @@ cv:
 
     Service:
       - name: Co-Guest Editor
-        lavel: 2024
+        label: 2024
         details: >-
-          Special Issue: [Music and Hearing Loss](https://journals.sagepub.com/topic/collections-mns/mns-1-music_and_hearing_loss/mns) (SAGE).
+          Special Issue: Music and Hearing Loss - Music & Science Journal (SAGE).
           Co-guest edited a special issue on music and hearing loss.
 
       - name: Peer Reviewer
