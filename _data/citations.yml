@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-08-17'
+  last_updated: '2026-08-26'
 papers:
   BfYwEGMAAAAJ:0EnyYjriUFMC:
     citations: 0
@@ -110,7 +110,7 @@ papers:
     title: "A systematic review of measurements of real-world interior car noise for the \u201CCadenza\u201D machine-learning project"
     year: '2023'
   BfYwEGMAAAAJ:u5HHmVD_uO8C:
-    citations: 46
+    citations: 47
     title: 'Automatic Lyric Transcription from Karaoke Vocal Tracks: Resources and a Baseline System'
     year: '2019'
   BfYwEGMAAAAJ:ufrVoPGSRksC:
