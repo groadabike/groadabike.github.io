@@ -6,7 +6,7 @@ description: Datasets I've created for research and other projects.
 nav: true
 nav_order: 3
 display_categories: [Intelligibility, ASR]
-horizontal: false
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
