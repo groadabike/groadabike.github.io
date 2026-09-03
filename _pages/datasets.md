@@ -5,8 +5,8 @@ permalink: /datasets/
 description: Datasets I've created for research and other projects.
 nav: true
 nav_order: 3
-display_categories: [ASR]
-horizontal: false
+display_categories: [Intelligibility, ASR]
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
@@ -17,7 +17,7 @@ horizontal: false
   <a id="{{ category }}" href=".#{{ category }}">
     <h2 class="category">{{ category }}</h2>
   </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
+  {% assign categorized_projects = site.datasets | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}
@@ -41,7 +41,7 @@ horizontal: false
 
 <!-- Display projects without categories -->
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+{% assign sorted_projects = site.datasets | sort: "importance" %}
 
   <!-- Generate cards for each project -->
 

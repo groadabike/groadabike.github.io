@@ -6,7 +6,7 @@ description: Research and technical projects I've worked on.
 nav: true
 nav_order: 2
 display_categories: [Cadenza Project, PhD]
-horizontal: false
+horizontal: true
 ---
 
 <!-- pages/projects.md -->

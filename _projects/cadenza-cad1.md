@@ -3,7 +3,7 @@ layout: page
 title: CAD1
 description: A tutorial-style guide to the first Cadenza Challenge, its tasks, resources, and how to build on it
 img: assets/img/projects/cad1/cad1-thumbnail.png
-importance: 1
+importance: 5
 category: Cadenza Project
 related_publications: true
 giscus_comments: true

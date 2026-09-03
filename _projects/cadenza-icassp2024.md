@@ -3,7 +3,7 @@ layout: page
 title: ICASSP 2024
 description: A tutorial-style guide to the ICASSP 2024 Cadenza Challenge
 img: assets/img/projects/icassp2024/icassp2024-crosstalk.png
-importance: 2
+importance: 4
 category: Cadenza Project
 related_publications: true
 giscus_comments: true
