@@ -59,3 +59,16 @@ h2.category {
 .navbar .dropdown-menu {
   min-width: 12rem !important;
 }
+
+
+/* Page title and description (all pages using the page layout) */
+.post-header .post-title {
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+}
+
+.post-header .post-description {
+  font-size: 2rem !important;
+  color: var(--global-text-color-light) !important;
+  margin-bottom: 1.5rem !important;
+}

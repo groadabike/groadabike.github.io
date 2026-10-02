@@ -9,14 +9,14 @@ related_publications: true
 giscus_comments: true
 ---
 
-<h2 style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<h1 style="display: flex; align-items: center; gap: 0.75rem;">
   <img
     src="{{ 'assets/img/logos/cadenza_logo.png' | relative_url }}"
     alt="Cadenza project logo"
-    style="height: 60px; width: auto;"
+    style="height: 100px; width: auto;"
   >
   <span>First Cadenza Challenge (CAD1)</span>
-</h2>
+</h1>
 
 <div style="margin: 0 0 1.5rem 0;" markdown="1">
 

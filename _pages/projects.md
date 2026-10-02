@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: Research and technical projects I've worked on.
+description: A selection of projects I've led or worked on.
 nav: true
 nav_order: 2
 display_categories: [Cadenza Project, PhD]
