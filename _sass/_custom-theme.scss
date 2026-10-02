@@ -62,12 +62,12 @@ h2.category {
 
 
 /* Page title and description (all pages using the page layout) */
-.post-header .post-title {
-  font-size: 3rem !important;
+.post:not(:has(.profile))  .post-header .post-title {
+  font-size: 2.5rem !important;
   font-weight: 600 !important;
 }
 
-.post-header .post-description {
+.post:not(:has(.profile)) .post-header .post-description {
   font-size: 2rem !important;
   color: var(--global-text-color-light) !important;
   margin-bottom: 1.5rem !important;
